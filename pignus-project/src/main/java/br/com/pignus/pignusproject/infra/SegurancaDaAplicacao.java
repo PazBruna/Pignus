@@ -14,12 +14,6 @@ public class SegurancaDaAplicacao {
 		return false;
 	}
 	
-	public boolean loginValidado(LoginUsuarioComum usuarioComum) {
-			if((usuarioComum.getEmail() == "" && usuarioComum.getSenha() == null)
-					|| (usuarioComum.getEmail() == null && usuarioComum.getSenha() == "")) {
-				return true ;	
-			}
-			return false;
-		}
+	
 			
 	}
