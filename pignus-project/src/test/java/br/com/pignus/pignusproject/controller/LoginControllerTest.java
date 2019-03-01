@@ -36,14 +36,21 @@ public class LoginControllerTest {
 
 	}
 
-	// TESTE EMAIL E SENHA NULA
-
+	// TESTE EMAIL E SENHA NULA  
+	@Test
+	public void senhaNula() {
+		Mockito.when(seguranca.permitirAcesso(usuarioComum)).thenReturn(true);
+		Assert.assertEquals("loginErro", controller.loginInvalido());
+	}
 	
-	
 
-	// TESTE EMAIL NULA E SENHA
+	// TESTE EMAIL NULA E SENHA VALIDA
 
-	
+	@Test
+	public void emailNula() {
+		Mockito.when(seguranca.permitirAcesso(usuarioComum)).thenReturn(true);
+		Assert.assertEquals("loginErro", controller.loginInvalido());
+	}
 	
 
 }

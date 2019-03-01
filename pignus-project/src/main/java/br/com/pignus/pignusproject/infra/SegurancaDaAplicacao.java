@@ -15,5 +15,23 @@ public class SegurancaDaAplicacao {
 	}
 	
 	
+	
+	public class SegurancaDaAPlicacao {
+		
+		
+		public Boolean permitirAcesso(LoginUsuarioComum usuarioComum) {
+			if((usuarioComum.getSenha() == null && usuarioComum.getEmail() == "") || 
+					(usuarioComum.getSenha() == "" && usuarioComum.getEmail()== null)) {
+				return true;
+			}
+			return false;
+			
+		}
+	}
+	
+	
+	
+	
+	
 			
 	}
