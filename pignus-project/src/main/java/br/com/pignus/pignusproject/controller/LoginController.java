@@ -1,10 +1,6 @@
 package br.com.pignus.pignusproject.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.pignus.pignusproject.infra.SegurancaDaAplicacao;
@@ -15,6 +11,7 @@ public class LoginController {
 	public static final String PAGINA_LOGIN_EFETUADO = "loginEfetuado";
 	public static final String PAGINA_LOGIN_ERRO = "loginErro";
 
+	@SuppressWarnings("unused")
 	private SegurancaDaAplicacao seguranca;
 
 	public LoginController(SegurancaDaAplicacao seguranca) {

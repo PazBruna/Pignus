@@ -1,12 +1,13 @@
 package br.com.pignus.pignusproject.entities;
 
-public class LoginUsuarioComum {
-	
-	String email;
-	String senha;
-	String nome;
-	String endereco;
-	public LoginUsuarioComum(String email, String senha, String nome, String endereco) {
+public class Usuario {
+	private int id;
+	private String email;
+	private String senha;
+	private String nome;
+	private String endereco;
+	private final int tipo = 1;
+	public Usuario(String email, String senha, String nome, String endereco) {
 		super();
 		this.email = email;
 		this.senha = senha;
@@ -39,6 +40,15 @@ public class LoginUsuarioComum {
 	}
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getTipo() {
+		return tipo;
 	}
 	
 	

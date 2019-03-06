@@ -5,12 +5,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import br.com.pignus.pignusproject.entities.LoginUsuarioComum;
+import br.com.pignus.pignusproject.entities.Usuario;
 import br.com.pignus.pignusproject.infra.SegurancaDaAplicacao;
 
 public class LoginControllerTest {
 
-	LoginUsuarioComum usuarioComum = new LoginUsuarioComum("email", "senha", "nome", "endereco");
+	Usuario usuarioComum = new Usuario("email", "senha", "nome", "endereco");
 
 	private LoginController controller;
 	private SegurancaDaAplicacao seguranca = Mockito.mock(SegurancaDaAplicacao.class);
