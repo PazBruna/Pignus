@@ -10,7 +10,7 @@ import br.com.pignus.pignusproject.infra.SegurancaDaAplicacao;
 
 public class LoginControllerTest {
 
-	Usuario usuarioComum = new Usuario("email", "senha", "nome", "endereco");
+	Usuario usuarioComum;
 
 	private LoginController controller;
 	private SegurancaDaAplicacao seguranca = Mockito.mock(SegurancaDaAplicacao.class);
@@ -18,6 +18,9 @@ public class LoginControllerTest {
 	@Before
 	public void iniciar() {
 		controller = new LoginController(seguranca);
+		usuarioComum = new Usuario();
+		usuarioComum.setEmail("email");
+		usuarioComum.setSenha("senha");
 	}
 
 	// TESTE DO EMAIL VALIDO

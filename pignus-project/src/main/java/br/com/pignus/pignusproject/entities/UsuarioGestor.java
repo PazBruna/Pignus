@@ -1,29 +1,26 @@
 package br.com.pignus.pignusproject.entities;
 
-public class UsuarioGestor extends Usuario{
-	private String cnpj;
-	private final int tipo = 2;
+public class UsuarioGestor extends Usuario {
 
-	public UsuarioGestor(String email, String senha, String nome, String endereco) {
-		super(email, senha, nome, endereco);
+	public UsuarioGestor() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getCnpj() {
-		return cnpj;
-	}
+	private int areaGerenciada;
+	private final int tipo = 2;
 
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
-	}
-	
 	@Override
 	public int getTipo() {
 		return tipo;
 	}
 
-	
-	
-	
+	public int getAreaGerenciada() {
+		return areaGerenciada;
+	}
+
+	public void setAreaGerenciada(int areaGerenciada) {
+		this.areaGerenciada = areaGerenciada;
+	}
 
 }

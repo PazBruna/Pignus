@@ -5,15 +5,9 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private String nome;
-	private String endereco;
+	private int setor;
 	private final int tipo = 1;
-	public Usuario(String email, String senha, String nome, String endereco) {
-		super();
-		this.email = email;
-		this.senha = senha;
-		this.nome = nome;
-		this.endereco = endereco;
-	}
+	
 	public String getEmail() {
 		return email;
 	}
@@ -34,13 +28,6 @@ public class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	public String getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
 	public int getId() {
 		return id;
 	}
@@ -49,6 +36,12 @@ public class Usuario {
 	}
 	public int getTipo() {
 		return tipo;
+	}
+	public int getSetor() {
+		return setor;
+	}
+	public void setSetor(int setor) {
+		this.setor = setor;
 	}
 	
 	
