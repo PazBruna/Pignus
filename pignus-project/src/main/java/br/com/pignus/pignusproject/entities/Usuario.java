@@ -1,5 +1,6 @@
 package br.com.pignus.pignusproject.entities;
 
+
 public class Usuario {
 	private int id;
 	private String email;
