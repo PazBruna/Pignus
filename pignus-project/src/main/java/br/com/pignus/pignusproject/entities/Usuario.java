@@ -16,6 +16,9 @@ public class Usuario {
 	private int setor;
 	private final int tipo = 1;
 	
+	
+	
+	
 	public String getEmail() {
 		return email;
 	}

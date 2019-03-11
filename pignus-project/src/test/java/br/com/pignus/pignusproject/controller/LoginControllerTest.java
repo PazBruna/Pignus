@@ -27,7 +27,7 @@ public class LoginControllerTest {
 	@Test
 	public void emailValido() {
 		Mockito.when(seguranca.permitirAcesso(usuarioComum)).thenReturn(true);
-		Assert.assertEquals("loginEfetuado", controller.loginEfetuado());
+		Assert.assertEquals("paginaPrincipal", controller.loginEfetuado(usuarioComum));
 
 	}
 
@@ -35,15 +35,15 @@ public class LoginControllerTest {
 	@Test
 	public void emailInvalido() {
 		Mockito.when(seguranca.permitirAcesso(usuarioComum)).thenReturn(false);
-		Assert.assertEquals("loginErro", controller.loginInvalido());
+		Assert.assertEquals("paginaLoginErro", controller.loginEfetuado(usuarioComum));
 
 	}
 
 	// TESTE EMAIL E SENHA NULA  
 	@Test
 	public void senhaNula() {
-		Mockito.when(seguranca.permitirAcesso(usuarioComum)).thenReturn(true);
-		Assert.assertEquals("loginErro", controller.loginInvalido());
+		Mockito.when(seguranca.permitirAcesso(usuarioComum)).thenReturn(false);
+		Assert.assertEquals("paginaLoginErro", controller.loginEfetuado(usuarioComum));
 	}
 	
 
@@ -51,8 +51,8 @@ public class LoginControllerTest {
 
 	@Test
 	public void emailNula() {
-		Mockito.when(seguranca.permitirAcesso(usuarioComum)).thenReturn(true);
-		Assert.assertEquals("loginErro", controller.loginInvalido());
+		Mockito.when(seguranca.permitirAcesso(usuarioComum)).thenReturn(false);
+		Assert.assertEquals("paginaLoginErro", controller.loginEfetuado(usuarioComum));
 	}
 	
 

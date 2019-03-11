@@ -8,10 +8,8 @@ import br.com.pignus.pignusproject.entities.Usuario;
 public class SegurancaDaAplicacao {
 
 	public Boolean permitirAcesso(Usuario usuarioComum) {
-		if(usuarioComum.getEmail() == "") {
-			return true;
-		}
-		return false;
+		if(usuarioComum.getEmail() == "" || usuarioComum.getSenha() == "") return false;
+		return usuarioComum.getEmail().equals(usuarioComum.getSenha());
 	}
 	
 	
