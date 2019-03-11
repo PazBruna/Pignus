@@ -1,11 +1,10 @@
-package br.com.pignus.pignusproject.infra;
+package br.com.pignus.pignusproject;
 
-import org.springframework.stereotype.Component;
-
-@Component
-public class SegurancaDaAplicacao {
-
-	public Boolean permitirAcesso(String email, String senha) {
+public class TesteAlgoritmo {
+	public static void main(String[] args) {
+		permitirAcesso("teste@teste","1234");
+	}
+	public static Boolean permitirAcesso(String email, String senha) {
 		boolean resposta = false;
 		String matrizLogin[][] = new String[5][2];
 		matrizLogin[0][0] = "teste@teste";
@@ -23,23 +22,23 @@ public class SegurancaDaAplicacao {
 		matrizLogin[4][0] = "gui@teste";
 		matrizLogin[4][1] = "4321";
 
+
 		for (int i = 0; i < matrizLogin.length; i++) {
-			boolean respostaEmail = false;
-			boolean respostaSenha = false;
 			if (matrizLogin[i][0].equals(email)) {
-				respostaEmail = true;
+				resposta = true;
+				System.out.println(matrizLogin[i][0]);
 			}
 			for (int j = 0; j < matrizLogin[0].length; j++) {
 				if (matrizLogin[i][j].equals(senha)) {
-					respostaSenha = true;
+					resposta = true;
+					System.out.println(matrizLogin[i][j]);
 					break;
+				}else {
+					resposta = false;
 				}
 			}
-			if (respostaEmail && respostaSenha) {
-				resposta = true;
-				break;
-			}
 		}
+		System.out.println(resposta);
 		return resposta;
 	}
 }

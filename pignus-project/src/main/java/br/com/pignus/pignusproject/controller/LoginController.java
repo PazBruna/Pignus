@@ -26,7 +26,7 @@ public class LoginController {
 	
 	@PostMapping("/login")
 	public String loginEfetuado (@ModelAttribute Usuario usuarioComum) {
-		if (seguranca.permitirAcesso(usuarioComum))return PAGINA_PRINCIPAL;
+		if (seguranca.permitirAcesso(usuarioComum.getEmail(),usuarioComum.getSenha()))return PAGINA_PRINCIPAL;
 		else return PAGINA_LOGIN_ERRO;
 	}
 	
