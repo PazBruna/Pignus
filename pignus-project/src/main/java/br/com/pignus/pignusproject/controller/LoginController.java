@@ -17,6 +17,8 @@ public class LoginController {
 	public LoginController(SegurancaDaAplicacao seguranca) {
 		this.seguranca = seguranca;
 	}
+	
+	
 	@RequestMapping("/loginEfetuado")
 	public String loginEfetuado () {
 		return PAGINA_LOGIN_EFETUADO;
