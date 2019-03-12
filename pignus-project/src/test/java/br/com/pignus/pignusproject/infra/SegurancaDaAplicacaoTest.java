@@ -1,5 +1,7 @@
 package br.com.pignus.pignusproject.infra;
 
+
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +12,7 @@ import br.com.pignus.pignusproject.entities.Usuario;
 public class SegurancaDaAplicacaoTest {
 	Usuario usuario;
 	SegurancaDaAplicacao seguranca;
+	String matriz[][] ;
 
 	@Before
 	public void iniciar() {
@@ -48,6 +51,12 @@ public class SegurancaDaAplicacaoTest {
 		usuario.setSenha("1234");
 		
 		Assert.assertEquals(false,seguranca.permitirAcesso(usuario.getEmail(), usuario.getSenha()));
+	}
+	
+	@Test
+	public void gerarLog() {
+		usuario.setEmail("bbb@gmail.com");
+		matriz = seguranca.adicionaMatrizLog(usuario.getEmail());
 	}
 	
 

@@ -1,7 +1,7 @@
 package br.com.pignus.pignusproject.repository;
 
 public class DadosUsuarios {
-	public String[][] retornaMatriz() {
+	public String[][] retornaMatrizUsuarios() {
 		String matrizLogin[][] = new String[5][2];
 
 		matrizLogin[0][0] = "teste@teste";
@@ -20,4 +20,12 @@ public class DadosUsuarios {
 		matrizLogin[4][1] = "issoae";
 		return matrizLogin;
 	}
+
+	
+	
+	
+	
+	
+	
+	
 }

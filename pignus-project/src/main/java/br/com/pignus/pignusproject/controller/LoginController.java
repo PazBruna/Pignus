@@ -23,14 +23,15 @@ public class LoginController {
 
 	@PostMapping("/login")
 	public String loginEfetuado(@ModelAttribute Usuario usuarioComum) {
-		if (seguranca.permitirAcesso(usuarioComum.getEmail(), usuarioComum.getSenha()))
+		if (seguranca.permitirAcesso(usuarioComum.getEmail(), usuarioComum.getSenha())) {
+			seguranca.adicionaMatrizLog(usuarioComum.getEmail());
 			return PAGINA_PRINCIPAL;
-		else
-			return PAGINA_LOGIN_ERRO;
+		}
+		return PAGINA_LOGIN_ERRO;
 	}
 
 	@GetMapping("/login")
-	public String acessarLogin() {
+	public String acessarLogin(@ModelAttribute Usuario usuarioComum) {
 		return PAGINA_DE_LOGIN;
 	}
 
