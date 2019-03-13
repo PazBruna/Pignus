@@ -1,19 +1,13 @@
 package br.com.pignus.pignusproject.entities;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue(value = "G")
 public class UsuarioGestor extends Usuario {
 
-	public UsuarioGestor() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 	private int areaGerenciada;
-	private final int tipo = 2;
-
-	@Override
-	public int getTipo() {
-		return tipo;
-	}
 
 	public int getAreaGerenciada() {
 		return areaGerenciada;

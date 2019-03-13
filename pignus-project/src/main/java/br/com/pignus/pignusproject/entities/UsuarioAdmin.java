@@ -1,5 +1,10 @@
 package br.com.pignus.pignusproject.entities;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue(value = "A")
 public class UsuarioAdmin extends Usuario {
 	private String nomeFantasia;
 	private String cnpj;
@@ -9,7 +14,6 @@ public class UsuarioAdmin extends Usuario {
 	private String estado;
 	private String numero;
 	private String complemento;
-	private final int tipo = 3;
 
 	public String getNomeFantasia() {
 		return nomeFantasia;
@@ -75,8 +79,5 @@ public class UsuarioAdmin extends Usuario {
 		this.complemento = complemento;
 	}
 	
-	@Override
-	public int getTipo() {
-		return tipo;
-	}
+	
 }

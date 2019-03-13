@@ -1,11 +1,20 @@
 package br.com.pignus.pignusproject.entities;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo", length = 1, discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorValue("C")
 public class Usuario {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -14,7 +23,8 @@ public class Usuario {
 	private String senha;
 	private String nome;
 	private int setor;
-	private final int tipo = 1;
+	@Column(insertable=false, updatable=false)
+	private String tipo;
 	
 	
 	
@@ -45,8 +55,11 @@ public class Usuario {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getTipo() {
+	public String getTipo() {
 		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 	public int getSetor() {
 		return setor;
