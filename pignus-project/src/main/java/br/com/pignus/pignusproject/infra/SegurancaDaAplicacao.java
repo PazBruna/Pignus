@@ -1,6 +1,9 @@
 package br.com.pignus.pignusproject.infra;
 
-import java.util.Calendar;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Locale;
 
 import org.springframework.stereotype.Component;
 
@@ -38,27 +41,29 @@ public class SegurancaDaAplicacao {
 	}
 
 	public String[][] adicionaMatrizLog(String email) {
-		for (int i = 0; i < matrizLog.length; i++) {
+		for (int i = 0; i < matrizLog.length;) {
 			if (matrizLog[i][0] == null) {
 				matrizLog[i][0] = email;
-			} 
+			}
 			for (int j = 1; j < matrizLog[0].length;) {
 				if (matrizLog[i][j] == null) {
-					matrizLog[i][j] = Calendar.getInstance().toString();
+					DateTimeFormatter formatador = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
+							.withLocale(new Locale("pt", "br"));
+					matrizLog[i][j] = LocalDateTime.now().format(formatador);
 					break;
-				} 
+				}
 			}
 			break;
 		}
 		System.out.println("Histórico de acesso: ");
-		
+
 		for (int i = 0; i < matrizLog.length; i++) {
-		
+
 			for (int j = 0; j < matrizLog[0].length; j++) {
 				System.out.println(matrizLog[i][j]);
 			}
 			System.out.println();
-		} 
+		}
 		return matrizLog;
 	}
 
