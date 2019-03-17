@@ -54,9 +54,24 @@ public class SegurancaDaAplicacaoTest {
 	}
 	
 	@Test
-	public void gerarLog() {
-		usuario.setEmail("bbb@gmail.com");
-		matriz = seguranca.adicionaMatrizLog(usuario.getEmail());
+	public void gerarLogEmailValido() {
+		usuario.setEmail("teste@teste");
+		usuario.setSenha("1234");
+		if(seguranca.permitirAcesso(usuario.getEmail(), usuario.getSenha())){
+			matriz = seguranca.adicionaMatrizLog(usuario.getEmail());
+		}
+	}
+	
+	@Test
+	public void gerarLogEmailInvalido() {
+		usuario.setEmail("gggg@ggggg");
+		usuario.setSenha("ggggg");
+		if(seguranca.permitirAcesso(usuario.getEmail(), usuario.getSenha())){
+			matriz = seguranca.adicionaMatrizLog(usuario.getEmail());
+		}
+		else{
+			System.out.println("Email e login invalido");
+		}
 	}
 	
 
