@@ -39,33 +39,36 @@ public class SegurancaDaAplicacao {
 		}
 		return resposta;
 	}
-	
-	   public static String[][] exibeHistorico(String [][] m) {
+
+	public static String[][] exibeHistorico(String[][] m) {
+		System.out.println("");
+		System.out.println("Histórico de acesso: ");
+		for (int linha = 0; linha < m.length; linha++) {
+			for (int coluna = 0; coluna < m[linha].length; coluna++) {
+				System.out.println("");
+				System.out.print(m[linha][coluna] + "\t");
+			}
 			System.out.println("");
-			System.out.println("Histórico de acesso: ");
-	        for (int linha=0; linha < m.length; linha++ ) {    
-	            for (int coluna=0; coluna < m[linha].length; coluna++) {
-	            	System.out.println("");
-	                System.out.print(m[linha][coluna] + "\t");
-	            }
-	            System.out.println("");
-	        }
-			return m;
-	  
-	    }
+		}
+		return m;
+
+	}
 
 	public String[][] adicionaMatrizLog(String email) {
-		for (int i = 0; i < matrizLog.length;) {
-			if (matrizLog[i][0] == null || matrizLog[i][0] != null) {
+		for (int i = 0; i < matrizLog.length; i++) {
+			if (matrizLog[i][0] == null || matrizLog[i][0] == "null") {
 				matrizLog[i][0] = email;
-			}
-			for (int j = 1; j < matrizLog[0].length;) {
-				if (matrizLog[i][j] == null || matrizLog[i][0] != null) {
+				
+			} 
+			for (int j = 0; j < matrizLog[0].length; j++) {
+				if (matrizLog[0][j] == null) {
 					DateTimeFormatter formatador = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
 							.withLocale(new Locale("pt", "br"));
-					matrizLog[i][j] = LocalDateTime.now().format(formatador);
+					matrizLog[0][j] = LocalDateTime.now().format(formatador);
+					
 					break;
 				}
+				continue;
 			}
 			break;
 		}
