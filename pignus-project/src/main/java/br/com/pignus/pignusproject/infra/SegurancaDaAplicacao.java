@@ -56,15 +56,15 @@ public class SegurancaDaAplicacao {
 
 	public String[][] adicionaMatrizLog(String email) {
 		for (int i = 0; i < matrizLog.length; i++) {
-			if (matrizLog[i][0] == null || matrizLog[i][0] == "null") {
+			if (matrizLog[i][0] != null) {
 				matrizLog[i][0] = email;
 				
 			} 
-			for (int j = 0; j < matrizLog[0].length; j++) {
-				if (matrizLog[0][j] == null) {
+			for (int j = 0; j < matrizLog[i].length; j++) {
+				if (matrizLog[i][j] != null) {
 					DateTimeFormatter formatador = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
 							.withLocale(new Locale("pt", "br"));
-					matrizLog[0][j] = LocalDateTime.now().format(formatador);
+					matrizLog[i][j] = LocalDateTime.now().format(formatador);
 					
 					break;
 				}
