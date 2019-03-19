@@ -26,12 +26,15 @@ public class SegurancaDaAplicacao {
 			if (matrizLogin[i][0].equals(email)) {
 				respostaEmail = true;
 			}
-			for (int j = 0; j < matrizLogin[0].length; j++) {
+			if (matrizLogin[i][1].equals(senha)) {
+				respostaSenha = true;
+			}
+			/*for (int j = 0; j < matrizLogin[0].length; j++) {
 				if (matrizLogin[i][j].equals(senha)) {
 					respostaSenha = true;
 					break;
 				}
-			}
+			}*/
 			if (respostaEmail && respostaSenha) {
 				resposta = true;
 				break;
@@ -56,21 +59,16 @@ public class SegurancaDaAplicacao {
 
 	public String[][] adicionaMatrizLog(String email) {
 		for (int i = 0; i < matrizLog.length; i++) {
-			if (matrizLog[i][0] != null) {
+			if (matrizLog[i][0] == null) {
+				DateTimeFormatter formatador = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
+						.withLocale(new Locale("pt", "br"));
 				matrizLog[i][0] = email;
+				matrizLog[i][1] = LocalDateTime.now().format(formatador);
+				break;
 				
 			} 
-			for (int j = 0; j < matrizLog[i].length; j++) {
-				if (matrizLog[i][j] != null) {
-					DateTimeFormatter formatador = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
-							.withLocale(new Locale("pt", "br"));
-					matrizLog[i][j] = LocalDateTime.now().format(formatador);
-					
-					break;
-				}
-				continue;
-			}
-			break;
+
+		
 		}
 
 		return exibeHistorico(matrizLog);
