@@ -21,20 +21,18 @@ public class UsuarioRepositoryTest {
 	@Autowired
 	private UsuarioRepository ur;
 
-	@Test
-	public void criarNovoUsuarioComum() {
-		Usuario usuario = new Usuario();
-		usuario.setNome("Guilherme");
-		usuario.setEmail("guilherme@guilherme.com");
-		usuario.setSenha("1234");
-		usuario.setSetor(1);
-
-		ur.save(usuario);
-
-		Usuario usuarioCriado = ur.getOne(usuario.getId());
-		Assert.assertEquals(usuario, usuarioCriado);
-
-	}
+	/*
+	 * @Test public void criarNovoUsuarioComum() { Usuario usuario = new Usuario();
+	 * usuario.setNome("Guilherme"); usuario.setEmail("guilherme@guilherme.com");
+	 * usuario.setSenha("1234"); usuario.setSetor(1);
+	 * 
+	 * ur.save(usuario);
+	 * 
+	 * Usuario usuarioCriado = ur.getOne(usuario.getId());
+	 * Assert.assertEquals(usuario, usuarioCriado);
+	 * 
+	 * }
+	 */
 	
 	@Test
 	public void criarNovoUsuarioAdmin() {
@@ -59,20 +57,18 @@ public class UsuarioRepositoryTest {
 
 	}
 	
-	@Test
-	public void criarNovoUsuarioGestor() {
-		UsuarioGestor usuario = new UsuarioGestor();
-		usuario.setNome("Guilherme");
-		usuario.setEmail("guilherme@guilherme.com");
-		usuario.setSenha("1234");
-		usuario.setSetor(1);
-		usuario.setAreaGerenciada(1);
-
-		ur.save(usuario);
-
-		UsuarioGestor usuarioCriado = (UsuarioGestor) ur.getOne(usuario.getId());
-		Assert.assertEquals(usuario, usuarioCriado);
-
-	}
+	/*
+	 * @Test public void criarNovoUsuarioGestor() { UsuarioGestor usuario = new
+	 * UsuarioGestor(); usuario.setNome("Guilherme");
+	 * usuario.setEmail("guilherme@guilherme.com"); usuario.setSenha("1234");
+	 * usuario.setSetor(1); usuario.setAreaGerenciada(1);
+	 * 
+	 * ur.save(usuario);
+	 * 
+	 * UsuarioGestor usuarioCriado = (UsuarioGestor) ur.getOne(usuario.getId());
+	 * Assert.assertEquals(usuario, usuarioCriado);
+	 * 
+	 * }
+	 */
 
 }
