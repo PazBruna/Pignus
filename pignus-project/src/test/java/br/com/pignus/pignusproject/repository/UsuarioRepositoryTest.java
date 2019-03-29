@@ -21,7 +21,7 @@ public class UsuarioRepositoryTest {
 	@Autowired
 	private UsuarioRepository ur;
 
-	@Test
+	//@Test
 	public void criarNovoUsuarioComum() {
 		Usuario usuario = new Usuario();
 		usuario.setNome("Guilherme");
@@ -36,7 +36,7 @@ public class UsuarioRepositoryTest {
 
 	}
 	
-	@Test
+	//@Test
 	public void criarNovoUsuarioAdmin() {
 		UsuarioAdmin usuario = new UsuarioAdmin();
 		usuario.setNome("Guilherme");
@@ -59,7 +59,7 @@ public class UsuarioRepositoryTest {
 
 	}
 	
-	@Test
+	//@Test
 	public void criarNovoUsuarioGestor() {
 		UsuarioGestor usuario = new UsuarioGestor();
 		usuario.setNome("Guilherme");
@@ -73,6 +73,11 @@ public class UsuarioRepositoryTest {
 		UsuarioGestor usuarioCriado = (UsuarioGestor) ur.getOne(usuario.getId());
 		Assert.assertEquals(usuario, usuarioCriado);
 
+	}
+	@Test
+	public void loginValido() {
+		Assert.assertEquals(true ,ur.existsByEmailAndSenha("guilherme@guilherme.com", "1234"));
+		
 	}
 
 }

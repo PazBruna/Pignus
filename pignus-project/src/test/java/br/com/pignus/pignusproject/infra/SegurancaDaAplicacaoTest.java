@@ -4,25 +4,24 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+
 import br.com.pignus.pignusproject.entities.Usuario;
 
 public class SegurancaDaAplicacaoTest {
 	Usuario usuario;
-	SegurancaDaAplicacao seguranca;
-	String matriz[][];
+	private SegurancaDaAplicacao seguranca;
 
 	@Before
 	public void iniciar() {
 		usuario = new Usuario();
 		seguranca = new SegurancaDaAplicacao();
-
 	}
 
 	@Test
 	public void loginCorreto() {
-		usuario.setEmail("teste@teste");
+		usuario.setEmail("guilherme@guilherme.com");
 		usuario.setSenha("1234");
-
+		
 		Assert.assertEquals(true, seguranca.permitirAcesso(usuario.getEmail(), usuario.getSenha()));
 	}
 
@@ -55,17 +54,17 @@ public class SegurancaDaAplicacaoTest {
 		usuario.setEmail("teste@teste");
 		usuario.setSenha("1234");
 		if (seguranca.permitirAcesso(usuario.getEmail(), usuario.getSenha())) {
-			matriz = seguranca.adicionaMatrizLog(usuario.getEmail());
-			matriz = seguranca.adicionaMatrizLog(usuario.getEmail());
+			seguranca.adicionaMatrizLog(usuario.getEmail());
+			seguranca.adicionaMatrizLog(usuario.getEmail());
 		}
 	}
 
-	@Test
+	// @Test
 	public void gerarLogEmailInvalido() {
 		usuario.setEmail("gggg@ggggg");
 		usuario.setSenha("ggggg");
 		if (seguranca.permitirAcesso(usuario.getEmail(), usuario.getSenha())) {
-			matriz = seguranca.adicionaMatrizLog(usuario.getEmail());
+			seguranca.adicionaMatrizLog(usuario.getEmail());
 		} else {
 			System.out.println("Email e login invalido");
 		}

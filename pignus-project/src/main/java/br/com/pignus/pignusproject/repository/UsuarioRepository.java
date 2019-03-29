@@ -5,5 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import br.com.pignus.pignusproject.entities.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
-
+	
+	public boolean existsByEmailAndSenha(String email,String senha);
+	
 }

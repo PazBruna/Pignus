@@ -1,5 +1,6 @@
 package br.com.pignus.pignusproject.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,7 +15,7 @@ public class LoginController {
 	public static final String PAGINA_LOGIN_ERRO = "paginaLoginErro";
 	public static final String PAGINA_PRINCIPAL = "paginaPrincipal";
 
-	@SuppressWarnings("unused")
+	@Autowired
 	private SegurancaDaAplicacao seguranca;
 
 	public LoginController(SegurancaDaAplicacao seguranca) {
