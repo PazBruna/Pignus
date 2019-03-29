@@ -1,66 +1,68 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+
+
 <head>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
-<title>Cadastro Admin</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title>Cadastro Admin</title>
 </head>
+
 <body>
-	<form action="#" th:action="@{/login}" th:object="${usuarioAdmin}"
-		method="set" onsubmit="return validaForm(this);">
+	<form action="#" th:action="@{/usuarioAdmin}" th:object="${usuarioAdmin}" method="POST"
+		onsubmit="return validaFormLogin(this);">
 
 		<div class="form-group">
-			<input type="text" th:field="*{nomeFantasia}" id="nomeFantasia"
-				class="form-control col-md-2" placeholder="Nome Fantásia">
+			<input type="text" th:field="*{nomeFantasia}" id="nomeFantasia" class="form-control col-md-2"
+				placeholder="Nome Fantasia">
 		</div>
-		
+
 
 		<div class="form-group">
-			<input type="text" th:field="*{cnpj}" id="cnpj"
-				class="form-control col-md-2" placeholder="CNPJ">
+			<input type="text" th:field="*{cnpj}" id="cnpj" class="form-control col-md-2" placeholder="CNPJ">
 		</div>
-		
+
 		<div class="form-group">
-			<input type="text" th:field="*{cep}" id="cep"
-				class="form-control col-md-2" placeholder="CEP">
+			<input type="text" th:field="*{cep}" id="cep" class="form-control col-md-2" placeholder="CEP"
+				onblur="pesquisacep(this.value);">
 		</div>
-		
+
 		<div class="form-group">
-			<input type="text" th:field="*{rua}" id="rua"
-				class="form-control col-md-2" placeholder="Rua">
+			<input type="text" th:field="*{rua}" id="rua" class="form-control col-md-2" placeholder="Rua">
 		</div>
-		
+
 		<div class="form-group">
-			<input type="text" th:field="*{bairro}" id="bairro"
-				class="form-control col-md-2" placeholder="Bairro">
+			<input type="text" th:field="*{bairro}" id="bairro" class="form-control col-md-2" placeholder="Bairro">
 		</div>
-		
+
 		<div class="form-group">
-			<input type="text" th:field="*{estado}" id="estado"
-				class="form-control col-md-2" placeholder="Estado">
+			<input type="text" th:field="*{estado}" id="uf" class="form-control col-md-2" placeholder="Estado">
 		</div>
-		
+
 		<div class="form-group">
-			<input type="text" th:field="*{numero}" id="numero"
-				class="form-control col-md-2" placeholder="Numero">
+			<input type="text" th:field="*{cidade}" id="cidade" class="form-control col-md-2" placeholder="cidade">
 		</div>
-		
+
 		<div class="form-group">
-			<input type="text" th:field="*{complemento}" id="complemento"
-				class="form-control col-md-2" placeholder="Complemeto">
+			<input type="text" th:field="*{numero}" id="numero" class="form-control col-md-2" placeholder="Numero">
 		</div>
-		
+
+		<div class="form-group">
+			<input type="text" th:field="*{complemento}" id="complemento" class="form-control col-md-2"
+				placeholder="Complemeto">
+		</div>
+
 		<!-- Email e senha  -->
 		<div class="form-group">
-			<input type="text" th:field="*{email}" id="email"
-				class="form-control col-md-2" placeholder="Email">
+			<input type="text" th:field="*{email}" id="email" class="form-control col-md-2" placeholder="Email">
 		</div>
 		<div class="form-group">
-			<input type="text" th:field="*{senha}" id="senha"
-				class="form-control col-md-2" placeholder="Senha">
+			<input type="text" th:field="*{senha}" id="senha" class="form-control col-md-2" placeholder="Senha">
 		</div>
-		
+
 
 		<div class="form-group">
 			<input type="submit" value="Entrar" class="btn btn-primary" />
@@ -70,30 +72,6 @@
 	</form>
 </body>
 
-<script type="text/javascript">
-	function validaForm(form) {
-		var validou = false;
-
-		var campoLogin = form.login;
-		var campoSenha = form.senha;
-		var login = campoLogin.value;
-		var senha = campoSenha.value;
-
-		if (login.length == 0 && senha.length == 0) {
-			alert("Preencha os campos");
-			campoLogin.focus();
-		} else if (senha.length == 0) {
-			alert("Campo senha não foi preenchido");
-			campoSenha.focus();
-		} else if (login.length == 0) {
-			alert("Login não foi preenchido");
-			campoLogin.focus();
-		} else {
-			validou = true;
-		}
-
-		return validou;
-	}
-</script>
+<script src="../../js/form.js"></script>
 
 </html>

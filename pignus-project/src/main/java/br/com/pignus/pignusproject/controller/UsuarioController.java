@@ -30,6 +30,7 @@ public class UsuarioController {
 	public String loginEfetuado(@ModelAttribute Usuario usuario) {
 		if (seguranca.permitirAcesso(usuario.getEmail(), usuario.getSenha())) {
 			seguranca.adicionaMatrizLog(usuario.getEmail());
+			
 			return PAGINA_PRINCIPAL;
 		}
 		return PAGINA_LOGIN_ERRO;
@@ -38,6 +39,11 @@ public class UsuarioController {
 	@GetMapping("/login")
 	public String acessarLogin(@ModelAttribute Usuario usuario) {
 		return PAGINA_DE_LOGIN;
+	}
+	
+	@GetMapping("/cadastro")
+	public String acessarCadastro(@ModelAttribute UsuarioAdmin usuario) {
+		return "paginaDeCadastro";
 	}
 
 	@RequestMapping(value = "/usuarioAdmin", method = RequestMethod.POST)

@@ -1,23 +1,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
-<title>Login</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title>Login</title>
 </head>
+
 <body>
-	<form action="#" th:action="@{/login}" th:object="${usuario}"
-		method="post" onsubmit="return validaForm(this);">
+	<form action="#" th:action="@{/login}" th:object="${usuario}" method="post"
+		onsubmit="return validaFormLogin(this);">
 
 		<div class="form-group">
-			<input type="text" th:field="*{email}" id="login"
-				class="form-control col-md-2" placeholder="Email">
+			<input type="text" th:field="*{email}" id="login" class="form-control col-md-2" placeholder="Email">
 		</div>
 
 		<div class="form-group">
-			<input type="password" th:field="*{senha}" id="senha"
-				class="form-control col-md-2" placeholder="Senha">
+			<input type="password" th:field="*{senha}" id="senha" class="form-control col-md-2" placeholder="Senha">
 		</div>
 
 		<div class="form-group">
@@ -27,31 +26,6 @@
 
 	</form>
 </body>
-
-<script type="text/javascript">
-	function validaForm(form) {
-		var validou = false;
-
-		var campoLogin = form.login;
-		var campoSenha = form.senha;
-		var login = campoLogin.value;
-		var senha = campoSenha.value;
-
-		if (login.length == 0 && senha.length == 0) {
-			alert("Preencha os campos");
-			campoLogin.focus();
-		} else if (senha.length == 0) {
-			alert("Campo senha não foi preenchido");
-			campoSenha.focus();
-		} else if (login.length == 0) {
-			alert("Login não foi preenchido");
-			campoLogin.focus();
-		} else {
-			validou = true;
-		}
-
-		return validou;
-	}
-</script>
+<script src="../../js/form.js"></script>
 
 </html>

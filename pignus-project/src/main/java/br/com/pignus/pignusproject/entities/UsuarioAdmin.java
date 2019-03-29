@@ -10,6 +10,7 @@ public class UsuarioAdmin extends Usuario {
 	private String cnpj;
 	private String cep;
 	private String rua;
+	private String cidade;
 	private String bairro;
 	private String estado;
 	private String numero;
@@ -77,6 +78,14 @@ public class UsuarioAdmin extends Usuario {
 
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
 	
 	
