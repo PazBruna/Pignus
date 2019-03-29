@@ -28,8 +28,9 @@ public class UsuarioController {
 
 	@PostMapping("/login")
 	public String loginEfetuado(@ModelAttribute Usuario usuario) {
+		Usuario novoUsuario = new Usuario();
 		if (seguranca.permitirAcesso(usuario.getEmail(), usuario.getSenha())) {
-			seguranca.adicionaMatrizLog(usuario.getEmail());
+			seguranca.historicoAcesso(usuario.getEmail(),novoUsuario);
 			
 			return PAGINA_PRINCIPAL;
 		}

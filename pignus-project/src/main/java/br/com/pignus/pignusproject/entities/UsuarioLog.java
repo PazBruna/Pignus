@@ -18,8 +18,8 @@ public class UsuarioLog {
 	@ManyToOne
 	private Usuario usuario;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date usuarioData;
+	/* @Temporal(TemporalType.TIMESTAMP) */
+	private String usuarioData;
 	
 	
 	public int getLogId() {
@@ -34,12 +34,14 @@ public class UsuarioLog {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	public Date getUsuarioData() {
+	public String getUsuarioData() {
 		return usuarioData;
 	}
-	public void setUsuarioData(Date usuarioData) {
+	public void setUsuarioData(String usuarioData) {
 		this.usuarioData = usuarioData;
 	}
+	
+	
 	
 	
 }
