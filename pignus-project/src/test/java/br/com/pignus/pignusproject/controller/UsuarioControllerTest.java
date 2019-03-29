@@ -3,37 +3,45 @@ package br.com.pignus.pignusproject.controller;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.pignus.pignusproject.entities.Usuario;
-import br.com.pignus.pignusproject.infra.SegurancaDaAplicacao;
+import br.com.pignus.pignusproject.entities.UsuarioAdmin;
 
+@Transactional
+@Commit
+@SpringBootTest
+@RunWith(SpringRunner.class)
 public class UsuarioControllerTest {
 
-	Usuario usuarioComum;
-
+	private Usuario usuarioComum;
+	@Autowired
 	private UsuarioController controller;
-	private SegurancaDaAplicacao seguranca = Mockito.mock(SegurancaDaAplicacao.class);
 
 	@Before
 	public void iniciar() {
-		controller = new UsuarioController(seguranca);
 		usuarioComum = new Usuario();
-		usuarioComum.setEmail("guilherme@guilherme.com");
-		usuarioComum.setSenha("1234");
+
 	}
 
 	// TESTE DO EMAIL VALIDO
 	@Test
 	public void emailValido() {
-		Mockito.when(seguranca.permitirAcesso(usuarioComum.getEmail(), usuarioComum.getSenha())).thenReturn(true);
+		usuarioComum.setEmail("guilherme@guilherme.com");
+		usuarioComum.setSenha("1234");
 		Assert.assertEquals("paginaPrincipal", controller.loginEfetuado(usuarioComum));
 	}
 
 	// TESTE DO EMAIL INVALIDO
 	@Test
 	public void emailInvalido() {
-		Mockito.when(seguranca.permitirAcesso(usuarioComum.getEmail(), usuarioComum.getSenha())).thenReturn(false);
+		usuarioComum.setEmail("guilherm@guilherme.com");
+		usuarioComum.setSenha("1234");
 		Assert.assertEquals("paginaLoginErro", controller.loginEfetuado(usuarioComum));
 
 	}
@@ -41,7 +49,8 @@ public class UsuarioControllerTest {
 	// TESTE EMAIL E SENHA NULA
 	@Test
 	public void senhaNula() {
-		Mockito.when(seguranca.permitirAcesso(usuarioComum.getEmail(), usuarioComum.getSenha())).thenReturn(false);
+		usuarioComum.setEmail("guilherme@guilherme.com");
+		usuarioComum.setSenha("");
 		Assert.assertEquals("paginaLoginErro", controller.loginEfetuado(usuarioComum));
 	}
 
@@ -49,8 +58,29 @@ public class UsuarioControllerTest {
 
 	@Test
 	public void emailNula() {
-		Mockito.when(seguranca.permitirAcesso(usuarioComum.getEmail(), usuarioComum.getSenha())).thenReturn(false);
+		usuarioComum.setEmail("");
+		usuarioComum.setSenha("1234");
 		Assert.assertEquals("paginaLoginErro", controller.loginEfetuado(usuarioComum));
+	}
+
+	@Test
+	public void cadastrarUsuario() {
+		UsuarioAdmin usuario = new UsuarioAdmin();
+		usuario.setNome("Guilherme Faria");
+		usuario.setEmail("guilherme.faria@gui.com");
+		usuario.setSenha("1234");
+		usuario.setSetor(1);
+		usuario.setBairro("Jd. N sei");
+		usuario.setCep("14525412422");
+		usuario.setCnpj("15454454");
+		usuario.setComplemento("sasdsa");
+		usuario.setNomeFantasia("dasd");
+		usuario.setNumero("23-b");
+		usuario.setRua("Rua dos alfeneiros");
+		usuario.setEstado("Eu");
+
+		Assert.assertEquals("redirect:login", controller.cadastrarUsuarioAdmin(usuario));
+
 	}
 
 }

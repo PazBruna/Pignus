@@ -19,6 +19,7 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	@Column(unique=true, nullable=false) 
 	private String email;
 	private String senha;
 	private String nome;
