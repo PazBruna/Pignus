@@ -10,15 +10,14 @@ import br.com.pignus.pignusproject.entities.Usuario;
 import br.com.pignus.pignusproject.infra.SegurancaDaAplicacao;
 
 @Controller
-public class LoginController {
+public class UsuarioController {
 	public static final String PAGINA_DE_LOGIN = "paginaDeLogin";
 	public static final String PAGINA_LOGIN_ERRO = "paginaLoginErro";
 	public static final String PAGINA_PRINCIPAL = "paginaPrincipal";
-
 	@Autowired
 	private SegurancaDaAplicacao seguranca;
 
-	public LoginController(SegurancaDaAplicacao seguranca) {
+	public UsuarioController(SegurancaDaAplicacao seguranca) {
 		this.seguranca = seguranca;
 	}
 
@@ -35,5 +34,4 @@ public class LoginController {
 	public String acessarLogin(@ModelAttribute Usuario usuarioComum) {
 		return PAGINA_DE_LOGIN;
 	}
-
 }

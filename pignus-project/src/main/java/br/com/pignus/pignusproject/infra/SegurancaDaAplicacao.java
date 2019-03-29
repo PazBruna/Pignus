@@ -8,13 +8,10 @@ import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.com.pignus.pignusproject.repository.DadosUsuarios;
 import br.com.pignus.pignusproject.repository.UsuarioRepository;
 
 @Component
 public class SegurancaDaAplicacao {
-	DadosUsuarios dados = new DadosUsuarios();
-	String matrizLogin[][] = dados.retornaMatrizUsuarios();
 	String[][] matrizLog = new String[10][2];
 	@Autowired
 	UsuarioRepository usuarios;

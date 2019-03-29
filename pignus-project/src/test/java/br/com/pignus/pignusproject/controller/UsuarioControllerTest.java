@@ -8,16 +8,16 @@ import org.mockito.Mockito;
 import br.com.pignus.pignusproject.entities.Usuario;
 import br.com.pignus.pignusproject.infra.SegurancaDaAplicacao;
 
-public class LoginControllerTest {
+public class UsuarioControllerTest {
 
 	Usuario usuarioComum;
 
-	private LoginController controller;
+	private UsuarioController controller;
 	private SegurancaDaAplicacao seguranca = Mockito.mock(SegurancaDaAplicacao.class);
 
 	@Before
 	public void iniciar() {
-		controller = new LoginController(seguranca);
+		controller = new UsuarioController(seguranca);
 		usuarioComum = new Usuario();
 		usuarioComum.setEmail("guilherme@guilherme.com");
 		usuarioComum.setSenha("1234");
