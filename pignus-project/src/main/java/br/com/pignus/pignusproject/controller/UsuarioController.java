@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import br.com.pignus.pignusproject.entities.Usuario;
-import br.com.pignus.pignusproject.entities.UsuarioAdmin;
+import br.com.pignus.pignusproject.entities.Empresa;
 import br.com.pignus.pignusproject.infra.SegurancaDaAplicacao;
+import br.com.pignus.pignusproject.repository.EmpresaRepository;
 import br.com.pignus.pignusproject.repository.UsuarioRepository;
 
 @Controller
@@ -21,6 +22,9 @@ public class UsuarioController {
 	private SegurancaDaAplicacao seguranca;
 	@Autowired
 	private UsuarioRepository usuarios;
+	
+	@Autowired
+	private EmpresaRepository empresas;
 
 	public UsuarioController(SegurancaDaAplicacao seguranca) {
 		this.seguranca = seguranca;
@@ -43,13 +47,13 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("/cadastro")
-	public String acessarCadastro(@ModelAttribute UsuarioAdmin usuario) {
+	public String acessarCadastro(@ModelAttribute Empresa empresa) {
 		return "paginaDeCadastro";
 	}
 
-	@RequestMapping(value = "/usuarioAdmin", method = RequestMethod.POST)
-	public String cadastrarUsuarioAdmin(@ModelAttribute UsuarioAdmin usuario) {
-		usuarios.save(usuario);
+	@RequestMapping(value = "/cadastro", method = RequestMethod.POST)
+	public String cadastrarUsuarioAdmin(@ModelAttribute Empresa empresa) {
+		empresas.save(empresa);
 		return "redirect:login";
 	}
 }

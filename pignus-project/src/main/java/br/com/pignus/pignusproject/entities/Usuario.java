@@ -24,6 +24,7 @@ public class Usuario {
 	private String senha;
 	private String nome;
 	private int setor;
+	private String funcao;
 	@Column(insertable = false, updatable = false)
 	private String tipo;
 
@@ -66,5 +67,14 @@ public class Usuario {
 	public void setSetor(int setor) {
 		this.setor = setor;
 	}
+	
+	public String getFuncao() {
+		return funcao;
+	}
+
+	public void setFuncao(String funcao) {
+		this.funcao = funcao;
+	}
+
 
 }

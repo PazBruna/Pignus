@@ -7,14 +7,5 @@ import javax.persistence.Entity;
 @DiscriminatorValue(value = "G")
 public class UsuarioGestor extends Usuario {
 
-	private int areaGerenciada;
-
-	public int getAreaGerenciada() {
-		return areaGerenciada;
-	}
-
-	public void setAreaGerenciada(int areaGerenciada) {
-		this.areaGerenciada = areaGerenciada;
-	}
 
 }

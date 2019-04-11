@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.pignus.pignusproject.entities.Usuario;
-import br.com.pignus.pignusproject.entities.UsuarioAdmin;
+import br.com.pignus.pignusproject.entities.Empresa;
 
 @Transactional
 @Commit
@@ -63,24 +63,6 @@ public class UsuarioControllerTest {
 		Assert.assertEquals("paginaLoginErro", controller.loginEfetuado(usuarioComum));
 	}
 
-	@Test
-	public void cadastrarUsuario() {
-		UsuarioAdmin usuario = new UsuarioAdmin();
-		usuario.setNome("Guilherme Faria");
-		usuario.setEmail("guilherme.faria@gui.com");
-		usuario.setSenha("1234");
-		usuario.setSetor(1);
-		usuario.setBairro("Jd. N sei");
-		usuario.setCep("14525412422");
-		usuario.setCnpj("15454454");
-		usuario.setComplemento("sasdsa");
-		usuario.setNomeFantasia("dasd");
-		usuario.setNumero("23-b");
-		usuario.setRua("Rua dos alfeneiros");
-		usuario.setEstado("Eu");
 
-		Assert.assertEquals("redirect:login", controller.cadastrarUsuarioAdmin(usuario));
-
-	}
 
 }

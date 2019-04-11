@@ -8,6 +8,13 @@
 </head>
 
 <body>
+
+<div class="form-group">
+	<input type="radio" th:field="*{type}" th:value="${ty}" />
+   <label>Admin</label>
+			
+		</div>
+
 	<form action="#" th:action="@{/login}" th:object="${usuario}" method="post"
 		onsubmit="return validaFormLogin(this);">
 
@@ -21,6 +28,24 @@
 
 		<div class="form-group">
 			<input type="submit" value="Entrar" class="btn btn-primary" />
+		</div>
+
+
+	</form>
+	
+		<form action="#" th:action="@{/login}" th:object="${usuario}" method="post"
+		onsubmit="return validaFormLogin(this);">
+
+		<div class="form-group">
+			<input type="text" th:field="*{email}" id="login" class="form-control col-md-2" placeholder="Email">
+		</div>
+
+		<div class="form-group">
+			<input type="password" th:field="*{senha}" id="senha" class="form-control col-md-2" placeholder="Senha">
+		</div>
+
+		<div class="form-group">
+			<input type="submit" value="Entrar" class="btn btn-primary"  style="background: green"/>
 		</div>
 
 

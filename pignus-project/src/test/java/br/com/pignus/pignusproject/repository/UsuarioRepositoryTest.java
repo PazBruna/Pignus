@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.pignus.pignusproject.entities.Usuario;
-import br.com.pignus.pignusproject.entities.UsuarioAdmin;
+import br.com.pignus.pignusproject.entities.Empresa;
 import br.com.pignus.pignusproject.entities.UsuarioGestor;
 
 @Transactional
@@ -36,28 +36,7 @@ public class UsuarioRepositoryTest {
 
 	}
 	
-	//@Test
-	public void criarNovoUsuarioAdmin() {
-		UsuarioAdmin usuario = new UsuarioAdmin();
-		usuario.setNome("Guilherme");
-		usuario.setEmail("guilherme@guilherme.com");
-		usuario.setSenha("1234");
-		usuario.setSetor(1);
-		usuario.setBairro("Jd. N sei");
-		usuario.setCep("14525412422");
-		usuario.setCnpj("15454454");
-		usuario.setComplemento("sasdsa");
-		usuario.setNomeFantasia("dasd");
-		usuario.setNumero("23-b");
-		usuario.setRua("Rua dos alfeneiros");
-		usuario.setEstado("Eu");
 
-		ur.save(usuario);
-
-		UsuarioAdmin usuarioCriado = (UsuarioAdmin) ur.getOne(usuario.getId());
-		Assert.assertEquals(usuario, usuarioCriado);
-
-	}
 	
 	//@Test
 	public void criarNovoUsuarioGestor() {
@@ -66,7 +45,7 @@ public class UsuarioRepositoryTest {
 		usuario.setEmail("guilherme@guilherme.com");
 		usuario.setSenha("1234");
 		usuario.setSetor(1);
-		usuario.setAreaGerenciada(1);
+
 
 		ur.save(usuario);
 

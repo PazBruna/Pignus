@@ -12,9 +12,14 @@
 </head>
 
 <body>
-	<form action="#" th:action="@{/usuarioAdmin}" th:object="${usuarioAdmin}" method="POST"
+	<form action="#" th:action="@{/cadastro}" th:object="${empresa}" method="POST"
 		onsubmit="return validaFormLogin(this);">
 
+		<div class="form-group">
+			<input type="text" th:field="*{nome}" id="nome" class="form-control col-md-2"
+				placeholder="Nome da Empresa">
+		</div>
+		
 		<div class="form-group">
 			<input type="text" th:field="*{nomeFantasia}" id="nomeFantasia" class="form-control col-md-2"
 				placeholder="Nome Fantasia">
