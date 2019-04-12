@@ -1,5 +1,7 @@
 package br.com.pignus.pignusproject.infra;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,6 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.pignus.pignusproject.entities.Usuario;
+import br.com.pignus.pignusproject.entities.UsuarioLog;
 
 @Transactional
 @Commit
@@ -28,8 +31,8 @@ public class SegurancaDaAplicacaoTest {
 
 	@Test
 	public void loginCorreto() {
-		usuario.setEmail("guilherme@guilherme.com");
-		usuario.setSenha("1234");
+		usuario.setEmail("Ariel@Ariel");
+		usuario.setSenha("01010101");
 
 		Assert.assertEquals(true, seguranca.permitirAcesso(usuario.getEmail(), usuario.getSenha()));
 	}
@@ -78,5 +81,44 @@ public class SegurancaDaAplicacaoTest {
 			System.out.println("Email e login invalido");
 		}
 	}
+	
+/*	@Test
+	public void gerarMatrizHistoricoDeAcesso(List<UsuarioLog> lista) {
+	
+		Usuario usuario = new Usuario();
+		SegurancaDaAplicacao listaVetor = new SegurancaDaAplicacao();
+		
+		
+		Object[][] matriz = new Object [3][3];
+		matriz = listaVetor.historicoAcesso(usuario.getEmail(), usuario);
+		
+		
+		for (int lihha = 0; lihha <  ; lihha++) {
+			for (int coluna = 0; coluna < lista.length; coluna++) {
+				
+			}
+		}
+		
+		
+	}*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
