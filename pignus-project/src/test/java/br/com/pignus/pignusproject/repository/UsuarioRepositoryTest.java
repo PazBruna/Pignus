@@ -49,11 +49,11 @@ public class UsuarioRepositoryTest {
 
 	}
 
-	/*@Test
+	@Test
 	public void loginValido() {
 		Assert.assertEquals(true, ur.existsByEmailAndSenha("guilherme@guilherme.com", "1234"));
 
-	}*/
+	}
 	
 	
 	@Test
