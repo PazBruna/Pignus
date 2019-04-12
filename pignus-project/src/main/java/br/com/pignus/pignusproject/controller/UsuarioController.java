@@ -12,7 +12,6 @@ import br.com.pignus.pignusproject.entities.Usuario;
 import br.com.pignus.pignusproject.entities.Empresa;
 import br.com.pignus.pignusproject.infra.SegurancaDaAplicacao;
 import br.com.pignus.pignusproject.repository.EmpresaRepository;
-import br.com.pignus.pignusproject.repository.UsuarioRepository;
 
 @Controller
 public class UsuarioController {
@@ -20,9 +19,6 @@ public class UsuarioController {
 	public static final String PAGINA_LOGIN_ERRO = "paginaLoginErro";
 	public static final String PAGINA_PRINCIPAL = "paginaPrincipal";
 	private SegurancaDaAplicacao seguranca;
-	@Autowired
-	private UsuarioRepository usuarios;
-	
 	@Autowired
 	private EmpresaRepository empresas;
 

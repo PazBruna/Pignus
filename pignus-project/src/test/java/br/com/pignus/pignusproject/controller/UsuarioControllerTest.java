@@ -9,9 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Commit;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
-
 import br.com.pignus.pignusproject.entities.Usuario;
-import br.com.pignus.pignusproject.entities.Empresa;
+
 
 @Transactional
 @Commit

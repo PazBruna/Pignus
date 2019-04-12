@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -24,6 +25,8 @@ public class Usuario {
 	private String senha;
 	private String nome;
 	private int setor;
+	@ManyToOne
+	private Empresa empresa;
 	private String funcao;
 	@Column(insertable = false, updatable = false)
 	private String tipo;
@@ -74,6 +77,14 @@ public class Usuario {
 
 	public void setFuncao(String funcao) {
 		this.funcao = funcao;
+	}
+
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
 	}
 
 

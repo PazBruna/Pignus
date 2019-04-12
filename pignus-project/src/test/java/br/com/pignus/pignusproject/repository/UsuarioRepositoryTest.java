@@ -8,9 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Commit;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
-
 import br.com.pignus.pignusproject.entities.Usuario;
-import br.com.pignus.pignusproject.entities.Empresa;
 import br.com.pignus.pignusproject.entities.UsuarioGestor;
 
 @Transactional
@@ -21,7 +19,7 @@ public class UsuarioRepositoryTest {
 	@Autowired
 	private UsuarioRepository ur;
 
-	//@Test
+	// @Test
 	public void criarNovoUsuarioComum() {
 		Usuario usuario = new Usuario();
 		usuario.setNome("Guilherme");
@@ -35,10 +33,8 @@ public class UsuarioRepositoryTest {
 		Assert.assertEquals(usuario, usuarioCriado);
 
 	}
-	
 
-	
-	//@Test
+	// @Test
 	public void criarNovoUsuarioGestor() {
 		UsuarioGestor usuario = new UsuarioGestor();
 		usuario.setNome("Guilherme");
@@ -46,17 +42,17 @@ public class UsuarioRepositoryTest {
 		usuario.setSenha("1234");
 		usuario.setSetor(1);
 
-
 		ur.save(usuario);
 
 		UsuarioGestor usuarioCriado = (UsuarioGestor) ur.getOne(usuario.getId());
 		Assert.assertEquals(usuario, usuarioCriado);
 
 	}
+
 	@Test
 	public void loginValido() {
-		Assert.assertEquals(true ,ur.existsByEmailAndSenha("guilherme@guilherme.com", "1234"));
-		
+		Assert.assertEquals(true, ur.existsByEmailAndSenha("guilherme@guilherme.com", "1234"));
+
 	}
 
 }

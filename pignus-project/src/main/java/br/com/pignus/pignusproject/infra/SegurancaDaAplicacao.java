@@ -3,7 +3,6 @@ package br.com.pignus.pignusproject.infra;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -23,24 +22,22 @@ public class SegurancaDaAplicacao {
 	String[][] matrizLog = new String[10][2];
 	@Autowired
 	UsuarioRepository usuarios;
-	
+
 	UsuarioLog usuarioAcesso = new UsuarioLog();
 	@Autowired
 	UsuariosLogRepository log;
-	
-	
-	
+
 	DateTimeFormatter formatador = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
 			.withLocale(new Locale("pt", "br"));
 
 	public boolean permitirAcesso(String email, String senha) {
-		
+
 		if (usuarios.existsByEmailAndSenha(email, senha)) {
 			return true;
 		}
 		return false;
 	}
-	
+
 	public void historicoAcesso(String email, Usuario usuario) {
 		usuario = usuarios.findByEmail(email);
 		usuarioAcesso.setUsuario(usuario);

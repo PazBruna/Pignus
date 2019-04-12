@@ -1,6 +1,5 @@
 package br.com.pignus.pignusproject.entities;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
