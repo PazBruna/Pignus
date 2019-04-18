@@ -1,6 +1,5 @@
 package br.com.pignus.pignusproject.infra;
 
-import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -13,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.pignus.pignusproject.entities.Usuario;
-import br.com.pignus.pignusproject.entities.UsuarioLog;
+
 
 @Transactional
 @Commit
@@ -34,7 +33,7 @@ public class SegurancaDaAplicacaoTest {
 		usuario.setEmail("Ariel@Ariel");
 		usuario.setSenha("01010101");
 
-		Assert.assertEquals(true, seguranca.permitirAcesso(usuario.getEmail(), usuario.getSenha()));
+		Assert.assertEquals(true, seguranca.permitirAcessoUsuario(usuario.getEmail(), usuario.getSenha()));
 	}
 
 	@Test
@@ -42,7 +41,7 @@ public class SegurancaDaAplicacaoTest {
 		usuario.setEmail("");
 		usuario.setSenha("");
 
-		Assert.assertEquals(false, seguranca.permitirAcesso(usuario.getEmail(), usuario.getSenha()));
+		Assert.assertEquals(false, seguranca.permitirAcessoUsuario(usuario.getEmail(), usuario.getSenha()));
 	}
 
 	@Test
@@ -50,7 +49,7 @@ public class SegurancaDaAplicacaoTest {
 		usuario.setEmail("teste@teste");
 		usuario.setSenha("12341");
 
-		Assert.assertEquals(false, seguranca.permitirAcesso(usuario.getEmail(), usuario.getSenha()));
+		Assert.assertEquals(false, seguranca.permitirAcessoUsuario(usuario.getEmail(), usuario.getSenha()));
 	}
 
 	@Test
@@ -58,14 +57,14 @@ public class SegurancaDaAplicacaoTest {
 		usuario.setEmail("teste1@teste");
 		usuario.setSenha("1234");
 
-		Assert.assertEquals(false, seguranca.permitirAcesso(usuario.getEmail(), usuario.getSenha()));
+		Assert.assertEquals(false, seguranca.permitirAcessoUsuario(usuario.getEmail(), usuario.getSenha()));
 	}
 
 	@Test
 	public void gerarLogEmailValido() {
 		usuario.setEmail("teste@teste");
 		usuario.setSenha("1234");
-		if (seguranca.permitirAcesso(usuario.getEmail(), usuario.getSenha())) {
+		if (seguranca.permitirAcessoUsuario(usuario.getEmail(), usuario.getSenha())) {
 			seguranca.adicionaMatrizLog(usuario.getEmail());
 			seguranca.adicionaMatrizLog(usuario.getEmail());
 		}
@@ -75,7 +74,7 @@ public class SegurancaDaAplicacaoTest {
 	public void gerarLogEmailInvalido() {
 		usuario.setEmail("gggg@ggggg");
 		usuario.setSenha("ggggg");
-		if (seguranca.permitirAcesso(usuario.getEmail(), usuario.getSenha())) {
+		if (seguranca.permitirAcessoUsuario(usuario.getEmail(), usuario.getSenha())) {
 			seguranca.adicionaMatrizLog(usuario.getEmail());
 		} else {
 			System.out.println("Email e login invalido");

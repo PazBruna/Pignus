@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import br.com.pignus.pignusproject.entities.Usuario;
 import br.com.pignus.pignusproject.entities.UsuarioLog;
 import br.com.pignus.pignusproject.repository.DadosUsuarios;
+import br.com.pignus.pignusproject.repository.EmpresaRepository;
 import br.com.pignus.pignusproject.repository.UsuarioRepository;
 import br.com.pignus.pignusproject.repository.UsuariosLogRepository;
 
@@ -22,6 +23,9 @@ public class SegurancaDaAplicacao {
 	String[][] matrizLog = new String[10][2];
 	@Autowired
 	UsuarioRepository usuarios;
+	
+	@Autowired
+	EmpresaRepository empresa;
 
 	UsuarioLog usuarioAcesso = new UsuarioLog();
 	@Autowired
@@ -30,7 +34,7 @@ public class SegurancaDaAplicacao {
 	DateTimeFormatter formatador = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
 			.withLocale(new Locale("pt", "br"));
 
-	public boolean permitirAcesso(String email, String senha) {
+	public boolean permitirAcessoUsuario(String email, String senha) {
 
 		if (usuarios.existsByEmailAndSenha(email, senha)) {
 			return true;
@@ -38,6 +42,18 @@ public class SegurancaDaAplicacao {
 		return false;
 	}
 
+	public boolean permitirAcessoEmpresa(String email, String senha) {
+
+		if (empresa.existsByEmailAndSenhaEmpresa(email, senha)) {
+			return true;
+		}
+		return false;
+	}
+	
+	
+	
+	
+	
 	public void historicoAcesso(String email, Usuario usuario) {
 		usuario = usuarios.findByEmail(email);
 		usuarioAcesso.setUsuario(usuario);

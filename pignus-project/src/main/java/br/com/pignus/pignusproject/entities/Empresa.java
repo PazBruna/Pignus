@@ -1,11 +1,14 @@
 package br.com.pignus.pignusproject.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Empresa{
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String nome;
 	private String nomeFantasia;
@@ -19,6 +22,9 @@ public class Empresa{
 	private String complemento;
 	private String email;
 	private String senha;
+
+	
+	
 	
 	public int getId() {
 		return id;
@@ -105,16 +111,16 @@ public class Empresa{
 		return email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String emailEmpresa) {
+		this.email = emailEmpresa;
 	}
 
 	public String getSenha() {
 		return senha;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setSenha(String senhaEmpresa) {
+		this.senha = senhaEmpresa;
 	}
 	
 }

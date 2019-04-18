@@ -19,6 +19,8 @@ import br.com.pignus.pignusproject.entities.Usuario;
 public class UsuarioControllerTest {
 
 	private Usuario usuarioComum;
+	
+	
 	@Autowired
 	private UsuarioController controller;
 
@@ -33,15 +35,15 @@ public class UsuarioControllerTest {
 	public void emailValido() {
 		usuarioComum.setEmail("guilherme@guilherme.com");
 		usuarioComum.setSenha("1234");
-		Assert.assertEquals("paginaPrincipal", controller.loginEfetuado(usuarioComum));
+		Assert.assertEquals("paginaPrincipal", controller.loginUsuarioEfetuado(usuarioComum));
 	}
 
 	// TESTE DO EMAIL INVALIDO
 	@Test
 	public void emailInvalido() {
 		usuarioComum.setEmail("guilherm@guilherme.com");
-		usuarioComum.setSenha("1234");
-		Assert.assertEquals("paginaLoginErro", controller.loginEfetuado(usuarioComum));
+		usuarioComum.setSenha("12346");
+		Assert.assertEquals("paginaLoginErro", controller.loginUsuarioEfetuado(usuarioComum));
 
 	}
 
@@ -50,7 +52,7 @@ public class UsuarioControllerTest {
 	public void senhaNula() {
 		usuarioComum.setEmail("guilherme@guilherme.com");
 		usuarioComum.setSenha("");
-		Assert.assertEquals("paginaLoginErro", controller.loginEfetuado(usuarioComum));
+		Assert.assertEquals("paginaLoginErro", controller.loginUsuarioEfetuado(usuarioComum));
 	}
 
 	// TESTE EMAIL NULA E SENHA VALIDA
@@ -59,7 +61,7 @@ public class UsuarioControllerTest {
 	public void emailNula() {
 		usuarioComum.setEmail("");
 		usuarioComum.setSenha("1234");
-		Assert.assertEquals("paginaLoginErro", controller.loginEfetuado(usuarioComum));
+		Assert.assertEquals("paginaLoginErro", controller.loginUsuarioEfetuado(usuarioComum));
 	}
 
 

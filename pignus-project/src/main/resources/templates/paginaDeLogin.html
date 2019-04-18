@@ -7,35 +7,53 @@
 	<title>Login</title>
 </head>
 
+<!-- <style>
+
+#empresa:active{
+
+display:none;
+
+}
+
+</style> -->
+
 <body>
 
-<div class="form-group">
+		<div class="form-group">
+			<input type="submit" value="Empresa" class="btn btn-primary"  style="background: green" onclick="mostrarEmpresa()"/>
+		</div>
+		
+		<div class="form-group">
+			<input type="submit" value="Funcionario" class="btn btn-primary"  style="background: green" onclick="mostraUsuario()"/>
+		</div>
 	
-   <label>Admin</label>
-			
+
+ <form action="#" th:action="@{/login}" th:object="${empresa}" method="post"
+		onsubmit="return validaFormLogin(this);" id="empresa"  style="display: none">
+		
+		<label>Empresa</label>
+		
+		<div class="form-group">
+			<input type="text"  th:value="${email}" id="loginEmpresa" class="form-control col-md-2" placeholder="Email da Empresa">
 		</div>
 
-	<form action="#" th:action="@{/login}" th:object="${usuario}" method="post"
-		onsubmit="return validaFormLogin(this);">
-
 		<div class="form-group">
-			<input type="text" th:field="*{email}" id="login" class="form-control col-md-2" placeholder="Email">
-		</div>
-
-		<div class="form-group">
-			<input type="password" th:field="*{senha}" id="senha" class="form-control col-md-2" placeholder="Senha">
+			<input type="password"  th:value="${senha}" id="senhaEmpresa" class="form-control col-md-2" placeholder="Senha da Empresa">
 		</div>
 
 		<div class="form-group">
 			<input type="submit" value="Entrar" class="btn btn-primary" />
 		</div>
-
-
-	</form>
+	</form> 
+	
+	
+	
 	
 		<form action="#" th:action="@{/login}" th:object="${usuario}" method="post"
-		onsubmit="return validaFormLogin(this);">
-
+		onsubmit="return validaFormLogin(this);" id="usuario" style="display: none">
+	
+	<label>Funcionario</label>
+	
 		<div class="form-group">
 			<input type="text" th:field="*{email}" id="login" class="form-control col-md-2" placeholder="Email">
 		</div>
@@ -47,10 +65,31 @@
 		<div class="form-group">
 			<input type="submit" value="Entrar" class="btn btn-primary"  style="background: green"/>
 		</div>
-
-
 	</form>
+
 </body>
 <script src="../../js/form.js"></script>
+
+<script type="text/javascript">
+var empresa = document.getElementById('empresa');
+var usuario = document.getElementById('usuario');
+
+function mostrarEmpresa(){
+    if(empresa.style.display == "none"){
+   return empresa.style.display="block";
+	}else{
+	return empresa.style.display="none";
+	}
+}
+
+function  mostraUsuario(){
+    if(usuario.style.display == "none"){
+   return usuario.style.display="block";
+	}else{
+	return usuario.style.display="none";
+	}
+
+}
+</script>
 
 </html>
