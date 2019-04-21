@@ -24,9 +24,11 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private String nome;
-	private int setor;
+	private int setorId; // MUDA ISSO NO BANCO!!
 	@ManyToOne
 	private Empresa empresa;
+	@ManyToOne
+	private Setor setor;
 	private String funcao;
 	@Column(insertable = false, updatable = false)
 	private String tipo;
@@ -64,11 +66,11 @@ public class Usuario {
 	}
 
 	public int getSetor() {
-		return setor;
+		return setorId;
 	}
 
-	public void setSetor(int setor) {
-		this.setor = setor;
+	public void setSetor(int setorId) {
+		this.setorId = setorId;
 	}
 	
 	public String getFuncao() {
