@@ -20,11 +20,10 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	@Column(unique=true, nullable=false) 
+	@Column(unique = true, nullable = false)
 	private String email;
 	private String senha;
 	private String nome;
-	private int setorId; // MUDA ISSO NO BANCO!!
 	@ManyToOne
 	private Empresa empresa;
 	@ManyToOne
@@ -32,6 +31,18 @@ public class Usuario {
 	private String funcao;
 	@Column(insertable = false, updatable = false)
 	private String tipo;
+
+	public Setor getSetor() {
+		return setor;
+	}
+
+	public void setSetor(Setor setor) {
+		this.setor = setor;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getEmail() {
 		return email;
@@ -65,14 +76,6 @@ public class Usuario {
 		return tipo;
 	}
 
-	public int getSetor() {
-		return setorId;
-	}
-
-	public void setSetor(int setorId) {
-		this.setorId = setorId;
-	}
-	
 	public String getFuncao() {
 		return funcao;
 	}
@@ -88,6 +91,5 @@ public class Usuario {
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
 	}
-
 
 }

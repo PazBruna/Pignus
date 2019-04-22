@@ -1,35 +1,33 @@
 package br.com.pignus.pignusproject.entities;
 
-import javax.persistence.Entity;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import org.hibernate.annotations.CollectionId;
-
-import br.com.pignus.pignusproject.entities.Empresa;
-import br.com.pignus.pignusproject.entities.UsuarioGestor;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 
 @Entity
 public class Setor{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int numero;
-    
+    private int id;
     @Column(unique=true, nullable=false)
     private String nomeSetor;
+    @ManyToOne
     private Empresa empresa;
+    @OneToOne
     private UsuarioGestor gestor;
 
 
-    public int getNumero(){
-        return this.numero;
+    public int getId(){
+        return this.id;
     }
 
-    public void setNumero(int numero){
-        this.numero = numero;
+    public void setId(int id){
+        this.id = id;
     }
 
     public String getNomeSetor(){
