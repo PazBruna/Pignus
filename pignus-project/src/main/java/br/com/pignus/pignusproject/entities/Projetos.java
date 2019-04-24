@@ -3,14 +3,28 @@ package br.com.pignus.pignusproject.entities;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Projetos {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
 	private String nomeProjeto;
 	private String clienteDoProjeto;
 	private String descricaoProjeto;
+	@ManyToOne
 	private Setor setor;
-	private List<Download> softwaresprojeto;
+	private List<Download> softwaresProjeto;
+	@ManyToMany
+	@JoinTable(name = "projeto_has_usuario", joinColumns = { @JoinColumn(name = "projeto_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "usuario_id") })
 	private List<Usuario> integrantesDoProjeto;
 
 	public String getNomeProjeto() {
@@ -45,12 +59,12 @@ public class Projetos {
 		this.setor = setor;
 	}
 
-	public List<Download> getSoftwaresprojeto() {
-		return softwaresprojeto;
+	public List<Download> getSoftwaresProjeto() {
+		return softwaresProjeto;
 	}
 
-	public void setSoftwaresprojeto(List<Download> softwaresprojeto) {
-		this.softwaresprojeto = softwaresprojeto;
+	public void setSoftwaresProjeto(List<Download> softwaresProjeto) {
+		this.softwaresProjeto = softwaresProjeto;
 	}
 
 	public List<Usuario> getIntegrantesDoProjeto() {

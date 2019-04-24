@@ -1,5 +1,7 @@
 package br.com.pignus.pignusproject.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -10,6 +12,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -24,13 +29,17 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private String nome;
+	private String funcao;
 	@ManyToOne
 	private Empresa empresa;
 	@ManyToOne
 	private Setor setor;
-	private String funcao;
 	@Column(insertable = false, updatable = false)
 	private String tipo;
+	@ManyToMany
+	@JoinTable(name = "usuario_has_downloads", joinColumns = {
+			@JoinColumn(name = "usuario_id") }, inverseJoinColumns = { @JoinColumn(name = "download_id") })
+	private List<Download> downloadsUsuario;
 
 	public Setor getSetor() {
 		return setor;
@@ -90,6 +99,14 @@ public class Usuario {
 
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
+	}
+
+	public List<Download> getDownloadsUsuario() {
+		return downloadsUsuario;
+	}
+
+	public void setDownloadsUsuario(List<Download> downloadsUsuario) {
+		this.downloadsUsuario = downloadsUsuario;
 	}
 
 }
