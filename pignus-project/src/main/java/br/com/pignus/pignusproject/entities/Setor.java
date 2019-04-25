@@ -77,4 +77,6 @@ public class Setor {
 	public void setUsuarioGestor(UsuarioGestor gestor) {
 		this.gestor = gestor;
 	}
+
+	
 }

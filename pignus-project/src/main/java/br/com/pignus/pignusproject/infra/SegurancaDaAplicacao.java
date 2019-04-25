@@ -10,15 +10,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import br.com.pignus.pignusproject.entities.Usuario;
+import br.com.pignus.pignusproject.entities.UsuarioGestor;
 import br.com.pignus.pignusproject.entities.UsuarioLog;
 import br.com.pignus.pignusproject.repository.DadosUsuarios;
 import br.com.pignus.pignusproject.repository.EmpresaRepository;
+import br.com.pignus.pignusproject.repository.SetorRepository;
 import br.com.pignus.pignusproject.repository.UsuarioRepository;
 import br.com.pignus.pignusproject.repository.UsuariosLogRepository;
 
 @Component
 public class SegurancaDaAplicacao {
 	DadosUsuarios dados = new DadosUsuarios();
+	Usuario usuarioGestor;
 	String matrizLogin[][] = dados.retornaMatrizUsuarios();
 	String[][] matrizLog = new String[10][2];
 	@Autowired
@@ -26,6 +29,9 @@ public class SegurancaDaAplicacao {
 	
 	@Autowired
 	EmpresaRepository empresa;
+	
+	@Autowired
+	SetorRepository setores;
 
 	UsuarioLog usuarioAcesso = new UsuarioLog();
 	@Autowired
@@ -49,7 +55,6 @@ public class SegurancaDaAplicacao {
 		}
 		return false;
 	}
-	
 	
 	
 	
