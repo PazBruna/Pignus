@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import br.com.pignus.pignusproject.entities.Empresa;
 import br.com.pignus.pignusproject.entities.Usuario;
 import br.com.pignus.pignusproject.infra.SegurancaDaAplicacao;
 
@@ -33,7 +34,7 @@ public class UsuarioController {
 	
 	
 	@GetMapping("/login")
-	public String acessarUsuarioLogin(@ModelAttribute Usuario usuario) {
+	public String acessarUsuarioLogin(@ModelAttribute Usuario usuario,@ModelAttribute Empresa empresa) {
 		return PAGINA_DE_LOGIN;
 	}
 	

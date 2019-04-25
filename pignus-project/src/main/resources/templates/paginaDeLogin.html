@@ -28,17 +28,17 @@ display:none;
 		</div>
 	
 
- <form action="#" th:action="@{/login}" th:object="${empresa}" method="post"
+ <form action="#" th:action="@{/loginEmpresa}" th:object="${empresa}" method="post"
 		onsubmit="return validaFormLogin(this);" id="empresa"  style="display: none">
 		
 		<label>Empresa</label>
 		
 		<div class="form-group">
-			<input type="text"  th:value="${email}" id="loginEmpresa" class="form-control col-md-2" placeholder="Email da Empresa">
+			<input type="text"  th:field="*{email}" id="loginEmpresa" class="form-control col-md-2" placeholder="Email da Empresa">
 		</div>
 
 		<div class="form-group">
-			<input type="password"  th:value="${senha}" id="senhaEmpresa" class="form-control col-md-2" placeholder="Senha da Empresa">
+			<input type="password" th:field="*{senha}" id="senhaEmpresa" class="form-control col-md-2" placeholder="Senha da Empresa">
 		</div>
 
 		<div class="form-group">

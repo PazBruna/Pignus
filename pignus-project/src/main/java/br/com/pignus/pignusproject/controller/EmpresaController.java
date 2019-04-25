@@ -31,7 +31,7 @@ public class EmpresaController {
 	}
 
 	@PostMapping("/cadastro")
-	public String cadastrarUsuarioAdmin(@ModelAttribute Empresa empresa) {
+	public String cadastrarUsuarioEmpresa(@ModelAttribute Empresa empresa) {
 		empresas.save(empresa);
 		return "redirect:login";
 	}
@@ -40,6 +40,7 @@ public class EmpresaController {
 	public String loginEmpresaEfetuado(@ModelAttribute Empresa empresa) {
 		/* Empresa novaEmpresa = new Empresa(); */
 		if (seguranca.permitirAcessoEmpresa(empresa.getEmail(), empresa.getSenha())) {
+			System.out.println(empresa.getEmail());
 			/* seguranca.historicoAcesso((empresa.getEmail()); */ 
 			return PAGINA_PRINCIPAL;
 		}
