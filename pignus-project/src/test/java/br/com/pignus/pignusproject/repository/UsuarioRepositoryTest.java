@@ -29,9 +29,9 @@ public class UsuarioRepositoryTest {
 	//@Test
 	public void criarNovoSetor() {
 		Setor setor = new Setor();
-		Empresa empresa = er.getOne(11);
+		Empresa empresa = er.getOne(1);
 	
-		setor.setNomeSetor("Desenvolvimento");
+		setor.setNomeSetor("IBM");
 		setor.setEmpresa(empresa);
 		
 		sr.save(setor);
@@ -39,7 +39,7 @@ public class UsuarioRepositoryTest {
 
 	@Test
 	public void criarNovoUsuarioGestor() {
-		Setor setor = sr.getOne(12);
+		Setor setor = sr.getOne(2);
 		UsuarioGestor usuario = new UsuarioGestor();
 		usuario.setNome("Guilherme");
 		usuario.setEmail("guilherme@guilherme.com");
@@ -53,20 +53,20 @@ public class UsuarioRepositoryTest {
 
 	}
 
-	@Test
+	//@Test
 	public void loginValido() {
 		Assert.assertEquals(true, ur.existsByEmailAndSenha("guilherme@guilherme.com", "1234"));
 
 	}
 	
 	
-	@Test
+	//@Test
 	public void MassaDeDadosGestor () {
 		
 		//CRIACAO DOS USUARIOS GESTORES
 		
 		Usuario testeGestores1 = new UsuarioGestor();
-		Setor setor = sr.getOne(12);
+		Setor setor = sr.getOne(2);
 		
 		
 		testeGestores1.setEmail("Ariel@Ariel");
@@ -154,7 +154,7 @@ Usuario testeGestores5 = new UsuarioGestor();
 	  @Test
 	public void MassaDeDadosUsuario () {
 		Usuario testeUsuarioComum1 = new Usuario();
-		Setor setor = sr.getOne(12);
+		Setor setor = sr.getOne(2);
 		
 		testeUsuarioComum1.setEmail("Gustavo@Gustavo");
 		testeUsuarioComum1.setNome("Gustavo");
