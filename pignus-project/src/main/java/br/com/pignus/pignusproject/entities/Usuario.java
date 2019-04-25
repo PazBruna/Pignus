@@ -1,5 +1,8 @@
 package br.com.pignus.pignusproject.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -10,6 +13,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -20,16 +26,33 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	@Column(unique=true, nullable=false) 
+	@Column(unique = true, nullable = false)
 	private String email;
 	private String senha;
 	private String nome;
-	private int setor;
+	private String funcao;
 	@ManyToOne
 	private Empresa empresa;
-	private String funcao;
+	@ManyToOne
+	private Setor setor;
 	@Column(insertable = false, updatable = false)
 	private String tipo;
+	@ManyToMany
+	@JoinTable(name = "usuario_has_downloads", joinColumns = {
+			@JoinColumn(name = "usuario_id") }, inverseJoinColumns = { @JoinColumn(name = "download_id") })
+	private List<Download> downloadsUsuario = new ArrayList<>();
+
+	public Setor getSetor() {
+		return setor;
+	}
+
+	public void setSetor(Setor setor) {
+		this.setor = setor;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getEmail() {
 		return email;
@@ -63,14 +86,6 @@ public class Usuario {
 		return tipo;
 	}
 
-	public int getSetor() {
-		return setor;
-	}
-
-	public void setSetor(int setor) {
-		this.setor = setor;
-	}
-	
 	public String getFuncao() {
 		return funcao;
 	}
@@ -87,5 +102,12 @@ public class Usuario {
 		this.empresa = empresa;
 	}
 
+	public List<Download> getDownloadsUsuario() {
+		return downloadsUsuario;
+	}
+
+	public void setDownloadsUsuario(List<Download> downloadsUsuario) {
+		this.downloadsUsuario = downloadsUsuario;
+	}
 
 }

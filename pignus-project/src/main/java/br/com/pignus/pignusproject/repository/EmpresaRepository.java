@@ -5,16 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import br.com.pignus.pignusproject.entities.Empresa;
 
-
 @Repository
-public interface EmpresaRepository extends JpaRepository<Empresa, Integer>{
-	
-	
-	
-	
-	 public boolean existsByEmailAndSenhaEmpresa(String email,String senha); 
-	 public Empresa findByEmail(String email);
-	 
-	 
+public interface EmpresaRepository extends JpaRepository<Empresa, Integer> {
+	public boolean existsByEmailAndSenha(String email, String senha);
+
+	public Empresa findByEmail(String email);
 
 }

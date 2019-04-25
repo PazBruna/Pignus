@@ -44,7 +44,7 @@ public class SegurancaDaAplicacao {
 
 	public boolean permitirAcessoEmpresa(String email, String senha) {
 
-		if (empresa.existsByEmailAndSenhaEmpresa(email, senha)) {
+		if (empresa.existsByEmailAndSenha(email, senha)) {
 			return true;
 		}
 		return false;
