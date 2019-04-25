@@ -1,5 +1,6 @@
 package br.com.pignus.pignusproject.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -39,7 +40,7 @@ public class Usuario {
 	@ManyToMany
 	@JoinTable(name = "usuario_has_downloads", joinColumns = {
 			@JoinColumn(name = "usuario_id") }, inverseJoinColumns = { @JoinColumn(name = "download_id") })
-	private List<Download> downloadsUsuario;
+	private List<Download> downloadsUsuario = new ArrayList<>();
 
 	public Setor getSetor() {
 		return setor;

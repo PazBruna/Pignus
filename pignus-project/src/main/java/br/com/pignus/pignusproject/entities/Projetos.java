@@ -1,7 +1,9 @@
 package br.com.pignus.pignusproject.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Projetos {
@@ -21,7 +24,11 @@ public class Projetos {
 	private String descricaoProjeto;
 	@ManyToOne
 	private Setor setor;
-	private List<Download> softwaresProjeto;
+	@OneToMany(
+	        cascade = CascadeType.ALL,
+	        orphanRemoval = true
+	    )
+	private List<Download> softwaresProjeto = new ArrayList<>();
 	@ManyToMany
 	@JoinTable(name = "projeto_has_usuario", joinColumns = { @JoinColumn(name = "projeto_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "usuario_id") })

@@ -1,6 +1,7 @@
 package br.com.pignus.pignusproject.entities;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -18,7 +19,7 @@ public class Download {
 	private String categoria;
 	private String link;
 	@ManyToMany(mappedBy="softwaresSetor")
-	private List<Setor> setores;
+	private List<Setor> setores = new ArrayList<>();
 
 	public String getNomePrograma() {
 		return nomePrograma;
