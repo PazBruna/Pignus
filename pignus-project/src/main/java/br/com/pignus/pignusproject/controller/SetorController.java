@@ -7,20 +7,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import br.com.pignus.pignusproject.entities.Empresa;
 import br.com.pignus.pignusproject.entities.Setor;
-import br.com.pignus.pignusproject.entities.Usuario;
+import br.com.pignus.pignusproject.entities.UsuarioGestor;
+import br.com.pignus.pignusproject.infra.SegurancaDaAplicacao;
 import br.com.pignus.pignusproject.repository.SetorRepository;
 
 @Controller
 public class SetorController{
 	
-;
+
 
     public static final String PAGINA_PRINCIPAL_SETORES = "paginaPrincipalSetores";
 
 	@Autowired
 	SetorRepository setores;
+	@Autowired
+	public SegurancaDaAplicacao seguranca;
     public SetorController(){};
 
     @RequestMapping(value = "/setores", method=RequestMethod.GET)
@@ -35,6 +37,12 @@ public class SetorController{
     
     @PostMapping("/cadastroSetor")
 	public String retornaPaginaSetor(@ModelAttribute Setor setor) {
+    	UsuarioGestor gestor = setor.getGestor();
+    	System.out.println(setor.getGestor().getNome());
+    	if(seguranca.procuraGestor(gestor) == null) {
+    		return "redirect:cadastroSetor";
+    	}
+    	setor.setGestor(seguranca.procuraGestor(gestor));
     	setores.save(setor);
 		return "redirect:setores";
 	}

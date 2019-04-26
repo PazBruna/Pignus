@@ -98,5 +98,10 @@ public class SegurancaDaAplicacao {
 
 		return exibeHistorico(matrizLog);
 	}
+	
+	public UsuarioGestor procuraGestor(UsuarioGestor gestor) {
+		gestor = usuarios.findByNome(gestor.getNome());
+		return gestor;
+	}
 
 }
