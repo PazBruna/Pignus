@@ -1,10 +1,10 @@
 # **Front-end Pignus**
 
-As estruturas de pastas estão elaboradas mediante um padrão adaptado do ITCSS (Inverted Triangle CSS). Mediante isto, as pastas estão organizadas da seguinte forma:
+As estruturas de pastas estão elaboradas mediante um padrão adaptado [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)  ITCSS (Inverted Triangle CSS) . Mediante isto, as pastas estão organizadas da seguinte forma:
 
 **css:** Arquivo transpilado do SCSS,
 
-**scss:** Pasta à ser transpilada pelo Scout APP, contendo:
+**scss:** Pasta à ser transpilada pelo [Scout APP](https://scout-app.io/), contendo:
 
 - 1_settings: Configurações gerais do grid, reset de layout e afins.
 - 2_tools: As variáveis, mixins e demais recursos do SCSS.
