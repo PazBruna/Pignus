@@ -1,9 +1,9 @@
 $cols: 12;
 $gutter: 20px;
-$l-device: 1200px;
-$m-device: 960px;
-$t-device: 768px;
-$s-device: 480px;
+$l-device: 1200px; // Dispositivos largos (desktop)
+$m-device: 960px; // Dispositivos médios (notebooks)
+$t-device: 768px; // Tablets em geral
+$s-device: 480px; // Smartphones em geral
 
 *, *::after, *::before {
   box-sizing: border-box;
