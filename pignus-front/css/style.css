@@ -126,8 +126,21 @@
   position: relative;
 }
 
+@media screen and (min-width: 960px) and (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .container {
+    max-width: 480px;
     padding-left: 10px;
     padding-right: 10px;
   }
