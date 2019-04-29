@@ -1,7 +1,8 @@
 $cols: 12;
 $gutter: 20px;
 $l-device: 1200px;
-$m-device: 760px;
+$m-device: 960px;
+$t-device: 768px;
 $s-device: 480px;
 
 *, *::after, *::before {
@@ -10,18 +11,23 @@ $s-device: 480px;
 
 @mixin d($size) {
   @if $size == l {
-    // Quando o tamanho da tela for, no mínimo, este faça:
     @media screen and (min-width: #{$l-device}) {
       @content;
     };   
   }
   @else if $size == m {
+    // Quando o tamanho da tela for, no mínimo, e no máximo este faça:
     @media screen and (min-width: #{$m-device}) and (max-width: #{$l-device - 1}) {
       @content;
     };
   }
+  @else if $size == t {
+    @media screen and (min-width: #{$t-device}) and (max-width: #{$m-device - 1}) {
+      @content;
+    };
+  }
   @else if $size == s {
-    @media screen and (max-width: #{$m-device - 1}) {
+    @media screen and (max-width: #{$t-device - 1}) {
       @content;
     };
   }
@@ -91,10 +97,13 @@ $s-device: 480px;
     // Can be removed
     max-width: $m-device;
   }
+  @include d(t) {
+    max-width: $t-device;
+  }
   @include d(s) {
     max-width: $s-device;
-    margin-left: 10px;
-    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   @include clearfix;
 }
