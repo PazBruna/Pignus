@@ -1,6 +1,6 @@
 # **Front-end Pignus**
 
-As estruturas de pastas estão elaboradas mediante um padrão adaptado [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)  ITCSS (Inverted Triangle CSS) . Mediante isto, as pastas estão organizadas da seguinte forma:
+As estruturas de pastas estão elaboradas mediante um padrão adaptado [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) (Inverted Triangle CSS) . Mediante isto, as pastas estão organizadas da seguinte forma:
 
 **css:** Arquivo transpilado do SCSS,
 
