@@ -38,7 +38,6 @@ public class SetorController{
     @PostMapping("/cadastroSetor")
 	public String retornaPaginaSetor(@ModelAttribute Setor setor) {
     	UsuarioGestor gestor = setor.getGestor();
-    	System.out.println(setor.getGestor().getNome());
     	if(seguranca.procuraGestor(gestor) == null) {
     		return "redirect:cadastroSetor";
     	}

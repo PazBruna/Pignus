@@ -16,7 +16,7 @@
 		onsubmit="return validaFormLogin(this);">
 		
 		<div class="form-group">
-			<input type="text" th:value="${setor.getGestor()}" id="nomeGestor" class="form-control col-md-2"
+			<input type="text" th:field="*{gestor.nome}" id="nomeGestor" class="form-control col-md-2"
 				placeholder="Nome do Gestor">
 		</div>
 
