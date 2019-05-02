@@ -3,8 +3,6 @@ package br.com.pignus.pignusproject.repository;
 public class DadosUsuarios {
 	
 	
-	
-	
 	public String[][] retornaMatrizUsuarios() {
 		String matrizLogin[][] = new String[5][2];
 
