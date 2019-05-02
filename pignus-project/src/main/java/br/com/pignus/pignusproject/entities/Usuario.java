@@ -110,4 +110,9 @@ public class Usuario {
 		this.downloadsUsuario = downloadsUsuario;
 	}
 
+	public void setFuncao(int nextInt) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
