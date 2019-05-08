@@ -21,9 +21,10 @@
 <!-- 		</div> -->
 		
 	<select class="form-control col-4" th:field="*{gestor.nome}" id="selectGestor">	 
+	<option th:value="${gestor}" style="color: #ccc">Selecione um Gestor...</option>
     <option th:each="lista: ${listas}"
     		th:value="${gestor}"
-            th:text="${lista}">Part name</option>
+            th:text="${lista}"></option>
 </select><br>
 
 		<div class="form-group">
