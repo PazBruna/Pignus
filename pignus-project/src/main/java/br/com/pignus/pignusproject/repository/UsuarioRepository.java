@@ -1,5 +1,7 @@
 package br.com.pignus.pignusproject.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,5 +15,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
 	public Usuario findByEmail(String email);
 	public UsuarioGestor findByNome(String nome);
+	public List<Usuario> findAllByTipo(String tipo);
 
 }
