@@ -30,6 +30,8 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private String nome;
+
+
 	private String funcao;
 	@ManyToOne
 	private Empresa empresa;
@@ -113,6 +115,10 @@ public class Usuario {
 	public void setFuncao(int nextInt) {
 		// TODO Auto-generated method stub
 		
+	}
+	@Override
+	public String toString() {
+		return nome;
 	}
 
 }
