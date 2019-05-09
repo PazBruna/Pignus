@@ -37,7 +37,7 @@ public class UsuarioRepositoryTest {
 		sr.save(setor);
 	}
 
-	@Test
+	//@Test
 	public void criarNovoUsuarioGestor() {
 		Setor setor = sr.getOne(2);
 		UsuarioGestor usuario = new UsuarioGestor();
@@ -154,7 +154,7 @@ Usuario testeGestores5 = new UsuarioGestor();
 	  @Test
 	public void MassaDeDadosUsuario () {
 		Usuario testeUsuarioComum1 = new Usuario();
-		Setor setor = sr.getOne(2);
+		Setor setor = sr.getOne(13);
 		
 		testeUsuarioComum1.setEmail("Gustavo@Gustavo");
 		testeUsuarioComum1.setNome("Gustavo");

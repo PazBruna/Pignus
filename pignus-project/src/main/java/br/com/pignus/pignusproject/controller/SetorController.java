@@ -41,13 +41,19 @@ public class SetorController{
     }
 
     @RequestMapping(value = "/cadastroSetor", method=RequestMethod.GET)
-    public String cadastrarSetor(@ModelAttribute Setor setor, Model model, Usuario us){
-    	List<Usuario> lista = usuario.findAllByTipo("G");
-    	model.addAttribute("listas", lista).toString();
-    	for (Usuario usuario : lista) {
-    		
+    public String cadastrarSetor(@ModelAttribute Setor setor, Model model){
+    	List<Usuario> listaGestor = usuario.findAllByTipo("G");
+    	List<Usuario> listaFuncionario = usuario.findAllByTipo("C");
+    	model.addAttribute("listaGestor", listaGestor).toString();
+    	model.addAttribute("listaFuncionario", listaFuncionario).toString();
+    	for (Usuario usuario : listaGestor) {    		
 			System.out.println(usuario.getNome());
 		}
+    	
+    	for (Usuario usuario : listaFuncionario) {			
+    		System.out.println(usuario.getNome());
+		}
+    	
         return "paginaCadastroSetor";
     }
     
@@ -56,14 +62,17 @@ public class SetorController{
     @PostMapping("/cadastroSetor")
 	public String retornaPaginaSetor(@ModelAttribute Setor setor) {
     	UsuarioGestor gestor = setor.getGestor();
-    	if(seguranca.procuraGestor(gestor) == null) {
+    	Usuario funcionario = setor.getFuncionario();
+    	if(seguranca.procuraGestor(gestor) == null || seguranca.procurarFuncionario(funcionario) == null) {
     		System.out.println("Esta nulo");
     		return "redirect:cadastroSetor";
     	}
     	setor.setGestor(seguranca.procuraGestor(gestor));
+    	setor.setFuncionario(seguranca.procurarFuncionario(funcionario));
     	setores.save(setor);
 		return "redirect:setores";
 	}
+    
     
 
 

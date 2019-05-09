@@ -18,8 +18,12 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 	
 	//Buscando na Tabela
 	@Query("from Usuario")
-	public UsuarioGestor findByNome(String nome);
+	public UsuarioGestor findByNomeGestor(String nome);
 	
+	@Query("from Usuario")
 	public List<Usuario> findAllByTipo(String tipo);
+
+	@Query("select nome from Usuario where nome = ?1 ")
+	public Usuario findByNome(String nome);
 
 }

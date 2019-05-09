@@ -100,8 +100,13 @@ public class SegurancaDaAplicacao {
 	}
 	
 	public UsuarioGestor procuraGestor(UsuarioGestor gestor) {
-		gestor = usuarios.findByNome(gestor.getNome());
+		gestor = usuarios.findByNomeGestor(gestor.getNome());
 		return gestor;
+	}
+	
+	public Usuario procurarFuncionario(Usuario funcionario) {
+		funcionario = usuarios.findByNome(funcionario.getNome());
+		return funcionario;
 	}
 
 }
