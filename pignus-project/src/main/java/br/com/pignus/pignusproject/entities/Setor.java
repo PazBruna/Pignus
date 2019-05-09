@@ -25,23 +25,12 @@ public class Setor {
 	private Empresa empresa;
 	@OneToOne
 	private UsuarioGestor gestor;	
-	@OneToOne
-	private Usuario funcionario;
 
 	@ManyToMany
 	@JoinTable(name = "setor_has_download", joinColumns = { @JoinColumn(name = "setor_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "download_id") })
 	private List<Download> softwaresSetor = new ArrayList<>();
 
-	
-	public Usuario getFuncionario() {
-		return funcionario;
-	}
-
-	public void setFuncionario(Usuario funcionario) {
-		this.funcionario = funcionario;
-	}
-	
 	public UsuarioGestor getGestor() {
 		return gestor;
 	}

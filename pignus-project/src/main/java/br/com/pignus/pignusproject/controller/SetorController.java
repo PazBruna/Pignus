@@ -34,7 +34,9 @@ public class SetorController{
     public SetorController(){};
     @Autowired
     private UsuarioRepository usuario;
-
+    
+    
+    
     @RequestMapping(value = "/setores", method=RequestMethod.GET)
     public String acessarSetores(@ModelAttribute Setor setor){
         return PAGINA_PRINCIPAL_SETORES;
@@ -62,13 +64,11 @@ public class SetorController{
     @PostMapping("/cadastroSetor")
 	public String retornaPaginaSetor(@ModelAttribute Setor setor) {
     	UsuarioGestor gestor = setor.getGestor();
-    	Usuario funcionario = setor.getFuncionario();
-    	if(seguranca.procuraGestor(gestor) == null || seguranca.procurarFuncionario(funcionario) == null) {
+    	if(seguranca.procuraGestor(gestor) == null) {
     		System.out.println("Esta nulo");
     		return "redirect:cadastroSetor";
     	}
     	setor.setGestor(seguranca.procuraGestor(gestor));
-    	setor.setFuncionario(seguranca.procurarFuncionario(funcionario));
     	setores.save(setor);
 		return "redirect:setores";
 	}
