@@ -64,21 +64,21 @@ public class SegurancaDaAplicacaoTest {
 	public void gerarLogEmailValido() {
 		usuario.setEmail("teste@teste");
 		usuario.setSenha("1234");
-		if (seguranca.permitirAcessoUsuario(usuario.getEmail(), usuario.getSenha())) {
-			seguranca.adicionaMatrizLog(usuario.getEmail());
-			seguranca.adicionaMatrizLog(usuario.getEmail());
-		}
+//		if (seguranca.permitirAcessoUsuario(usuario.getEmail(), usuario.getSenha())) {
+//			seguranca.adicionaMatrizLog(usuario.getEmail());
+//			seguranca.adicionaMatrizLog(usuario.getEmail());
+//		}
 	}
 
 	// @Test
 	public void gerarLogEmailInvalido() {
 		usuario.setEmail("gggg@ggggg");
 		usuario.setSenha("ggggg");
-		if (seguranca.permitirAcessoUsuario(usuario.getEmail(), usuario.getSenha())) {
-			seguranca.adicionaMatrizLog(usuario.getEmail());
-		} else {
-			System.out.println("Email e login invalido");
-		}
+//		if (seguranca.permitirAcessoUsuario(usuario.getEmail(), usuario.getSenha())) {
+//			seguranca.adicionaMatrizLog(usuario.getEmail());
+//		} else {
+//			System.out.println("Email e login invalido");
+//		}
 	}
 	
 /*	@Test

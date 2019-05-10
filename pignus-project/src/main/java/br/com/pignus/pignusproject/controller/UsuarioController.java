@@ -1,5 +1,9 @@
 package br.com.pignus.pignusproject.controller;
 
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,20 +26,30 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/login")
-	public String loginUsuarioEfetuado(@ModelAttribute Usuario usuario) {
-		Usuario novoUsuario = new Usuario();
-		if (seguranca.permitirAcessoUsuario(usuario.getEmail(), usuario.getSenha())) {
+	public String loginUsuarioEfetuado(@ModelAttribute Usuario usuario, HttpSession session ) throws ClassNotFoundException {
+		Usuario novoUsuario = seguranca.permitirAcessoUsuario(usuario.getEmail(), usuario.getSenha());
+		if (novoUsuario != null) {
 			seguranca.historicoAcesso(usuario.getEmail(),novoUsuario);
-			
+			session.setAttribute("usuarioLogado", novoUsuario);
+			if (novoUsuario.getTipo().equals("G") ) {
+				return "homeGestor";
+			}
 			return PAGINA_PRINCIPAL;
 		}
-		return PAGINA_LOGIN_ERRO;
+		return PAGINA_DE_LOGIN;
+		
 	}	
 	
 	
 	@GetMapping("/login")
 	public String acessarUsuarioLogin(@ModelAttribute Usuario usuario,@ModelAttribute Empresa empresa) {
 		return PAGINA_DE_LOGIN;
+	}
+	
+	@GetMapping("/homeComum")
+	public String arrumaDepoisComum(@ModelAttribute Usuario usuario, HttpSession session) {
+		session.getAttribute("usuarioLogado");
+		return PAGINA_PRINCIPAL;
 	}
 	
 	

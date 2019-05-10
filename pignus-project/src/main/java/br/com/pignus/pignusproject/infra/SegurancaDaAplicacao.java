@@ -40,12 +40,14 @@ public class SegurancaDaAplicacao {
 	DateTimeFormatter formatador = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
 			.withLocale(new Locale("pt", "br"));
 
-	public boolean permitirAcessoUsuario(String email, String senha) {
+	public Usuario permitirAcessoUsuario(String email, String senha) {
 
 		if (usuarios.existsByEmailAndSenha(email, senha)) {
-			return true;
+			
+			Usuario usuarioExistente = usuarios.findByEmail(email);
+			return	usuarioExistente ;
 		}
-		return false;
+		return null;
 	}
 
 	public boolean permitirAcessoEmpresa(String email, String senha) {
