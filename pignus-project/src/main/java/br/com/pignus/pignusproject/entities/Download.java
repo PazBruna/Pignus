@@ -52,6 +52,10 @@ public class Download{
 		this.setores = setores;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return nomePrograma+"\n"+categoria+"\n" +link;
+	}
+
 
 }

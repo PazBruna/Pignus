@@ -1,17 +1,12 @@
 package br.com.pignus.pignusproject.controller;
-
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import br.com.pignus.pignusproject.entities.Download;
 import br.com.pignus.pignusproject.entities.LerArquivos;
 import br.com.pignus.pignusproject.repository.DownloadRepository;
@@ -26,8 +21,6 @@ public class DownloadsController {
 
 	@PostMapping("/meusDownloads")
 	public String salvandoDownloads (){
-		LerArquivos ler = new LerArquivos();
-		
 		return PAGINA_DE_DOWNLOADS;
 	}
 	
@@ -39,8 +32,7 @@ public class DownloadsController {
 		}
 		meusDownloads.saveAll(ler.listaDownloads());
 		List<Download> listaArqv = meusDownloads.findAll();
-		//model.addAttribute("listaArqv", listaArqv);
-		
+		model.addAttribute("listaArqv", listaArqv).toString();	
 		return PAGINA_DE_DOWNLOADS;
 	}
 	

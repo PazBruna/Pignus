@@ -1,13 +1,13 @@
 <h1> Meus Downloads</h1>
 
 
-<div style="width: 200px;height: 200px;background: #ccc;" th:object="${download}">
+<div style="width: 200px;height: 200px;background: #ccc;float: left; margin-right: 10px; margin-bottom: 10px;" th:object="${download}" th:each="listaArqv: ${listaArqv}">
 
-<button style="cursor: pointer;">baixar</button>
+<a  th:href=@{${listaArqv.link}} > baixar</a>
 
-<ul th:each="listaArqv: ${listaArqv}">
-<li th:text="${nomePrograma}"> </li>
-</ul>
+
+<p th:text=${listaArqv.nomePrograma}> </p>
+<p th:text=${listaArqv.categoria}> </p>
 
 
 </div>
