@@ -1,4 +1,5 @@
 h1 {
+  z-index: 2;
   position: relative;
   display: inline-block;
   line-height: 130%;
@@ -9,7 +10,7 @@ h1 {
     height: 23px;
     opacity: .2;
     bottom: 0;
-    z-index: -1;
+    z-index: 1;
 
     &.color-red {
       background-color: $red;
@@ -28,4 +29,8 @@ p {
 
 h1, h2, h3 {
   line-height: 120%;
+
+  &.reduce-lh {
+    line-height: 90%;
+  }
 }

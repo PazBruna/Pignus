@@ -1,5 +1,8 @@
-footer {
+#footer {
+  background-color: $dark;
   padding-bottom: 64px;
+  clear: both;
+  margin-top: 256px;
 
   .social-medias {
     p {
