@@ -1,0 +1,23 @@
+h1 {
+  position: relative;
+  display: inline-block;
+
+  &.effect {
+    position: absolute;
+  }
+  
+  span {
+    position: absolute;
+    width: 90%;
+    height: 23px;
+    opacity: .2;
+
+    &.color-red {
+      color: $red;
+    }
+
+    &.color-blue {
+      color: $blue;
+    }
+  }
+}

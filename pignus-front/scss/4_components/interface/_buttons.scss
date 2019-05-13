@@ -1,0 +1,42 @@
+.button-outline {
+  @extend %button-structure;
+  
+  &.red {
+    color: $red;
+    border: 2px solid $red; 
+
+    &:hover {
+      background-color: $red;
+      color: $light;
+    }
+  }
+
+  &.blue {
+    color: $blue;
+    border: 2px solid $blue; 
+
+    &:hover {
+      background-color: $blue;
+      color: $light;
+    }
+  }
+
+}
+
+.button-filled {
+  @extend %button-structure;
+
+  &.red {
+    background-color: $red;
+    color: $light;
+  }
+
+  &.blue {
+    background-color: $blue;
+    color: $light;
+  }
+
+  &:hover {
+    opacity: .6;
+  }
+}

@@ -1,0 +1,51 @@
+.tiny-space {
+  margin-top: 4px;
+}
+
+.little-space {
+  margin-top: 8px;
+}
+
+.small-space {
+  margin-top: 16px;
+
+  &.left {
+    margin-left: 16px;
+  }
+
+  &.right {
+    margin-right: 16px;
+  }
+}
+
+.base-space {
+  margin-top: 32px;
+
+  &.left {
+    margin-left: 32px;
+  }
+
+  &.right {
+    margin-right: 32px;
+  }
+}
+
+.large-space {
+  margin-top: 64px;
+
+  &.left {
+    margin-left: 64px;
+  }
+
+  &.right {
+    margin-right: 64px;
+  }
+}
+
+.extra-large-space {
+  margin-top: 128px;
+}
+
+.sections-space {
+  margin-top: 256px;
+}

@@ -1,0 +1,15 @@
+h1 {
+  font-size: $size-display;
+
+  &.with-subtitle {
+    font-size: $size-large;
+  }
+}
+
+h2 {
+  font-size: $size-title;
+}
+
+h3 {
+  font-size: $size-subtitle;
+}
