@@ -17,7 +17,6 @@ import br.com.pignus.pignusproject.infra.SegurancaDaAplicacao;
 public class UsuarioController {
 	public static final String PAGINA_DE_LOGIN = "paginaDeLogin";
 	public static final String PAGINA_LOGIN_ERRO = "paginaLoginErro";
-	public static final String PAGINA_PRINCIPAL = "paginaPrincipal";
 	private SegurancaDaAplicacao seguranca;
 	
 
@@ -31,10 +30,7 @@ public class UsuarioController {
 		if (novoUsuario != null) {
 			seguranca.historicoAcesso(usuario.getEmail(),novoUsuario);
 			session.setAttribute("usuarioLogado", novoUsuario);
-			if (novoUsuario.getTipo().equals("G") ) {
-				return "homeGestor";
-			}
-			return PAGINA_PRINCIPAL;
+			return "redirect:home";
 		}
 		return PAGINA_DE_LOGIN;
 		
@@ -46,11 +42,7 @@ public class UsuarioController {
 		return PAGINA_DE_LOGIN;
 	}
 	
-	@GetMapping("/homeComum")
-	public String arrumaDepoisComum(@ModelAttribute Usuario usuario, HttpSession session) {
-		session.getAttribute("usuarioLogado");
-		return PAGINA_PRINCIPAL;
-	}
+	
 	
 	
 	
