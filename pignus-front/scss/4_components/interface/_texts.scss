@@ -1,9 +1,11 @@
 h1 {
   position: relative;
   display: inline-block;
+  line-height: 130%;
 
-  &.effect {
+  + h1.effect {
     position: absolute;
+    left: 0;
   }
   
   span {
@@ -20,4 +22,13 @@ h1 {
       color: $blue;
     }
   }
+}
+
+p {
+  font-size: $size-body;
+  line-height: 170%;
+}
+
+h1, h2, h3 {
+  line-height: 150%;
 }

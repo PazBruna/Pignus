@@ -1,15 +1,23 @@
-h1 {
+.font-size-display {
   font-size: $size-display;
-
-  &.with-subtitle {
-    font-size: $size-large;
-  }
 }
 
-h2 {
+.font-size-large {
+  font-size: $size-large;
+}
+
+.font-size-title {
   font-size: $size-title;
 }
 
-h3 {
+.font-size-subtitle {
   font-size: $size-subtitle;
+}
+
+.font-size-button {
+  font-size: $size-button;
+}
+
+.font-size-body {
+  font-size: $size-body;
 }

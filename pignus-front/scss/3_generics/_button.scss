@@ -1,4 +1,7 @@
 %button-structure {
+  cursor: pointer;
+  border: 0;
+  outline: none;
   padding: 15px 50px;
   border-radius: 5px;
   font-size: $size-button;
