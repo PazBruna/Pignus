@@ -1,5 +1,6 @@
 .button-outline {
   @extend %button-structure;
+  background-color: transparent;
   
   &.red {
     color: $red;

@@ -10,10 +10,12 @@
   margin-top: 16px;
 
   &.left {
+    margin-top: 0;
     margin-left: 16px;
   }
 
   &.right {
+    margin-top: 0;
     margin-right: 16px;
   }
 }
@@ -22,11 +24,18 @@
   margin-top: 32px;
 
   &.left {
+    margin-top: 0;
     margin-left: 32px;
   }
 
   &.right {
+    margin-top: 0;
     margin-right: 32px;
+  }
+
+  &.bottom {
+    margin-top: 0;
+    margin-bottom: 64px;
   }
 }
 
@@ -34,11 +43,18 @@
   margin-top: 64px;
 
   &.left {
+    margin-top: 0;
     margin-left: 64px;
   }
 
   &.right {
+    margin-top: 0;
     margin-right: 64px;
+  }
+
+  &.bottom {
+    margin-top: 0;
+    margin-bottom: 64px;
   }
 }
 

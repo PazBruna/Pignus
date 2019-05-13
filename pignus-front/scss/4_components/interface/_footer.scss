@@ -1,0 +1,46 @@
+footer {
+  padding-bottom: 64px;
+
+  .social-medias {
+    p {
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+
+      &:after {
+        content: '.';
+        font-size: 48px;
+      }
+
+      &:nth-child(1) {
+        &::after, &:hover {
+          color: #0077B5;
+        }
+      }
+
+      &:nth-child(2) {
+        &::after, &:hover {
+          color: #8A3AB9;
+        }
+      }
+
+      &:nth-child(3) {
+        &::after, &:hover {
+          color: #3B5998;
+        }
+      }
+
+      &:nth-child(4) {
+        &::after, &:hover {
+          color: #999999;
+        }
+      }
+    }
+  }
+
+  .container div:last-child {
+    cursor: pointer;
+    margin-top: 64px;
+    padding: 32px 0;
+  }
+}
