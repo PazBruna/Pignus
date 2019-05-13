@@ -30,8 +30,6 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private String nome;
-
-
 	private String funcao;
 	@ManyToOne
 	private Empresa empresa;
@@ -43,6 +41,8 @@ public class Usuario {
 	@JoinTable(name = "usuario_has_downloads", joinColumns = {
 			@JoinColumn(name = "usuario_id") }, inverseJoinColumns = { @JoinColumn(name = "download_id") })
 	private List<Download> downloadsUsuario = new ArrayList<>();
+	@ManyToOne
+	private Funcoes funcaoUsuario;
 
 	public Setor getSetor() {
 		return setor;
