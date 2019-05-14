@@ -30,7 +30,6 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private String nome;
-	private String funcao;
 	@ManyToOne
 	private Empresa empresa;
 	@ManyToOne
@@ -43,6 +42,14 @@ public class Usuario {
 	private List<Download> downloadsUsuario = new ArrayList<>();
 	@ManyToOne
 	private Funcoes funcaoUsuario;
+
+	public Funcoes getFuncaoUsuario() {
+		return funcaoUsuario;
+	}
+
+	public void setFuncaoUsuario(Funcoes funcaoUsuario) {
+		this.funcaoUsuario = funcaoUsuario;
+	}
 
 	public Setor getSetor() {
 		return setor;
@@ -86,14 +93,6 @@ public class Usuario {
 
 	public String getTipo() {
 		return tipo;
-	}
-
-	public String getFuncao() {
-		return funcao;
-	}
-
-	public void setFuncao(String funcao) {
-		this.funcao = funcao;
 	}
 
 	public Empresa getEmpresa() {

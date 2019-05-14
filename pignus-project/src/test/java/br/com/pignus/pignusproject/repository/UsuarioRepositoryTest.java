@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.pignus.pignusproject.entities.Empresa;
+import br.com.pignus.pignusproject.entities.Funcoes;
 import br.com.pignus.pignusproject.entities.Setor;
 import br.com.pignus.pignusproject.entities.Usuario;
 import br.com.pignus.pignusproject.entities.UsuarioGestor;
@@ -25,6 +26,9 @@ public class UsuarioRepositoryTest {
 	private EmpresaRepository er;
 	@Autowired
 	private SetorRepository sr;
+	@Autowired
+	private FuncaoRepository fc;
+	private Empresa empresa;
 
 	//@Test
 	public void criarNovoSetor() {
@@ -62,6 +66,7 @@ public class UsuarioRepositoryTest {
 	
 	//@Test
 	public void MassaDeDadosGestor () {
+		Funcoes funcao = new Funcoes();
 		
 		//CRIACAO DOS USUARIOS GESTORES
 		
@@ -71,8 +76,9 @@ public class UsuarioRepositoryTest {
 		
 		testeGestores1.setEmail("Ariel@Ariel");
 		testeGestores1.setNome("Ariel");
-		testeGestores1.setSetor(setor);
-		testeGestores1.setFuncao("Dev");
+		testeGestores1.setFuncao(5);
+		testeGestores1.setEmpresa(empresa);
+		//testeGestores1.setSetor(setor);
 		testeGestores1.setSenha("01010101");
 		
 		
@@ -87,8 +93,9 @@ Usuario testeGestores2 = new UsuarioGestor();
 		
 		testeGestores2.setEmail("Jose@Jose");
 		testeGestores2.setNome("Jose");
-		testeGestores2.setSetor(setor);
-		testeGestores2.setFuncao("Negocios");
+		testeGestores2.setFuncao(5);
+		testeGestores2.setEmpresa(empresa);
+		//testeGestores2.setSetor(setor);
 		testeGestores2.setSenha("02020202");
 		
 		
@@ -103,10 +110,10 @@ Usuario testeGestores3 = new UsuarioGestor();
 		
 		testeGestores3.setEmail("Luciano@Luciano");
 		testeGestores3.setNome("Luciano");
-		testeGestores3.setSetor(setor);
-		testeGestores3.setFuncao("Limpeza");
-		testeGestores3.setSenha("030303030");
-		
+		testeGestores3.setFuncao(5);
+		testeGestores3.setEmpresa(empresa);
+		//testeGestores3.setSetor(setor);
+		testeGestores3.setSenha("testeLuciano");
 		
 		ur.save(testeGestores3);
 		
@@ -119,8 +126,9 @@ Usuario testeGestores4 = new UsuarioGestor();
 		
 		testeGestores4.setEmail("Cristino@Cristino");
 		testeGestores4.setNome("Cristino");
-		testeGestores4.setSetor(setor);
-		testeGestores4.setFuncao("RH");
+		testeGestores4.setFuncao(5);
+		testeGestores4.setEmpresa(empresa);
+		//testeGestores4.setSetor(setor);
 		testeGestores4.setSenha("04040404");
 		
 		
@@ -135,8 +143,9 @@ Usuario testeGestores5 = new UsuarioGestor();
 		
 		testeGestores5.setEmail("Santana@Santana");
 		testeGestores5.setNome("Santana");
-		testeGestores5.setSetor(setor);
-		testeGestores5.setFuncao("Financas");
+		testeGestores5.setFuncao(5);
+		testeGestores5.setEmpresa(empresa);
+		//testeGestores5.setSetor(setor);
 		testeGestores5.setSenha("0505050505");
 		
 		
@@ -151,7 +160,7 @@ Usuario testeGestores5 = new UsuarioGestor();
 	
 	//CRIACAO DOS USUARIOSO COMUNS
 
-	  @Test
+	  //@Test
 	public void MassaDeDadosUsuario () {
 		Usuario testeUsuarioComum1 = new Usuario();
 		Setor setor = sr.getOne(13);
@@ -159,7 +168,6 @@ Usuario testeGestores5 = new UsuarioGestor();
 		testeUsuarioComum1.setEmail("Gustavo@Gustavo");
 		testeUsuarioComum1.setNome("Gustavo");
 		testeUsuarioComum1.setSetor(setor);
-		testeUsuarioComum1.setFuncao("Comprador");
 		testeUsuarioComum1.setSenha("06060606");
 		
 		ur.save(testeUsuarioComum1);
@@ -174,7 +182,6 @@ Usuario testeGestores5 = new UsuarioGestor();
 		testeUsuarioComum2.setEmail("Sendy@Sendy");
 		testeUsuarioComum2.setNome("Sendy");
 		testeUsuarioComum1.setSetor(setor);
-		testeUsuarioComum1.setFuncao("UI");
 		testeUsuarioComum2.setSenha("07070707");
 		
 		ur.save(testeUsuarioComum2);
@@ -189,7 +196,6 @@ Usuario testeGestores5 = new UsuarioGestor();
 		testeUsuarioComum3.setEmail("Breno@Breno");
 		testeUsuarioComum3.setNome("Breno");
 		testeUsuarioComum3.setSetor(setor);
-		testeUsuarioComum3.setFuncao("Comercial");
 		testeUsuarioComum3.setSenha("8080808080");
 		
 		ur.save(testeUsuarioComum3);
@@ -203,7 +209,6 @@ Usuario testeGestores5 = new UsuarioGestor();
 		testeUsuarioComum4.setEmail("Marcia@Marcia");
 		testeUsuarioComum4.setNome("Marcia");
 		testeUsuarioComum4.setSetor(setor);
-		testeUsuarioComum4.setFuncao("Limpeza");
 		testeUsuarioComum4.setSenha("90909090");
 		
 		ur.save(testeUsuarioComum4);
@@ -218,7 +223,6 @@ Usuario testeGestores5 = new UsuarioGestor();
 		testeUsuarioComum5.setEmail("Alexandro@Alexandro");
 		testeUsuarioComum5.setNome("Alexandro");
 		testeUsuarioComum5.setSetor(setor);
-		testeUsuarioComum5.setFuncao("Manutencao");
 		testeUsuarioComum5.setSenha("100100100100");
 		
 		ur.save(testeUsuarioComum5);
@@ -228,6 +232,38 @@ Usuario testeGestores5 = new UsuarioGestor();
 		Assert.assertEquals(testeUsuarioComum5,usuarioCriado5);
 
 	}
+	  
+	 // @Test
+	  public void criandoFuncao() {
+		  
+		  Funcoes funcao1 = new Funcoes();
+		  Funcoes funcao2 = new Funcoes();
+		  Funcoes funcao3 = new Funcoes();
+		  Funcoes funcaoPadrao = new Funcoes();
+		  
+		  funcao1.setNomeFuncao("Desenvolvedor");
+		  fc.save(funcao1);
+		  Funcoes funcaoCriada1 = fc.getOne(funcao1.getId());
+		  Assert.assertEquals(funcao1,funcaoCriada1);
+		  
+		  funcao2.setNomeFuncao("Arquiteto");
+		  fc.save(funcao2);
+		  Funcoes funcaoCriada2 = fc.getOne(funcao2.getId());
+		  Assert.assertEquals(funcao2,funcaoCriada2);
+		  
+		  funcao3.setNomeFuncao("Designer");
+		  fc.save(funcao3);
+		  Funcoes funcaoCriada3 = fc.getOne(funcao3.getId());
+		  Assert.assertEquals(funcao3,funcaoCriada3);
+		  
+		  funcaoPadrao.setNomeFuncao("Padrão");
+		  fc.save(funcaoPadrao);
+		  Funcoes funcaoPadraoCriada = fc.getOne(funcaoPadrao.getId());
+		  Assert.assertEquals(funcaoPadrao,funcaoPadraoCriada);
+		  
+	  }
+	  
+	  
 	  
 /*	@Test
 	public String[][] retornaMatrizUsuarios() {

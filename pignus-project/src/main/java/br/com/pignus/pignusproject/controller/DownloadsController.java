@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import br.com.pignus.pignusproject.entities.Download;
-import br.com.pignus.pignusproject.entities.LerArquivos;
 import br.com.pignus.pignusproject.repository.DownloadRepository;
 
 @Controller

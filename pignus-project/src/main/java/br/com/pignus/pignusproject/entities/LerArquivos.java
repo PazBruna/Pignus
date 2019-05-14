@@ -33,7 +33,6 @@ public class LerArquivos {
 				while (sc.hasNext()) {
 					Download disc = new Download();
 					disc.setNomePrograma(sc.next());
-					disc.setCategoria(sc.next());
 					disc.setLink(sc.next());
 					lista.add(disc);
 					

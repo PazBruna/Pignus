@@ -15,7 +15,6 @@ public class Download{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String nomePrograma;
-	private String categoria;
 	private String link;
 	@ManyToMany(mappedBy="softwaresSetor")
 	private List<Setor> setores = new ArrayList<>();
@@ -29,14 +28,6 @@ public class Download{
 
 	public String setNomePrograma(String nomePrograma) {
 		return this.nomePrograma = nomePrograma;
-	}
-
-	public String getCategoria() {
-		return categoria;
-	}
-
-	public String setCategoria(String categoria) {
-		return this.categoria = categoria;
 	}
 
 	public String getLink() {
@@ -57,8 +48,9 @@ public class Download{
 	
 	@Override
 	public String toString() {
-		return nomePrograma+"\n"+categoria+"\n" +link;
+		return nomePrograma+"\n"+funcaoDownload+"\n" +link;
 	}
+
 
 
 }

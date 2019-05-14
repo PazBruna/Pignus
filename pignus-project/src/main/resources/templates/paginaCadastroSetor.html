@@ -21,18 +21,17 @@
 <!-- 		</div> -->
 		
 	<select class="form-control col-4" th:field="*{gestor.nome}" id="selectGestor">	 
-	<option th:value="${gestor}" style="color: #ccc">Selecione um Gestor...</option>
     <option th:each="listaGestor: ${listaGestor}"
     		th:value="${gestor}"
             th:text="${listaGestor}"></option>
 </select><br>
 
-<select class="form-control col-4" th:field="*{funcionario.nome}" id="selectGestor">	 
-	<option th:value="${funcionario}" style="color: #ccc">Selecione um Funcionario...</option>
-    <option th:each="lista: ${listaFuncionario}"
-    		th:value="${funcionario}"
-            th:text="${lista}"></option>
-</select><br>
+<!-- <select class="form-control col-4" th:field="*{funcionario.nome}" id="selectGestor">	  -->
+<!-- 	<option th:value="${funcionario}" style="color: #ccc">Selecione um Funcionario...</option> -->
+<!--     <option th:each="lista: ${listaFuncionario}" -->
+<!--     		th:value="${funcionario}" -->
+<!--             th:text="${lista}"></option> -->
+<!-- </select><br> -->
 
 		<div class="form-group">
 			<input type="text" th:field="*{nomeSetor}" id="nomeSetor" class="form-control col-md-2"
