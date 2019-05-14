@@ -52,7 +52,6 @@ var background_2 = 'e8e8e8'
 
 var buttonElement = document.getElementById('add-to-app');
 var containerElement = document.getElementById('app');
-
 var itens = document.getElementById('socorro');
 
 var suppArrSoftwares = [];
@@ -98,30 +97,26 @@ buttonElement.onclick = function() {
   for( var i = 0; i < suppArrPersons.length; i++ ) {
     personsValues.push(suppArrPersons[i].text);
   }
-  var personsTexts = document.createTextNode(personsValues.join(', '));
+  var personsTexts = document.createTextNode('Colaboradores: ' + personsValues.join(', '));
   listaIntegrantes.appendChild(personsTexts);
   containerElement.appendChild(listaIntegrantes);
 
   for( var i = 0; i < suppArrSoftwares.length; i++ ) {
     softwaresValues.push(suppArrSoftwares[i].text);
   }
-  var softwaresTexts = document.createTextNode(softwaresValues.join(', '));
+  var softwaresTexts = document.createTextNode('Softwares: ' + softwaresValues.join(', '));
   listaSoftwares.appendChild(softwaresTexts)
   containerElement.appendChild(listaSoftwares)
 
-  // Reseting Form
   
+  // Reseting Form
   suppArrPersons = [];
   suppArrSoftwares = [];
-
   for( var i = 0; i < pessoasSelecionadas.length; i++ )  {
     pessoasSelecionadas.options[i].selected = false;
   }
-
   for( var i = 0; i < softwaresSelecionados.length; i++ )  {
     softwaresSelecionados.options[i].selected = false;
   }
   
 }
-
-console.log(itens)
