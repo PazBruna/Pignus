@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <!-- INÍCIO META TAGS -->
   <meta charset="utf-8" />
@@ -9,12 +10,80 @@
   <meta name="keywords" content="">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Diego Braga - Web Developer">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="resources/img/logo-SmooTI.png">
+  <meta property="og:image:alt" , content=>
+  <meta property="og:image:type" , content="image/jpg">
+  <meta property="og:image:width" , content="1365">
+  <meta property="og:image:height" , content="1365">
+  <meta name=”twitter:card” content=”summary_large_image”>
+  <meta name=”twitter:site” content=”Conta do Twitter do site (incluindo arroba)“>
+  <meta name=”twitter:title” content=”Título da página“>
+  <meta name=”twitter:description” content=”Descrição da página. No máximo 200 caracteres“>
+  <meta name=”twitter:creator” content=”Conta do Twitter do autor do texto (incluindo arroba)“>
   <!-- FIM META TAGS -->
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
   <title>Pignus</title>
 </head>
+
 <body>
-  
-  <script src="js/default.js"></script>
+
+  <div class="pig-container">
+    <div class="pig-grid-4 large-space">
+      <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Vamos adicionar um projeto?</h2>
+      <form class="dashboard-form-container">
+        <div>
+          <label class="font-weight-bold color-gray tiny-space bottom">Qual será o nome deste projeto?</label>
+          <input class="base-space bottom font-size-body" type="text" name="nome-projeto" />
+        </div>
+        <div>
+          <label class="font-weight-bold color-gray tiny-space bottom">Quem será o cliente beneficiado</label>
+          <input class="base-space bottom font-size-body" type="text" name="cliente-beneficiado" />
+        </div>
+        <div>
+          <label class="font-weight-bold color-gray tiny-space bottom">Poderia descrever brevemente este
+            projeto?</label>
+          <input class="base-space bottom font-size-body" type="text" name="descricao-projeto" />
+        </div>
+        <div>
+          <label class="font-weight-bold color-gray little-space bottom">Quais softwares você irá utilizar?</label>
+          <select id="select-softwares" multiple>
+            <option disabled>Selecione os softwares...</option>
+            <option>Eclipse IDE</option>
+            <option>Brakets</option>
+          </select>
+          <small class="font-weight-light color-gray base-space bottom">Para selecionar mais de um, pressione e segure
+            CTRL</small>
+        </div>
+        <div>
+          <label class="font-weight-bold color-gray little-space bottom">Quais serão os integrantes deste
+            projeto?</label>
+          <select id="select-persons" multiple>
+            <option disabled>Selecione os integrantes</option>
+            <option>Guilherme Raulino</option>
+            <option>Bruna Pereira</option>
+          </select>
+          <small class="font-weight-light color-gray base-space bottom">Para selecionar mais de um, pressione e segure
+            CTRL</small>
+        </div>
+        <button id="add-to-app" type="button"
+          class="btn-form-dash button-outline red color-red to-uppercase font-weight-bold">Anexar</button>
+      </form>
+    </div>
+    <div class="pig-grid-4 large-space">
+      <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Estes são seus projetos cadastrados :D</h2>
+      <div id="app">
+
+      </div>
+      <button type="submit"
+          class="btn-form-dash button-filled red color-red to-uppercase font-weight-bold float-right base-space">Finalizar</button>
+    </div>
+  </div>
+
+  <script src="../dashboard/js/default.js"></script>
 </body>
+
 </html>

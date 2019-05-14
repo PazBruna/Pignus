@@ -51,6 +51,9 @@ var background_2 = 'e8e8e8'
 
 
 var buttonElement = document.getElementById('add-to-app');
+var buttonSubmit = document.getElementsByClassName('btn-form-dash')[1];
+buttonSubmit.style.display = 'none';
+
 var containerElement = document.getElementById('app');
 var itens = document.getElementById('socorro');
 
@@ -80,17 +83,32 @@ function validaSelecoes() {
 }
 
 buttonElement.onclick = function() {
+  buttonSubmit.style.display = 'block';
   validaSelecoes();
+
+  var divider = document.createElement('div');
   
-  var nomeProjeto = document.createElement('p');
+  var nomeProjeto = document.createElement('h3');
   var clienteBeneficiado = document.createElement('p');
   var descricaoProjeto = document.createElement('p');
   var listaSoftwares = document.createElement('p');
   var listaIntegrantes = document.createElement('p');
 
-  var inputNomeProjeto;
-  var inputClienteBeneficiado;
-  var inputDescricaoProjeto;
+  var inputNomeProjeto = document.querySelector('input[name=nome-projeto]');
+  var inputClienteBeneficiado = document.querySelector('input[name=cliente-beneficiado]');
+  var inputDescricaoProjeto = document.querySelector('input[name=descricao-projeto]');
+
+  var nomeProjetoText = document.createTextNode(inputNomeProjeto.value);
+  nomeProjeto.appendChild(nomeProjetoText);
+  divider.appendChild(nomeProjeto);
+
+  var clienteBeneficiadoText = document.createTextNode('Cliente: ' + inputClienteBeneficiado.value);
+  clienteBeneficiado.appendChild(clienteBeneficiadoText);
+  divider.appendChild(clienteBeneficiado);
+
+  var descricaoProjetoText = document.createTextNode('Descrição: ' + inputDescricaoProjeto.value);
+  descricaoProjeto.appendChild(descricaoProjetoText);
+  divider.appendChild(descricaoProjeto);
 
   var personsValues = [];
   var softwaresValues = [];
@@ -99,19 +117,24 @@ buttonElement.onclick = function() {
   }
   var personsTexts = document.createTextNode('Colaboradores: ' + personsValues.join(', '));
   listaIntegrantes.appendChild(personsTexts);
-  containerElement.appendChild(listaIntegrantes);
+  divider.appendChild(listaIntegrantes);
 
   for( var i = 0; i < suppArrSoftwares.length; i++ ) {
     softwaresValues.push(suppArrSoftwares[i].text);
   }
   var softwaresTexts = document.createTextNode('Softwares: ' + softwaresValues.join(', '));
   listaSoftwares.appendChild(softwaresTexts)
-  containerElement.appendChild(listaSoftwares)
+  divider.appendChild(listaSoftwares)
+
+  containerElement.appendChild(divider);
 
   
   // Reseting Form
   suppArrPersons = [];
   suppArrSoftwares = [];
+  inputNomeProjeto.value = '';
+  inputClienteBeneficiado.value = '';
+  inputDescricaoProjeto.value = '';
   for( var i = 0; i < pessoasSelecionadas.length; i++ )  {
     pessoasSelecionadas.options[i].selected = false;
   }
