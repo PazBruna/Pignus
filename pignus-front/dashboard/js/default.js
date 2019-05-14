@@ -61,9 +61,10 @@ var arrSoftwares = [];
 var suppArrPersons = [];
 var arrPersons = [];
 
+var softwaresSelecionados = document.getElementById('select-softwares');
+var pessoasSelecionadas = document.getElementById('select-persons');
 
 function validaSelecoes() {
-  var softwaresSelecionados = document.getElementById('select-softwares');
   for( var i = 0; i < softwaresSelecionados.length; i++ )  {
     if( softwaresSelecionados.options[i].selected == true ) {
       suppArrSoftwares.push(softwaresSelecionados[i]);
@@ -71,7 +72,6 @@ function validaSelecoes() {
   }
   arrSoftwares.push(suppArrSoftwares);
 
-  var pessoasSelecionadas = document.getElementById('select-persons');
   for( var i = 0; i < pessoasSelecionadas.length; i++ )  {
     if( pessoasSelecionadas.options[i].selected == true ) {
       suppArrPersons.push(pessoasSelecionadas[i]);
@@ -109,9 +109,19 @@ buttonElement.onclick = function() {
   listaSoftwares.appendChild(softwaresTexts)
   containerElement.appendChild(listaSoftwares)
 
+  // Reseting Form
+  
   suppArrPersons = [];
   suppArrSoftwares = [];
 
+  for( var i = 0; i < pessoasSelecionadas.length; i++ )  {
+    pessoasSelecionadas.options[i].selected = false;
+  }
+
+  for( var i = 0; i < softwaresSelecionados.length; i++ )  {
+    softwaresSelecionados.options[i].selected = false;
+  }
+  
 }
 
 console.log(itens)
