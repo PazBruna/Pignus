@@ -46,3 +46,72 @@ var menu_1 = '040505'
 var menu_2 = '131314';
 var background_1 = '373737';
 var background_2 = 'e8e8e8'
+
+
+
+
+var buttonElement = document.getElementById('add-to-app');
+var containerElement = document.getElementById('app');
+
+var itens = document.getElementById('socorro');
+
+var suppArrSoftwares = [];
+var arrSoftwares = [];
+
+var suppArrPersons = [];
+var arrPersons = [];
+
+
+function validaSelecoes() {
+  var softwaresSelecionados = document.getElementById('select-softwares');
+  for( var i = 0; i < softwaresSelecionados.length; i++ )  {
+    if( softwaresSelecionados.options[i].selected == true ) {
+      suppArrSoftwares.push(softwaresSelecionados[i]);
+    }
+  }
+  arrSoftwares.push(suppArrSoftwares);
+
+  var pessoasSelecionadas = document.getElementById('select-persons');
+  for( var i = 0; i < pessoasSelecionadas.length; i++ )  {
+    if( pessoasSelecionadas.options[i].selected == true ) {
+      suppArrPersons.push(pessoasSelecionadas[i]);
+    }
+  }
+  arrPersons.push(suppArrPersons);
+}
+
+buttonElement.onclick = function() {
+  validaSelecoes();
+  
+  var nomeProjeto = document.createElement('p');
+  var clienteBeneficiado = document.createElement('p');
+  var descricaoProjeto = document.createElement('p');
+  var listaSoftwares = document.createElement('p');
+  var listaIntegrantes = document.createElement('p');
+
+  var inputNomeProjeto;
+  var inputClienteBeneficiado;
+  var inputDescricaoProjeto;
+
+  var personsValues = [];
+  var softwaresValues = [];
+  for( var i = 0; i < suppArrPersons.length; i++ ) {
+    personsValues.push(suppArrPersons[i].text);
+  }
+  var personsTexts = document.createTextNode(personsValues.join(', '));
+  listaIntegrantes.appendChild(personsTexts);
+  containerElement.appendChild(listaIntegrantes);
+
+  for( var i = 0; i < suppArrSoftwares.length; i++ ) {
+    softwaresValues.push(suppArrSoftwares[i].text);
+  }
+  var softwaresTexts = document.createTextNode(softwaresValues.join(', '));
+  listaSoftwares.appendChild(softwaresTexts)
+  containerElement.appendChild(listaSoftwares)
+
+  suppArrPersons = [];
+  suppArrSoftwares = [];
+
+}
+
+console.log(itens)

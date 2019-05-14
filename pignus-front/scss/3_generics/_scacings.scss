@@ -1,9 +1,19 @@
 .tiny-space {
   margin-top: 4px;
+
+  &.bottom {
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
 }
 
 .little-space {
   margin-top: 8px;
+
+  &.bottom {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
 }
 
 .small-space {

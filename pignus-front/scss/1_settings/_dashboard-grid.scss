@@ -65,7 +65,7 @@ $s-device: 480px; // Smartphones em geral
 }
 
 @for $i from 1 through $cols {
-  .offset-#{$i} {
+  .pig-offset-#{$i} {
     margin-left: grid($i, offset);
     @extend %offset;
   }
@@ -86,31 +86,29 @@ $s-device: 480px; // Smartphones em geral
 }
 
 @mixin container {
-  max-width: $l-device;
+  max-width: 100%;
   margin: 0px auto;
   position: relative;
   @include d(m) {
     // Can be removed
-    max-width: $m-device;
+    max-width: 100%
   }
   @include d(t) {
-    max-width: $t-device;
+    max-width: 100%;
   }
   @include d(s) {
-    max-width: $s-device;
+    max-width: 100%;
     padding-left: 10px;
     padding-right: 10px;
   }
   @include clearfix;
 }
 
-.container {
+.pig-container {
   @include container;
 }
 
 @mixin row {
-  margin-left: -$gutter / 2;
-  margin-right: -$gutter / 2;
   @include d(s) {
     margin-left: 0;
     margin-right: 0;

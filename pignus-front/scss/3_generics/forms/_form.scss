@@ -1,0 +1,27 @@
+select {
+  border: 2px solid $blue;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  background: transparent;
+
+  option {
+    font-size: $size-body;
+  }
+}
+
+input {
+  width: 100%;
+  border: none;
+  padding: 10px 16px;
+  background: transparent;
+}
+
+label {
+  display: block;
+}
+
+small {
+  display: block;
+  color: $blue;
+}
