@@ -45,16 +45,16 @@ public class SetorController{
     @RequestMapping(value = "/cadastroSetor", method=RequestMethod.GET)
     public String cadastrarSetor(@ModelAttribute Setor setor, Model model){
     	List<Usuario> listaGestor = usuario.findAllByTipo("G");
-    	List<Usuario> listaFuncionario = usuario.findAllByTipo("C");
+    	//List<Usuario> listaFuncionario = usuario.findAllByTipo("C");
     	model.addAttribute("listaGestor", listaGestor).toString();
-    	model.addAttribute("listaFuncionario", listaFuncionario).toString();
+    	//model.addAttribute("listaFuncionario", listaFuncionario).toString();
     	for (Usuario usuario : listaGestor) {    		
 			System.out.println(usuario.getNome());
 		}
     	
-    	for (Usuario usuario : listaFuncionario) {			
-    		System.out.println(usuario.getNome());
-		}
+//    	for (Usuario usuario : listaFuncionario) {			
+//    		System.out.println(usuario.getNome());
+//		}
     	
         return "paginaCadastroSetor";
     }
