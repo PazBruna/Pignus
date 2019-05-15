@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <!-- INÍCIO META TAGS -->
   <meta charset="utf-8" />
@@ -27,122 +28,149 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <title>Pignus</title>
 </head>
+
 <body class="background-dark">
 
   <div class="container base-space">
     <div class="grid-10 offset-1">
       <div id="progress-bar"></div>
-      <form class="sign-up-form" id="sign-up-1">
-        <h1 class="font-size-title font-weight-light align-center base-space color-white">Olá! Acredito que você seja novo aqui... Qual o nome da sua empresa?</h1>
-        <div class="sign-up-inputs large-space">
-          <input id="nome-empresa" name="nome-empresa" type="text" placeholder="Ex.: Pignus Corporation" />
-        </div>
-        <div class="sign-up-buttons large-space">
-          <button type="button" id="next-form-1" class="button-filled blue color-white to-uppercase font-weight-bold">Próximo</button>
-        </div>
-      </form> 
-
-      <form class="sign-up-form" id="sign-up-2">
-        <h1 class="font-size-title font-weight-light align-center base-space color-white">Hey, <span id="textEmpresa-1"></span>, a sua empresa possui Nome Fantasia? (Caso não tenha, prossiga)</span></h1>
-        <div class="sign-up-inputs large-space">
-          <input name="nome-fantasia" type="text" placeholder="Ex.: Pignus" />
-        </div>
-        <div class="sign-up-buttons large-space">
-          <button type="button" id="prev-form-1" class="button-filled blue color-white to-uppercase font-weight-bold">Anterior</button>
-          <button type="button" id="next-form-2" class="button-filled blue color-white to-uppercase font-weight-bold">Próximo</button>
-        </div>
-      </form> 
-      
-      <form class="sign-up-form" id="sign-up-3">
-        <h1 class="font-size-title font-weight-light d-block align-center base-space color-white">Agora, por favor, insira o CNPJ da empresa <span id="textEmpresa-2"></span></h1>
-        <div class="sign-up-inputs large-space">
-          <input name="cnpj-empresa" type="text" placeholder="Ex.: 15.553.477/0001-71" />
-        </div>
-        <div class="sign-up-buttons large-space">
-          <button type="button" id="prev-form-2" class="button-filled blue color-white to-uppercase font-weight-bold">Anterior</button>
-          <button type="button" id="next-form-3" class="button-filled blue color-white to-uppercase font-weight-bold">Próximo</button>
-        </div>
-      </form> 
-      
-      <form class="sign-up-form" id="sign-up-4">
-        <h1 class="font-size-title font-weight-light align-center base-space color-white">Também precisaremos do e-mail administrativo desta empresa :D</h1>
-        <div class="sign-up-inputs large-space">
-          <input name="email-empresa" type="email" placeholder="Ex.: contato@pignus.com" />
-        </div>
-        <div class="sign-up-buttons large-space">
-          <button type="button" id="prev-form-3" class="button-filled blue color-white to-uppercase font-weight-bold">Anterior</button>
-          <button type="button" id="next-form-4" class="button-filled blue color-white to-uppercase font-weight-bold">Próximo</button>
-        </div>
-      </form> 
-
-      
-      <form class="sign-up-form" id="sign-up-5">
-        <h1 class="font-size-title font-weight-light align-center base-space color-white">Estamos quase acabando! Precisamos agora do CEP da empresa</h1>
-        <div class="sign-up-inputs large-space">
-          <input name="cep-empresa" type="text" placeholder="Ex.: 01419-002" />
-        </div>
-        <div class="sign-up-buttons large-space">
-          <button type="button" id="prev-form-4" class="button-filled blue color-white to-uppercase font-weight-bold">Anterior</button>
-          <button type="button" id="next-form-5" class="button-filled blue color-white to-uppercase font-weight-bold">Próximo</button>
-        </div>
-      </form> 
-      
-      <form class="sign-up-form" id="sign-up-6">
-        <h1 class="font-size-title font-weight-light align-center base-space color-white">Sabe aquele CEP digitado? Então, ele nos retornou estes dados abaixo. Por favor, verifique-os</h1>
-        <div class="sign-up-inputs large-space">
-          <div class="row">
-            <div class="grid-7">
-              <input name="logradouro-empresa" type="text" />
-            </div>
-            <div class="grid-5">
-              <input name="bairro-empresa" type="text" />
-            </div>
+      <form action="">
+        <div class="sign-up-form" id="sign-up-1">
+          <h1 class="font-size-title font-weight-light align-center base-space color-white">Olá! Acredito que você seja
+            novo aqui... Qual o nome da sua empresa?</h1>
+          <div class="sign-up-inputs large-space">
+            <input id="nome-empresa" name="nome-empresa" type="text" placeholder="Ex.: Pignus Corporation" />
           </div>
-          <div class="row base-space">
-            <div class="grid-3">
-              <input name="cidade-empresa" type="text" />
-            </div>
-            <div class="grid-2">
-              <input name="estado-empresa" type="text" />
-            </div>
-            <div class="grid-4">
-              <input name="numero-empresa" type="text" placeholder="Nº Estabelecimento" />
-            </div>
-            <div class="grid-3">
-              <input name="complemento-empresa" type="text" placeholder="Complemento" />
-            </div>
+          <div class="sign-up-buttons large-space">
+            <button type="button" id="next-form-1"
+              class="button-filled blue color-white to-uppercase font-weight-bold">Próximo</button>
           </div>
         </div>
-        <div class="sign-up-buttons large-space">
-          <button type="button" id="prev-form-5" class="button-filled blue color-white to-uppercase font-weight-bold">Anterior</button>
-          <button type="button" id="next-form-6"class="button-filled blue color-white to-uppercase font-weight-bold">Próximo</button>
+
+        <div class="sign-up-form" id="sign-up-2">
+          <h1 class="font-size-title font-weight-light align-center base-space color-white">Hey, <span
+              id="textEmpresa-1"></span>, a sua empresa possui Nome Fantasia? (Caso não tenha, prossiga)</span></h1>
+          <div class="sign-up-inputs large-space">
+            <input name="nome-fantasia" type="text" placeholder="Ex.: Pignus" />
+          </div>
+          <div class="sign-up-buttons large-space">
+            <button type="button" id="prev-form-1"
+              class="button-filled blue color-white to-uppercase font-weight-bold">Anterior</button>
+            <button type="button" id="next-form-2"
+              class="button-filled blue color-white to-uppercase font-weight-bold">Próximo</button>
+          </div>
         </div>
-      </form> 
-      
-      <form class="sign-up-form" id="sign-up-7">
-        <h1 class="font-size-title font-weight-light align-center base-space color-white">Por fim, você precisa definir uma senha para o acesso. Lembre-se de memorizá-la</h1>
-        <div class="sign-up-inputs large-space">
-          <input name="passwd" type="password" placeholder="Ex.: HelloWorld123" />
+
+        <div class="sign-up-form" id="sign-up-3">
+          <h1 class="font-size-title font-weight-light d-block align-center base-space color-white">Agora, por favor,
+            insira o CNPJ da empresa <span id="textEmpresa-2"></span></h1>
+          <div class="sign-up-inputs large-space">
+            <input name="cnpj-empresa" type="text" placeholder="Ex.: 15.553.477/0001-71" />
+          </div>
+          <div class="sign-up-buttons large-space">
+            <button type="button" id="prev-form-2"
+              class="button-filled blue color-white to-uppercase font-weight-bold">Anterior</button>
+            <button type="button" id="next-form-3"
+              class="button-filled blue color-white to-uppercase font-weight-bold">Próximo</button>
+          </div>
         </div>
-        <div class="sign-up-buttons large-space">
-          <button type="button" id="prev-form-6" class="button-filled blue color-white to-uppercase font-weight-bold">Anterior</button>
-          <button type="button" id="next-form-7" class="button-filled blue color-white to-uppercase font-weight-bold">Próximo</button>
+
+        <div class="sign-up-form" id="sign-up-4">
+          <h1 class="font-size-title font-weight-light align-center base-space color-white">Também precisaremos do
+            e-mail administrativo desta empresa :D</h1>
+          <div class="sign-up-inputs large-space">
+            <input name="email-empresa" type="email" placeholder="Ex.: contato@pignus.com" />
+          </div>
+          <div class="sign-up-buttons large-space">
+            <button type="button" id="prev-form-3"
+              class="button-filled blue color-white to-uppercase font-weight-bold">Anterior</button>
+            <button type="button" id="next-form-4"
+              class="button-filled blue color-white to-uppercase font-weight-bold">Próximo</button>
+          </div>
+        </div>
+
+        <div class="sign-up-form" id="sign-up-5">
+          <h1 class="font-size-title font-weight-light align-center base-space color-white">Estamos quase acabando!
+            Precisamos agora do CEP da empresa</h1>
+          <div class="sign-up-inputs large-space">
+            <input name="cep-empresa" type="text" placeholder="Ex.: 01419-002" />
+          </div>
+          <div class="sign-up-buttons large-space">
+            <button type="button" id="prev-form-4"
+              class="button-filled blue color-white to-uppercase font-weight-bold">Anterior</button>
+            <button type="button" id="next-form-5"
+              class="button-filled blue color-white to-uppercase font-weight-bold">Próximo</button>
+          </div>
+        </div>
+
+        <div class="sign-up-form" id="sign-up-6">
+          <h1 class="font-size-title font-weight-light align-center base-space color-white">Sabe aquele CEP digitado?
+            Então, ele nos retornou estes dados abaixo. Por favor, verifique-os</h1>
+          <div class="sign-up-inputs large-space">
+            <div class="row">
+              <div class="grid-7">
+                <input name="logradouro-empresa" type="text" />
+              </div>
+              <div class="grid-5">
+                <input name="bairro-empresa" type="text" />
+              </div>
+            </div>
+            <div class="row base-space">
+              <div class="grid-3">
+                <input name="cidade-empresa" type="text" />
+              </div>
+              <div class="grid-2">
+                <input name="estado-empresa" type="text" />
+              </div>
+              <div class="grid-4">
+                <input name="numero-empresa" type="text" placeholder="Nº Estabelecimento" />
+              </div>
+              <div class="grid-3">
+                <input name="complemento-empresa" type="text" placeholder="Complemento" />
+              </div>
+            </div>
+          </div>
+          <div class="sign-up-buttons large-space">
+            <button type="button" id="prev-form-5"
+              class="button-filled blue color-white to-uppercase font-weight-bold">Anterior</button>
+            <button type="button" id="next-form-6"
+              class="button-filled blue color-white to-uppercase font-weight-bold">Próximo</button>
+          </div>
+        </div>
+
+        <div class="sign-up-form" id="sign-up-7">
+          <h1 class="font-size-title font-weight-light align-center base-space color-white">Por fim, você precisa
+            definir uma senha para o acesso. Lembre-se de memorizá-la</h1>
+          <div class="sign-up-inputs large-space">
+            <input name="passwd" type="password" placeholder="Ex.: HelloWorld123" />
+          </div>
+          <div class="sign-up-buttons large-space">
+            <button type="button" id="prev-form-6"
+              class="button-filled blue color-white to-uppercase font-weight-bold">Anterior</button>
+            <button type="button" id="next-form-7"
+              class="button-filled blue color-white to-uppercase font-weight-bold">Próximo</button>
+          </div>
+        </div>
+
+        <div class="sign-up-form" id="sign-up-8">
+          <h1 class="font-size-title font-weight-light align-center base-space color-white">Lembra que era para você ter
+            memorizado aquela senha, né? Agora precisa escrevê-la novamente</h1>
+          <div class="sign-up-inputs large-space">
+            <input name="confirm-passwd" type="password"
+              placeholder="Ei, senhora, você lembra a senha que eu digitei?" />
+          </div>
+          <div class="sign-up-buttons large-space">
+            <button type="button" id="prev-form-7"
+              class="button-filled blue color-white to-uppercase font-weight-bold">Anterior</button>
+            <button type="submit" id="next-form-8"
+              class="button-filled blue color-white to-uppercase font-weight-bold">Enviar</button>
+          </div>
         </div>
       </form>
-      
-      <form class="sign-up-form" id="sign-up-8">
-        <h1 class="font-size-title font-weight-light align-center base-space color-white">Lembra que era para você ter memorizado aquela senha, né? Agora precisa escrevê-la novamente</h1>
-        <div class="sign-up-inputs large-space">
-          <input name="confirm-passwd" type="password" placeholder="Ei, senhora, você lembra a senha que eu digitei?" />
-        </div>
-        <div class="sign-up-buttons large-space">
-          <button type="button" id="prev-form-7" class="button-filled blue color-white to-uppercase font-weight-bold">Anterior</button>
-          <button type="submit" id="next-form-8" class="button-filled blue color-white to-uppercase font-weight-bold">Enviar</button>
-        </div>
-      </form> 
     </div>
   </div>
-  
+
   <script src="js/default.js"></script>
 </body>
+
 </html>
