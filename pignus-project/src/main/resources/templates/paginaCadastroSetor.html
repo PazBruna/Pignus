@@ -23,7 +23,7 @@
 	<select class="form-control col-4" th:field="*{gestor.nome}" id="selectGestor">	 
     <option th:each="listaGestor: ${listaGestor}"
     		th:value="${gestor}"
-            th:text="${listaGestor}"></option>
+            th:text="${listaGestor.nome}"></option>
 </select><br>
 
 <!-- <select class="form-control col-4" th:field="*{funcionario.nome}" id="selectGestor">	  -->

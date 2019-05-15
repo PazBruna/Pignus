@@ -17,11 +17,12 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 	public Usuario findByEmail(String email);
 	
 	//Buscando na Tabela
-	@Query("from Usuario")
+	@Query("select nome from Usuario where nome = ?1 ")
 	public UsuarioGestor findByNomeGestor(String nome);
 	
 	@Query("from Usuario")
 	public List<Usuario> findAllByTipo(String tipo);
+
 
 	@Query("select nome from Usuario where nome = ?1 ")
 	public Usuario findByNome(String nome);
