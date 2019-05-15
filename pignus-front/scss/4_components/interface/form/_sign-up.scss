@@ -44,6 +44,13 @@
         border-bottom-left-radius: 20%;
         border-bottom-right-radius: 20%;
         border-color: $red;
+        padding-left: 52px;
+        
+        &::placeholder {
+          transition-duration: .5s;
+          color: $red;
+        }
+        
       }
 
       &[name=logradouro-empresa], &[name=bairro-empresa], &[name=cidade-empresa], &[name=estado-empresa] {
@@ -53,7 +60,7 @@
   }
   
   .sign-up-buttons {
-    button:last-child {
+    button + button {
       margin-left: 32px;
 
       @include d(s) {
@@ -63,4 +70,3 @@
     }
   }
 }
-
