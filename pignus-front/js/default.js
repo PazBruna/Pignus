@@ -45,42 +45,34 @@ var page8 = document.getElementById('sign-up-8');
 var nomeEmpresa, textNomeEmpresa;
 var containerNomeEmpresa_1 = document.getElementById('textEmpresa-1');
 var empty = document.createTextNode('')
-function getNameToFantasy() {
+function getName() {
   nomeEmpresa = document.getElementById('nome-empresa');
   textNomeEmpresa = document.createTextNode(nomeEmpresa.value);
   containerNomeEmpresa_1.appendChild(textNomeEmpresa);
-}
-var containerNomeEmpresa_2 = document.getElementById('textEmpresa-2');
-function getNameToCNPJ() {
-  nomeEmpresa = document.getElementById('nome-empresa');
-  textNomeEmpresa = document.createTextNode(nomeEmpresa.value);
-  containerNomeEmpresa_2.appendChild(textNomeEmpresa);
 }
 
 /*
  * Funções dos Botões
  */
 nextButton_1.onclick = function() {
-  getNameToFantasy();
+  getName();
   page1.style.display = 'none';
   page2.style.display = 'block';
   progressBar.style.width = '25%';
 }
 prevButton_1.onclick = function() {
-  containerNomeEmpresa_1.remove(textNomeEmpresa);
+  containerNomeEmpresa_1.removeChild(textNomeEmpresa);
   page2.style.display = 'none';
   page1.style.display = 'block'
   progressBar.style.width = '12.5%';
 }
 
 nextButton_2.onclick = function() {
-  getNameToCNPJ();
   page2.style.display = 'none';
   page3.style.display = 'block';
   progressBar.style.width = '37.5%';
 }
 prevButton_2.onclick = function() {
-  containerNomeEmpresa_2.remove(textNomeEmpresa);
   progressBar.style.width = '25%';
   page3.style.display = 'none';
   page2.style.display = 'block';
