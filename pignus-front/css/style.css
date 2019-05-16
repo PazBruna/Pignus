@@ -726,6 +726,54 @@ img {
   margin-top: 16px;
 }
 
+#header-dashboard {
+  position: fixed;
+  width: 342px;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #040505;
+  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.2), 0px 3px 16px rgba(0, 0, 0, 0.12), 0px 9px 12px rgba(0, 0, 0, 0.14);
+}
+
+#header-dashboard > div {
+  margin: 0 auto;
+  width: 80%;
+  height: 1px;
+  margin-top: 8px;
+  margin-bottom: 32px;
+  background-color: #273cf6;
+}
+
+#header-dashboard h1 {
+  padding-top: 8px;
+  color: #273cf6;
+}
+
+#header-dashboard ul li {
+  cursor: pointer;
+  padding: 12px;
+  width: 80%;
+  border-radius: 5px;
+}
+
+#header-dashboard ul li:hover {
+  background: #273cf6;
+}
+
+#header-dashboard ul li:hover i {
+  color: #ffffff;
+}
+
+#header-dashboard ul li i {
+  font-size: 24px;
+  color: #273cf6;
+}
+
+#header-dashboard ul li:nth-child(5) i {
+  font-size: 17px;
+}
+
 #progress-bar {
   width: 12.5%;
   height: 8px;
