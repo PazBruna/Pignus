@@ -20,10 +20,10 @@
 <!-- 				placeholder="Nome do Gestor"> -->
 <!-- 		</div> -->
 		
-	<select class="form-control col-4" th:field="*{gestor.nome}" id="selectGestor">	 
-    <option th:each="listaGestor: ${listaGestor}"
+	<select class="form-control col-4" th:field="*{gestor}" id="selectGestor">	 
+    <option th:each="gestor: ${listaGestor}"
     		th:value="${gestor}"
-            th:text="${listaGestor.nome}"></option>
+            th:text="${gestor.nome}"></option>
 </select><br>
 
 <!-- <select class="form-control col-4" th:field="*{funcionario.nome}" id="selectGestor">	  -->

@@ -45,9 +45,8 @@ public class SetorController{
     @RequestMapping(value = "/cadastroSetor", method=RequestMethod.GET)
     public String cadastrarSetor(@ModelAttribute Setor setor, Model model){
     	List<Usuario> listaGestor = usuario.findAllByTipo("G");
-    	//List<Usuario> listaFuncionario = usuario.findAllByTipo("C");
-    	model.addAttribute("listaGestor", listaGestor).toString();
-    	//model.addAttribute("listaFuncionario", listaFuncionario).toString();
+
+    	model.addAttribute("listaGestor", listaGestor);
     	for (Usuario usuario : listaGestor) {    		
 			System.out.println(usuario.getNome());
 		}
@@ -63,12 +62,13 @@ public class SetorController{
     
     @PostMapping("/cadastroSetor")
 	public String retornaPaginaSetor(@ModelAttribute Setor setor) {
-    	UsuarioGestor gestor = setor.getGestor();
-    	if(seguranca.procuraGestor(gestor) == null) {
+    	 
+    	System.out.println("nome gestor: " + setor.getGestor().getNome());
+    	if(seguranca.procuraGestor(setor.getGestor()) == null) {
     		System.out.println("Esta nulo");
     		return "redirect:cadastroSetor";
     	}
-    	setor.setGestor(seguranca.procuraGestor(gestor));
+    	setor.setGestor(seguranca.procuraGestor(setor.getGestor()));
     	setores.save(setor);
 		return "redirect:setores";
 	}
