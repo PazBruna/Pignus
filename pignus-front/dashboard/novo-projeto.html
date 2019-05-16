@@ -33,30 +33,38 @@
 
 <body id="body-dashboard">
 
-  <div class="pig-container small-space bottom">
-    <div class="pig-grid-3">
-      <header id="header-dashboard" class="small-space right">
-        <h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1>
-        <div></div>
-        <ul class="base-space left">
-          <li class="color-white font-size-body"><i class="small-space right menu-icon fas fa-tachometer-alt"></i>Meu
-            dashboard</li>
-          <li class="color-white font-size-body base-space"><i
-              class="small-space right menu-icon fas fa-download"></i>Meus downloads</li>
-          <li class="color-white font-size-body base-space"><i
-              class="small-space right menu-icon fas fa-rocket"></i>Meus projetos</li>
-          <li class="color-white font-size-body base-space"><i
-              class="small-space right menu-icon fas fa-plus"></i>Adicionar programas</li>
-          <li class="color-white font-size-body base-space"><i
-              class="small-space right menu-icon fas fa-sitemap"></i>Adicionar estruturas</li>
-          <li class="color-white font-size-body base-space"><i
-              class="small-space right menu-icon fas fa-plus"></i>Adicionar projetos</li>
-          <li class="color-white font-size-body base-space"><i
-              class="small-space right menu-icon fas fa-sign-out-alt"></i>Sair</li>
-        </ul>
-      </header>
+  <div id="open-menu">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div id="close-menu"></div>
+  <header id="header-dashboard" class="small-space right">
+    <div id="header-content">
+      <h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1>
+      <div></div>
+      <ul class="base-space left">
+        <li class="color-white font-size-body"><i class="small-space right menu-icon fas fa-tachometer-alt"></i>Meu
+          dashboard</li>
+        <li class="color-white font-size-body base-space"><i
+            class="small-space right menu-icon fas fa-download"></i>Meus
+          downloads</li>
+        <li class="color-white font-size-body base-space"><i class="small-space right menu-icon fas fa-rocket"></i>Meus
+          projetos</li>
+        <li class="color-white font-size-body base-space"><i
+            class="small-space right menu-icon fas fa-plus"></i>Adicionar
+          programas</li>
+        <li class="color-white font-size-body base-space"><i
+            class="small-space right menu-icon fas fa-sitemap"></i>Adicionar estruturas</li>
+        <li class="color-white font-size-body base-space"><i
+            class="small-space right menu-icon fas fa-plus"></i>Adicionar
+          projetos</li>
+        <li class="color-white font-size-body base-space"><i
+            class="small-space right menu-icon fas fa-sign-out-alt"></i>Sair</li>
+      </ul>
     </div>
-    <div class="pig-grid-4 large-space">
+  </header>
+
+  <div class="container small-space bottom">
+    <div class="grid-6 extra-large-space">
       <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Vamos adicionar um
         projeto?</h2>
       <form class="dashboard-form-container">
@@ -98,18 +106,17 @@
           class="btn-form-dash button-outline red color-red to-uppercase font-weight-bold">Anexar</button>
       </form>
     </div>
-    <div class="pig-grid-4 large-space">
+    <div class="grid-6 extra-large-space">
       <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Estes são seus
         projetos
         cadastrados :D</h2>
-      <div id="app">
-
-      </div>
+      <div id="app"></div>
       <button type="submit"
         class="btn-form-dash button-filled red color-red to-uppercase font-weight-bold float-right base-space">Finalizar</button>
     </div>
   </div>
 
+  <script src="js/default.js"></script>
   <script src="../dashboard/js/forms/add-projects.js"></script>
 </body>
 
