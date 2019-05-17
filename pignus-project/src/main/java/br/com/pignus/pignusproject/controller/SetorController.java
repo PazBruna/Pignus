@@ -1,17 +1,15 @@
 package br.com.pignus.pignusproject.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import br.com.pignus.pignusproject.entities.Setor;
 import br.com.pignus.pignusproject.entities.Usuario;
@@ -46,14 +44,8 @@ public class SetorController{
     public String cadastrarSetor(@ModelAttribute Setor setor, Model model){
     	List<Usuario> listaGestor = usuario.findAllByTipo("G");
 
+
     	model.addAttribute("listaGestor", listaGestor);
-    	for (Usuario usuario : listaGestor) {    		
-			System.out.println(usuario.getNome());
-		}
-    	
-//    	for (Usuario usuario : listaFuncionario) {			
-//    		System.out.println(usuario.getNome());
-//		}
     	
         return "paginaCadastroSetor";
     }
@@ -61,14 +53,11 @@ public class SetorController{
   
     
     @PostMapping("/cadastroSetor")
-	public String retornaPaginaSetor(@ModelAttribute Setor setor) {
-    	 
-    	System.out.println("nome gestor: " + setor.getGestor().getNome());
-    	if(seguranca.procuraGestor(setor.getGestor()) == null) {
-    		System.out.println("Esta nulo");
-    		return "redirect:cadastroSetor";
-    	}
-    	setor.setGestor(seguranca.procuraGestor(setor.getGestor()));
+	public String cadastraSetor(@ModelAttribute Setor setor) {
+    	
+    	UsuarioGestor gestor = usuario.getOne(setor.getGestor().getId());
+    	setor.setGestor(gestor);
+    	
     	setores.save(setor);
 		return "redirect:setores";
 	}

@@ -26,5 +26,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
 	@Query("select nome from Usuario where nome = ?1 ")
 	public Usuario findByNome(String nome);
-
+	
+	@Query("from Usuario where id = ?1 and tipo = 'G'")
+	public UsuarioGestor getOne(int id);
 }

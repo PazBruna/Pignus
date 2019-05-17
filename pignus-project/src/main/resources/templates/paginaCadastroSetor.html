@@ -15,23 +15,14 @@
 	<form action="#" th:action="@{/cadastroSetor}" th:object="${setor}" method="POST"
 		onsubmit="return validaFormLogin(this);">
 		
-<!-- 		<div class="form-group"> -->
-<!-- 			<input type="text" th:field="*{gestor.nome}" id="nomeGestor" class="form-control col-md-2" -->
-<!-- 				placeholder="Nome do Gestor"> -->
-<!-- 		</div> -->
 		
-	<select class="form-control col-4" th:field="*{gestor}" id="selectGestor">	 
+	<select class="form-control col-4" th:field="*{gestor.id}" id="selectGestor">	 
     <option th:each="gestor: ${listaGestor}"
-    		th:value="${gestor}"
-            th:text="${gestor.nome}"></option>
+    		th:value="${gestor.id}"
+            th:text="${gestor}"></option>
 </select><br>
 
-<!-- <select class="form-control col-4" th:field="*{funcionario.nome}" id="selectGestor">	  -->
-<!-- 	<option th:value="${funcionario}" style="color: #ccc">Selecione um Funcionario...</option> -->
-<!--     <option th:each="lista: ${listaFuncionario}" -->
-<!--     		th:value="${funcionario}" -->
-<!--             th:text="${lista}"></option> -->
-<!-- </select><br> -->
+
 
 		<div class="form-group">
 			<input type="text" th:field="*{nomeSetor}" id="nomeSetor" class="form-control col-md-2"
