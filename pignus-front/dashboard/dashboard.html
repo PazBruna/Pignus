@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <!-- INÍCIO META TAGS -->
   <meta charset="utf-8" />
@@ -9,12 +10,132 @@
   <meta name="keywords" content="">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Diego Braga - Web Developer">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="resources/img/logo-SmooTI.png">
+  <meta property="og:image:alt" , content=>
+  <meta property="og:image:type" , content="image/jpg">
+  <meta property="og:image:width" , content="1365">
+  <meta property="og:image:height" , content="1365">
+  <meta name=”twitter:card” content=”summary_large_image”>
+  <meta name=”twitter:site” content=”Conta do Twitter do site (incluindo arroba)“>
+  <meta name=”twitter:title” content=”Título da página“>
+  <meta name=”twitter:description” content=”Descrição da página. No máximo 200 caracteres“>
+  <meta name=”twitter:creator” content=”Conta do Twitter do autor do texto (incluindo arroba)“>
   <!-- FIM META TAGS -->
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
   <title>Pignus</title>
 </head>
-<body>
-  
+
+<body id="body-dashboard">
+
+  <div id="open-menu">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div id="close-menu"></div>
+  <header id="header-dashboard" class="small-space right">
+    <div id="header-content">
+      <h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1>
+      <div></div>
+      <ul class="base-space left">
+        <a href="dashboard.html"><li class="color-white font-size-body"><i class="small-space right menu-icon fas fa-tachometer-alt"></i>Meu
+          dashboard</li></a>
+        <a href="meus-downloads.html"><li class="color-white font-size-body base-space"><i
+            class="small-space right menu-icon fas fa-download"></i>Meus
+          downloads</li></a>
+        <a href="meus-projetos.html"><li class="color-white font-size-body base-space"><i class="small-space right menu-icon fas fa-rocket"></i>Meus
+          projetos</li></a>
+        <a href="novo-programa.html"><li class="color-white font-size-body base-space"><i
+            class="small-space right menu-icon fas fa-plus"></i>Adicionar
+          programas</li></a>
+        <a href="nova-estrutura.html"><li class="color-white font-size-body base-space"><i
+            class="small-space right menu-icon fas fa-sitemap"></i>Adicionar estruturas</li>
+        <a href="novo-projeto.html"><li class="color-white font-size-body base-space"><i
+            class="small-space right menu-icon fas fa-plus"></i>Adicionar
+          projetos</li></a>
+        <a href="../login.html"><li class="color-white font-size-body base-space"><i
+            class="small-space right menu-icon fas fa-sign-out-alt"></i>Sair</li></a>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container extra-large-space">
+    <div class="grid-12">
+      <div class="description-card">
+        <h1 class="font-weight-bold font-size-subtitle color-red">Olá, { user.name }!</h1>
+        <div></div>
+      </div>
+    </div>
+    <div class="grid-4">
+      <div class="card card--dashboard d-flex centralize base-space">
+        <img src="../img/icons/equipe-pertencente.svg" />
+        <div class="small-space left">
+          <p class="font-weight-bold color-white font-size-body">Equipe <br />Pertencente</p>
+          <p class="font-weight-light color-white font-size-body">Oracle Solutions</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-4">
+      <div class="card card--dashboard d-flex centralize base-space">
+        <img src="../img/icons/downloads-realizados.svg" />
+        <div class="small-space left">
+          <p class="font-weight-bold color-white font-size-body">Downloads <br />Realizados</p>
+          <p class="font-weight-light color-white font-size-body">5/10</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-4">
+      <div class="card card--dashboard d-flex centralize base-space">
+        <img src="../img/icons/area-atuacao.svg" />
+        <div class="small-space left">
+          <p class="font-weight-bold color-white font-size-body">Área de <br />Atuação</p>
+          <p class="font-weight-light color-white font-size-body">Administrador</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-4">
+      <div class="card card--dashboard d-flex centralize base-space">
+        <img src="../img/icons/projetos-andamento.svg" />
+        <div class="small-space left">
+          <p class="font-weight-bold color-white font-size-body">Projetos em <br />Andamento</p>
+          <p class="font-weight-light color-white font-size-body">10 projetos</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-4">
+      <div class="card card--dashboard d-flex centralize base-space">
+        <img src="../img/icons/projetos-cadastrados.svg" />
+        <div class="small-space left">
+          <p class="font-weight-bold color-white font-size-body">Projetos <br />Cadastrados</p>
+          <p class="font-weight-light color-white font-size-body">20 projetos</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-4">
+      <div class="card card--dashboard d-flex centralize base-space">
+        <img src="../img/icons/projetos-cadastrados.svg" />
+        <div class="small-space left">
+          <p class="font-weight-bold color-white font-size-body">Projetos <br />Aprovados</p>
+          <p class="font-weight-light color-white font-size-body">30 projetos</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-4">
+      <div class="card card--dashboard d-flex centralize base-space">
+        <img src="../img/icons/projetos-recusados.svg" />
+        <div class="small-space left">
+          <p class="font-weight-bold color-white font-size-body">Projetos <br />Recusados</p>
+          <p class="font-weight-light color-white font-size-body">2 projetos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/default.js"></script>
 </body>
+
 </html>
