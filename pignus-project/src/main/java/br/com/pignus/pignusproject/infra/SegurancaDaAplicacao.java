@@ -43,7 +43,6 @@ public class SegurancaDaAplicacao {
 	public Usuario permitirAcessoUsuario(String email, String senha) {
 
 		if (usuarios.existsByEmailAndSenha(email, senha)) {
-			
 			Usuario usuarioExistente = usuarios.findByEmail(email);
 			return	usuarioExistente ;
 		}
