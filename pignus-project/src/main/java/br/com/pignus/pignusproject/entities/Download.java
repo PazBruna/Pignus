@@ -22,6 +22,14 @@ public class Download{
 	private Funcoes funcaoDownload;
 
  
+	public Funcoes getFuncaoDownload() {
+		return funcaoDownload;
+	}
+
+	public void setFuncaoDownload(Funcoes funcaoDownload) {
+		this.funcaoDownload = funcaoDownload;
+	}
+
 	public String getNomePrograma() {
 		return nomePrograma;
 	}
