@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <!-- INÍCIO META TAGS -->
   <meta charset="utf-8" />
@@ -9,12 +10,127 @@
   <meta name="keywords" content="">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Diego Braga - Web Developer">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="resources/img/logo-SmooTI.png">
+  <meta property="og:image:alt" , content=>
+  <meta property="og:image:type" , content="image/jpg">
+  <meta property="og:image:width" , content="1365">
+  <meta property="og:image:height" , content="1365">
+  <meta name=”twitter:card” content=”summary_large_image”>
+  <meta name=”twitter:site” content=”Conta do Twitter do site (incluindo arroba)“>
+  <meta name=”twitter:title” content=”Título da página“>
+  <meta name=”twitter:description” content=”Descrição da página. No máximo 200 caracteres“>
+  <meta name=”twitter:creator” content=”Conta do Twitter do autor do texto (incluindo arroba)“>
   <!-- FIM META TAGS -->
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
   <title>Pignus</title>
 </head>
-<body>
-  
+
+<body id="body-dashboard">
+
+  <div id="open-menu">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div id="close-menu"></div>
+  <header id="header-dashboard" class="small-space right">
+    <div id="header-content">
+      <h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1>
+      <div></div>
+      <ul class="base-space left">
+        <a href="dashboard.html">
+          <li class="color-white font-size-body"><i class="small-space right menu-icon fas fa-tachometer-alt"></i>Meu
+            dashboard</li>
+        </a>
+        <a href="meus-downloads.html">
+          <li class="color-white font-size-body base-space"><i
+              class="small-space right menu-icon fas fa-download"></i>Meus
+            downloads</li>
+        </a>
+        <a href="meus-projetos.html">
+          <li class="color-white font-size-body base-space"><i
+              class="small-space right menu-icon fas fa-rocket"></i>Meus
+            projetos</li>
+        </a>
+        <a href="novo-programa.html">
+          <li class="color-white font-size-body base-space"><i
+              class="small-space right menu-icon fas fa-plus"></i>Adicionar
+            programas</li>
+        </a>
+        <a href="nova-estrutura.html">
+          <li class="color-white font-size-body base-space"><i
+              class="small-space right menu-icon fas fa-sitemap"></i>Adicionar estruturas</li>
+          <a href="novo-projeto.html">
+            <li class="color-white font-size-body base-space"><i
+                class="small-space right menu-icon fas fa-plus"></i>Adicionar
+              projetos</li>
+          </a>
+          <a href="../login.html">
+            <li class="color-white font-size-body base-space"><i
+                class="small-space right menu-icon fas fa-sign-out-alt"></i>Sair</li>
+          </a>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container extra-large-space">
+    <div class="grid-8">
+      <div class="card card--user base-space">
+        <div class="top-info padding-32">
+          <h2 class="color-white font-weight-bold">Edição de Perfil</h2>
+          <p class="color-white font-weight-light">Deseja editar suas informações?</p>
+        </div>
+        <div class="user-infos">
+          <div class="row base-space">
+            <div class="grid-8">
+              <label class="tiny-space bottom font-weight-bold color-white">Nome Completo</label>
+              <input class="font-size-body" type="text" name="user-completeName" />
+            </div>
+            <div class="grid-4">
+              <label class="tiny-space bottom font-weight-bold color-white">Idade</label>
+              <input class="font-size-body" type="text" name="user-age" />
+            </div>
+          </div>
+          <div class="row base-space">
+            <div class="grid-6">
+              <label class="tiny-space bottom font-weight-bold color-white">Setor Pertencente</label>
+              <input class="font-size-body" type="text" name="user-area" />
+            </div>
+            <div class="grid-6">
+              <label class="tiny-space bottom font-weight-bold color-white">Gestor da Área</label>
+              <input class="font-size-body" type="text" name="user-manager" />
+            </div>
+          </div>
+          <div class="row base-space">
+            <div class="grid-6">
+              <label class="tiny-space bottom font-weight-bold color-white">Senha de Acesso <i class="far fa-question-circle"></i></label>
+              <input class="font-size-body" type="password" name="user-password" />
+            </div>
+            <div class="grid-6">
+              <label class="tiny-space bottom font-weight-bold color-white">E-mail Corporativo</label>
+              <input class="font-size-body" type="email" name="user-email" />
+            </div>
+          </div>
+          <button class="button-filled btn-form-dash blue color-white to-uppercase large-space font-weight-bold">Atualizar</button>
+        </div>
+      </div>
+    </div>
+    <div class="grid-4">
+      <div class="card card--user base-space">
+        <div class="user-profile d-flex centralize column">
+          <div class="d-flex centralize">A</div>
+          <p class="color-white font-weight-bold small-space">Alessandro Ribeiro da Silva Júnior</p>
+          <p class="color-white font-weight-light small-space">Desenvolvedor Fullstack</p>
+        </div>        
+      </div>
+    </div>
+  </div>
+
   <script src="js/default.js"></script>
 </body>
+
 </html>
