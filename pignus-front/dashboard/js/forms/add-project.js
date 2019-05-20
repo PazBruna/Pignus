@@ -3,7 +3,6 @@ var buttonSubmit = document.getElementsByClassName('btn-form-dash')[1];
 buttonSubmit.style.display = 'none';
 
 var containerElement = document.getElementById('app');
-var itens = document.getElementById('socorro');
 
 var suppArrSoftwares = [];
 var arrSoftwares = [];
