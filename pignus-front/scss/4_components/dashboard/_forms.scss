@@ -47,6 +47,7 @@
 #app {
 
   div {
+    position: relative;
     border-radius: 5px;
     margin-left: 32px;
     width: 100%;
@@ -72,6 +73,22 @@
       }
     
     }
+
+    .remove {
+      cursor: pointer;
+      width: auto;
+      position: absolute;;
+      top: 0;
+      right: 0;
+      color: $red;
+      box-shadow: none;
+    }
+
+    a {
+      font-weight: bold;
+      color: $red;
+    }
+
   }
 
 }
