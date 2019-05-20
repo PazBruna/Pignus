@@ -14,7 +14,7 @@
   <title>Pignus</title>
 </head>
 
-<body id="body-dashboard">
+<body>
 
   <div id="open-menu">
     <i class="fas fa-bars"></i>
@@ -60,57 +60,58 @@
     </div>
   </header>
 
-  <div class="container extra-large-space">
-    <div class="grid-8">
-      <div class="card card--user base-space">
-        <div class="top-info padding-32">
-          <h2 class="color-white font-weight-bold">Edição de Perfil</h2>
-          <p class="color-white font-weight-light">Deseja editar suas informações?</p>
-        </div>
-        <div class="user-infos">
-          <div class="row base-space">
-            <div class="grid-8">
-              <label class="tiny-space bottom font-weight-bold color-white">Nome Completo</label>
-              <input class="font-size-body" type="text" name="user-completeName" />
-            </div>
-            <div class="grid-4">
-              <label class="tiny-space bottom font-weight-bold color-white">Idade</label>
-              <input class="font-size-body" type="text" name="user-age" />
-            </div>
-          </div>
-          <div class="row base-space">
-            <div class="grid-6">
-              <label class="tiny-space bottom font-weight-bold color-white">Setor Pertencente</label>
-              <input class="font-size-body" type="text" name="user-area" />
-            </div>
-            <div class="grid-6">
-              <label class="tiny-space bottom font-weight-bold color-white">Gestor da Área</label>
-              <input class="font-size-body" type="text" name="user-manager" />
-            </div>
-          </div>
-          <div class="row base-space">
-            <div class="grid-6">
-              <label class="tiny-space bottom font-weight-bold color-white">Senha de Acesso <i class="far fa-question-circle"></i></label>
-              <input class="font-size-body" type="password" name="user-password" />
-            </div>
-            <div class="grid-6">
-              <label class="tiny-space bottom font-weight-bold color-white">E-mail Corporativo</label>
-              <input class="font-size-body" type="email" name="user-email" />
-            </div>
-          </div>
-          <button class="button-filled btn-form-dash blue color-white to-uppercase large-space font-weight-bold">Atualizar</button>
-        </div>
-      </div>
+  <div class="container">
+    <div class="grid-6 extra-large-space">
+      <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Opa, conseguimos mais
+        um <br />setor? :D</h2>
     </div>
-    <div class="grid-4">
-      <div class="card card--user base-space">
-        <div class="user-profile d-flex centralize column">
-          <div class="d-flex centralize">A</div>
-          <p class="color-white font-weight-bold small-space">Alessandro Ribeiro da Silva Júnior</p>
-          <p class="color-white font-weight-light small-space">Desenvolvedor Fullstack</p>
-        </div>        
+    <form class="dashboard-form-container">
+      <div>
+        <label class="font-weight-bold color-gray little-space bottom">Quem será o gestor desta área?</label>
+        <select id="select-softwares">
+          <option disabled>Selecione o novo gestor...</option>
+          <option>Ryan</option>
+          <option>Bryan</option>
+          <option>Manuel</option>
+          <option>Henrique</option>
+        </select>
       </div>
-    </div>
+      <div>
+        <label class="font-weight-bold color-gray little-space bottom">E quem será colaborador dela?</label>
+        <select id="select-softwares" multiple>
+          <option disabled>Selecione os colaboradores...</option>
+          <option>Bianca Gomes</option>
+          <option>Bruno Carvalho</option>
+          <option>Diego Braga</option>
+          <option>Guilherme Raulino</option>
+        </select>
+        <small class="font-weight-light color-gray base-space bottom">Para selecionar mais de um, pressione e segure
+          CTRL</small>
+      </div>
+      <div>
+        <label class="font-weight-bold color-gray little-space bottom">Quais softwares eles irão necessitar?</label>
+        <select id="select-softwares" multiple>
+          <option disabled>Selecione os softwares...</option>
+          <option>Eclipse IDE</option>
+          <option>Brakets</option>
+        </select>
+        <small class="font-weight-light color-gray base-space bottom">Para selecionar mais de um, pressione e segure
+          CTRL</small>
+      </div>
+      <div>
+        <label class="font-weight-bold color-gray tiny-space bottom">Por fim, qual será o nome desta setor?</label>
+        <input class="base-space bottom font-size-body" type="text" name="nome-setor" />
+      </div>
+    </form>
+  </div>
+  </form>
+  <div class="grid-6 extra-large-space">
+    <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Estas são as setores
+      que você acabou de cadastrar</h2>
+    <div id="app"></div>
+    <button type="submit"
+      class="btn-form-dash button-filled red color-red to-uppercase font-weight-bold float-right base-space">Finalizar</button>
+  </div>
   </div>
 
   <script src="js/default.js"></script>

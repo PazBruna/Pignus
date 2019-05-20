@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <!-- INÍCIO META TAGS -->
   <meta charset="utf-8" />
@@ -12,8 +13,105 @@
   <link rel="stylesheet" type="text/css" href="../css/style.css" />
   <title>Pignus</title>
 </head>
+
 <body>
-  
-  <script src="js/default.js"></script>
+
+  <div id="open-menu">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div id="close-menu"></div>
+  <header id="header-dashboard" class="small-space right">
+    <div id="header-content">
+      <h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1>
+      <div></div>
+      <ul class="base-space left">
+        <a href="dashboard.html">
+          <li class="color-white font-size-body"><i class="small-space right menu-icon fas fa-tachometer-alt"></i>Meu
+            dashboard</li>
+        </a>
+        <a href="meus-downloads.html">
+          <li class="color-white font-size-body base-space"><i
+              class="small-space right menu-icon fas fa-download"></i>Meus
+            downloads</li>
+        </a>
+        <a href="meus-projetos.html">
+          <li class="color-white font-size-body base-space"><i
+              class="small-space right menu-icon fas fa-rocket"></i>Meus
+            projetos</li>
+        </a>
+        <a href="novo-programa.html">
+          <li class="color-white font-size-body base-space"><i
+              class="small-space right menu-icon fas fa-plus"></i>Adicionar
+            programas</li>
+        </a>
+        <a href="novo-setor.html">
+          <li class="color-white font-size-body base-space"><i
+              class="small-space right menu-icon fas fa-sitemap"></i>Adicionar setores</li>
+          <a href="novo-projeto.html">
+            <li class="color-white font-size-body base-space"><i
+                class="small-space right menu-icon fas fa-plus"></i>Adicionar
+              projetos</li>
+          </a>
+          <a href="../login.html">
+            <li class="color-white font-size-body base-space"><i
+                class="small-space right menu-icon fas fa-sign-out-alt"></i>Sair</li>
+          </a>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="grid-6 extra-large-space">
+      <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Eita! Mais um programa
+        chegando <br />para a coleção?</h2>
+      <form class="dashboard-form-container">
+        <div>
+          <label class="font-weight-bold color-gray tiny-space bottom">Qual o nome do programa?</label>
+          <input class="base-space bottom font-size-body" type="text" name="nome-programa" />
+        </div>
+        <div>
+          <label class="font-weight-bold color-gray little-space bottom">Em qual categoria ele está inserido?</label>
+          <select id="select-softwares">
+            <option disabled>Selecione o categoria...</option>
+            <option>Gerência de Mudanças</option>
+            <option>Prototipação</option>
+            <option>Geradores de Código</option>
+            <option>IDE</option>
+            <option>Depuração de Código</option>
+            <option>Editores de Texto</option>
+            <option>Planejamento</option>
+            <option>Análise de Programas</option>
+            <option>Documentação</option>
+            <option>Métricas</option>
+            <option>Gerência de Versões</option>
+            <option>Testes</option>
+          </select>
+        </div>
+        <div>
+          <label class="font-weight-bold color-gray little-space bottom">Ele estará disponível para quais setores?</label>
+          <select id="select-softwares" multiple>
+            <option disabled>Selecione os setores...</option>
+            <option>Oracle</option>
+            <option>IBM</option>
+            <option>Marketing</option>
+          </select>
+          <small class="font-weight-light color-gray base-space bottom">Para selecionar mais de um, pressione e segure
+            CTRL</small>
+        </div>
+        <div>
+          <label class="font-weight-bold color-gray tiny-space bottom">Por fim, insira o link para download</label>
+          <input class="base-space bottom font-size-body" type="text" name="link-download" />
+        </div>
+        <div class="grid-6 extra-large-space">
+          <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Os programas que
+            você adicinou estão logo abaixo :)</h2>
+          <div id="app"></div>
+          <button type="submit"
+            class="btn-form-dash button-filled red color-red to-uppercase font-weight-bold float-right base-space">Finalizar</button>
+        </div>
+    </div>
+
+    <script src="js/default.js"></script>
 </body>
+
 </html>
