@@ -14,7 +14,7 @@
   <title>Pignus</title>
 </head>
 
-<body>
+<body id="body-dashboard">
 
   <div id="open-menu">
     <i class="fas fa-bars"></i>
@@ -62,56 +62,53 @@
 
   <div class="container">
     <div class="grid-6 extra-large-space">
-      <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Opa, conseguimos mais
-        um <br />setor? :D</h2>
+      <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Eita! Conseguimos mais um setor? :D</h2>
+      <form class="dashboard-form-container">
+        <div>
+          <label class="font-weight-bold color-gray little-space bottom">Quem será o gestor deste setor?</label>
+          <select id="select-softwares" class="not-multiple base-space bottom">
+            <option disabled >Selecione a categoria...</option>
+            <option>Ryan Gomes</option>
+            <option>Guilherme Sousa</option>
+            <option>Rodrigo Guimarães</option>
+          </select>
+        </div>
+        <div>
+          <label class="font-weight-bold color-gray little-space bottom">E quem será colaborador deste setor?</label>
+          <select id="select-softwares" multiple>
+            <option disabled >Selecione os colaboradores...</option>
+            <option>Bianca Gomes</option>
+            <option>Bruno Carvalho</option>
+            <option>Diego Braga</option>
+            <option>Guilherme Raulino</option>
+          </select>
+          <small class="font-weight-light color-gray base-space bottom">Para selecionar mais de um, pressione e segure
+            CTRL</small>
+        </div>
+        <div>
+          <label class="font-weight-bold color-gray little-space bottom">Quais softwares eles irão necessitar?</label>
+          <select id="select-softwares" multiple>
+            <option disabled >Selecione os colaboradores...</option>
+            <option>Eclipse IDE</option>
+            <option>Brackets</option>
+          </select>
+          <small class="font-weight-light color-gray base-space bottom">Para selecionar mais de um, pressione e segure
+            CTRL</small>
+        </div>
+        <div>
+          <label class="font-weight-bold color-gray tiny-space bottom">Por fim, qual será o nome deste setor?</label>
+          <input class="base-space bottom font-size-body" type="text" name="nome-setor" />
+        </div>
+        <button id="add-to-app" type="button"
+          class="btn-form-dash button-outline red color-red to-uppercase font-weight-bold">Anexar</button>
+      </form>
     </div>
-    <form class="dashboard-form-container">
-      <div>
-        <label class="font-weight-bold color-gray little-space bottom">Quem será o gestor desta área?</label>
-        <select id="select-softwares">
-          <option disabled>Selecione o novo gestor...</option>
-          <option>Ryan</option>
-          <option>Bryan</option>
-          <option>Manuel</option>
-          <option>Henrique</option>
-        </select>
-      </div>
-      <div>
-        <label class="font-weight-bold color-gray little-space bottom">E quem será colaborador dela?</label>
-        <select id="select-softwares" multiple>
-          <option disabled>Selecione os colaboradores...</option>
-          <option>Bianca Gomes</option>
-          <option>Bruno Carvalho</option>
-          <option>Diego Braga</option>
-          <option>Guilherme Raulino</option>
-        </select>
-        <small class="font-weight-light color-gray base-space bottom">Para selecionar mais de um, pressione e segure
-          CTRL</small>
-      </div>
-      <div>
-        <label class="font-weight-bold color-gray little-space bottom">Quais softwares eles irão necessitar?</label>
-        <select id="select-softwares" multiple>
-          <option disabled>Selecione os softwares...</option>
-          <option>Eclipse IDE</option>
-          <option>Brakets</option>
-        </select>
-        <small class="font-weight-light color-gray base-space bottom">Para selecionar mais de um, pressione e segure
-          CTRL</small>
-      </div>
-      <div>
-        <label class="font-weight-bold color-gray tiny-space bottom">Por fim, qual será o nome desta setor?</label>
-        <input class="base-space bottom font-size-body" type="text" name="nome-setor" />
-      </div>
-    </form>
-  </div>
-  </form>
-  <div class="grid-6 extra-large-space">
-    <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Estas são as setores
-      que você acabou de cadastrar</h2>
-    <div id="app"></div>
-    <button type="submit"
-      class="btn-form-dash button-filled red color-red to-uppercase font-weight-bold float-right base-space">Finalizar</button>
-  </div>
+    <div class="grid-6 extra-large-space">
+      <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Estes são os setores que você acabou de cadastrar</h2>
+      <div id="app"></div>
+      <button type="submit"
+        class="btn-form-dash button-filled red color-red to-uppercase font-weight-bold float-right base-space">Finalizar</button>
+    </div>
   </div>
 
   <script src="js/default.js"></script>

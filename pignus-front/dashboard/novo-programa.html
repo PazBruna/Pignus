@@ -14,7 +14,7 @@
   <title>Pignus</title>
 </head>
 
-<body>
+<body id ="body-dashboard">
 
   <div id="open-menu">
     <i class="fas fa-bars"></i>
@@ -62,8 +62,8 @@
 
   <div class="container">
     <div class="grid-6 extra-large-space">
-      <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Eita! Mais um programa
-        chegando <br />para a coleção?</h2>
+      <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Opa! Mais um programa
+        chegando <br /> para a coleção?</h2>
       <form class="dashboard-form-container">
         <div>
           <label class="font-weight-bold color-gray tiny-space bottom">Qual o nome do programa?</label>
@@ -71,24 +71,25 @@
         </div>
         <div>
           <label class="font-weight-bold color-gray little-space bottom">Em qual categoria ele está inserido?</label>
-          <select id="select-softwares">
-            <option disabled>Selecione o categoria...</option>
-            <option>Gerência de Mudanças</option>
-            <option>Prototipação</option>
-            <option>Geradores de Código</option>
-            <option>IDE</option>
-            <option>Depuração de Código</option>
-            <option>Editores de Texto</option>
-            <option>Planejamento</option>
+          <select id="select-softwares" class="not-multiple base-space bottom">
+            <option disabled>Selecione a categoria...</option>
             <option>Análise de Programas</option>
+            <option>Depuração de Código</option>
             <option>Documentação</option>
-            <option>Métricas</option>
+            <option>Editores de Texto</option>
+            <option>Geradores de Código</option>
+            <option>Gerência de Mudanças</option>
             <option>Gerência de Versões</option>
+            <option>IDE</option>
+            <option>Métricas</option>
+            <option>Planejamento</option>
+            <option>Prototipação</option>
             <option>Testes</option>
           </select>
         </div>
         <div>
-          <label class="font-weight-bold color-gray little-space bottom">Ele estará disponível para quais setores?</label>
+          <label class="font-weight-bold color-gray little-space bottom">Ele estará disponível para quais
+            setores?</label>
           <select id="select-softwares" multiple>
             <option disabled>Selecione os setores...</option>
             <option>Oracle</option>
@@ -99,19 +100,23 @@
             CTRL</small>
         </div>
         <div>
-          <label class="font-weight-bold color-gray tiny-space bottom">Por fim, insira o link para download</label>
+          <label class="font-weight-bold color-gray tiny-space bottom">Por fim, insira o link para o download</label>
           <input class="base-space bottom font-size-body" type="text" name="link-download" />
         </div>
-        <div class="grid-6 extra-large-space">
-          <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Os programas que
-            você adicinou estão logo abaixo :)</h2>
-          <div id="app"></div>
-          <button type="submit"
-            class="btn-form-dash button-filled red color-red to-uppercase font-weight-bold float-right base-space">Finalizar</button>
-        </div>
+        <button id="add-to-app" type="button"
+          class="btn-form-dash button-outline red color-red to-uppercase font-weight-bold">Anexar</button>
+      </form>
     </div>
+    <div class="grid-6 extra-large-space">
+      <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Os programas que você
+        acabou de adicionar estão logo abaixo</h2>
+      <div id="app"></div>
+      <button type="submit"
+        class="btn-form-dash button-filled red color-red to-uppercase font-weight-bold float-right base-space">Finalizar</button>
+    </div>
+  </div>
 
-    <script src="js/default.js"></script>
+  <script src="js/default.js"></script>
 </body>
 
 </html>
