@@ -132,3 +132,14 @@ prevButton_7.onclick = function() {
   page7.style.display = 'block';
   progressBar.style.width = '87.5%';
 }
+
+
+function flipGeneral() {
+  var cardContainer = document.getElementById('card');
+  cardContainer.style.transform = "rotateY(0deg)"
+}
+
+function flipManager() {
+  var cardContainer = document.getElementById('card');
+  cardContainer.style.transform = "rotateY(180deg)";
+}
