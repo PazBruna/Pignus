@@ -1,10 +1,17 @@
 .description-card {
-  color: $red;
+  color: $blue-dash-2;
+
+  h1 span {
+    position: relative;
+    width: auto;
+    opacity: 1;
+    color: $blue-dash-2;
+  }
 
   > div {
     width: 100%;
     height: 1px;
-    background-color: $red;
+    background-color: $blue-dash-2;
     margin-top: 8px;
   }
 }
@@ -13,6 +20,7 @@
   @extend %card-structure;
 
   &.card--dashboard {
+    cursor: context-menu;
     img {
       width: 30%;
     }
@@ -23,6 +31,7 @@
   }
 
   &.card--projects {
+    cursor: pointer;
     position: relative;
 
     img {
@@ -34,6 +43,7 @@
   }
 
   &.card--downloads {
+    cursor: pointer;
     position: relative;
     padding: 32px 80px 32px 16px;
 
@@ -46,35 +56,42 @@
   }
 
   &.card--user {
+    background-color: $blue-dash-1;
+
     .top-info {
       position: relative;
       top: -64px;
       box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.2), 0px 3px 16px rgba(0, 0, 0, 0.12), 0px 9px 12px rgba(0, 0, 0, 0.14);
       border-radius: 5px;
-      background: $red;
+      background: $blue-dash-3;
     }
 
     .user-infos {
       input {
+        color: $gray;
         border: none;
-        border-bottom: 1px solid $blue;
+        border-bottom: 1px solid $gray;
 
         &:focus {
           border-bottom-left-radius: 16px;
           border-bottom-right-radius: 16px;
         }
       }
+
+      button {
+        background-color: $blue-dash-3;
+      }
     }
 
     .user-profile {
 
       > div {
-        background: $red;
+        box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.2), 0px 3px 16px rgba(0, 0, 0, 0.12), 0px 9px 12px rgba(0, 0, 0, 0.14);
+        background: $blue-dash-3;
         padding: 64px;
         border-radius: 50%;
         position: relative;
         top: -64px;
-        border: 3px solid $blue;
         font-size: 64px;
         line-height: 42px;
       }

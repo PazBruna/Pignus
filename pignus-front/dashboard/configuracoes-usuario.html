@@ -22,7 +22,7 @@
   <div id="close-menu"></div>
   <header id="header-dashboard" class="small-space right">
     <div id="header-content">
-      <h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1>
+      <a href="dashboard.html"><h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1></a>
       <div></div>
       <ul class="base-space left">
         <a href="dashboard.html">
@@ -60,55 +60,63 @@
     </div>
   </header>
 
+  <a href="configuracoes-usuario.html" id="goTo-profile">
+    <div>
+      <i class="fas fa-user"></i>
+    </div>
+  </a>
+
   <div class="container extra-large-space">
     <div class="grid-8">
       <div class="card card--user base-space">
         <div class="top-info padding-32">
-          <h2 class="color-white font-weight-bold">Edição de Perfil</h2>
-          <p class="color-white font-weight-light">Deseja editar suas informações?</p>
+          <h2 class="font-weight-bold color-white">Edição de Perfil</h2>
+          <p class="font-weight-light color-white">Deseja editar suas informações?</p>
         </div>
         <div class="user-infos">
           <div class="row base-space">
             <div class="grid-8">
-              <label class="tiny-space bottom font-weight-bold color-white">Nome Completo</label>
+              <label class="tiny-space bottom font-weight-bold color-gray">Nome Completo</label>
               <input class="font-size-body" type="text" name="user-completeName" />
             </div>
             <div class="grid-4">
-              <label class="tiny-space bottom font-weight-bold color-white">Idade</label>
+              <label class="tiny-space bottom font-weight-bold color-gray">Idade</label>
               <input class="font-size-body" type="text" name="user-age" />
             </div>
           </div>
           <div class="row base-space">
             <div class="grid-6">
-              <label class="tiny-space bottom font-weight-bold color-white">Setor Pertencente</label>
+              <label class="tiny-space bottom font-weight-bold color-gray">Setor Pertencente</label>
               <input class="font-size-body" type="text" name="user-area" />
             </div>
             <div class="grid-6">
-              <label class="tiny-space bottom font-weight-bold color-white">Gestor da Área</label>
+              <label class="tiny-space bottom font-weight-bold color-gray">Gestor da Área</label>
               <input class="font-size-body" type="text" name="user-manager" />
             </div>
           </div>
           <div class="row base-space">
             <div class="grid-6">
-              <label class="tiny-space bottom font-weight-bold color-white">Senha de Acesso <i class="far fa-question-circle"></i></label>
+              <label class="tiny-space bottom font-weight-bold color-gray">Senha de Acesso <i
+                  class="far fa-question-circle"></i></label>
               <input class="font-size-body" type="password" name="user-password" />
             </div>
             <div class="grid-6">
-              <label class="tiny-space bottom font-weight-bold color-white">E-mail Corporativo</label>
+              <label class="tiny-space bottom font-weight-bold color-gray">E-mail Corporativo</label>
               <input class="font-size-body" type="email" name="user-email" />
             </div>
           </div>
-          <button class="button-filled btn-form-dash blue color-white to-uppercase large-space font-weight-bold">Atualizar</button>
+          <button
+            class="button-filled btn-form-dash blue color-white to-uppercase large-space font-weight-bold">Atualizar</button>
         </div>
       </div>
     </div>
     <div class="grid-4">
       <div class="card card--user base-space">
         <div class="user-profile d-flex centralize column">
-          <div class="d-flex centralize">A</div>
-          <p class="color-white font-weight-bold small-space">Alessandro Ribeiro da Silva Júnior</p>
-          <p class="color-white font-weight-light small-space">Desenvolvedor Fullstack</p>
-        </div>        
+          <div class="d-flex centralize color-white">A</div>
+          <p class="color-gray font-weight-bold small-space">Alessandro Ribeiro da Silva Júnior</p>
+          <p class="color-gray font-weight-light small-space">Desenvolvedor Fullstack</p>
+        </div>
       </div>
     </div>
   </div>

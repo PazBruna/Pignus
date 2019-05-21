@@ -14,7 +14,7 @@
   <title>Pignus</title>
 </head>
 
-<body id ="body-dashboard">
+<body id="body-dashboard">
 
   <div id="open-menu">
     <i class="fas fa-bars"></i>
@@ -22,7 +22,7 @@
   <div id="close-menu"></div>
   <header id="header-dashboard" class="small-space right">
     <div id="header-content">
-      <h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1>
+      <a href="dashboard.html"><h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1></a>
       <div></div>
       <ul class="base-space left">
         <a href="dashboard.html">
@@ -60,9 +60,16 @@
     </div>
   </header>
 
+  <a href="configuracoes-usuario.html" id="goTo-profile">
+    <div>
+      <i class="fas fa-user"></i>
+    </div>
+  </a>
+
   <div class="container">
     <div class="grid-6 extra-large-space">
-      <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Opa! Mais um programa
+      <h2 class="color-blue-dash font-weight-bold font-size-subtitle align-center small-space bottom">Opa! Mais um
+        programa
         chegando <br /> para a coleção?</h2>
       <form class="dashboard-form-container">
         <div>
@@ -72,7 +79,7 @@
         <div>
           <label class="font-weight-bold color-gray little-space bottom">Em qual categoria ele está inserido?</label>
           <select id="select-category" class="not-multiple base-space bottom">
-            <option selected disabled >Selecione a categoria...</option>
+            <option selected disabled>Selecione a categoria...</option>
             <option>Análise de Programas</option>
             <option>Depuração de Código</option>
             <option>Documentação</option>
@@ -104,15 +111,16 @@
           <input class="base-space bottom font-size-body" type="text" name="link-download" />
         </div>
         <button id="add-to-app" type="button"
-          class="btn-form-dash button-outline red color-red to-uppercase font-weight-bold">Anexar</button>
+          class="btn-form-dash button-outline blue color-blue-dash to-uppercase font-weight-bold">Anexar</button>
       </form>
     </div>
     <div class="grid-6 extra-large-space">
-      <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Os programas que você
+      <h2 class="color-blue-dash font-weight-bold font-size-subtitle align-center small-space bottom">Os programas que
+        você
         acabou de adicionar estão logo abaixo</h2>
       <div id="app"></div>
       <button type="submit"
-        class="btn-form-dash remove-mr button-filled red color-red to-uppercase font-weight-bold float-right base-space">Finalizar</button>
+        class="btn-form-dash remove-mr button-filled blue color-blue-dash to-uppercase font-weight-bold float-right base-space">Finalizar</button>
     </div>
   </div>
 

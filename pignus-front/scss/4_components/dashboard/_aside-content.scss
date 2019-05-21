@@ -1,14 +1,23 @@
-#open-menu {
+#open-menu, #goTo-profile {
   z-index: 10;
   cursor: pointer;
   position: absolute;
+  width: 32px;
   top: 32px;
-  left: 32px;
+  padding: 8px;
 
   i {
     font-size: 34px;
-    color: red;
+    color: $blue-dash-3;
   }
+}
+
+#open-menu {
+  left: 32px;
+}
+
+#goTo-profile {
+  right: 64px;
 }
 
 #close-menu {
@@ -46,13 +55,13 @@
       height: 1px;
       margin-top: 8px;
       margin-bottom: 32px;
-      background-color: $blue;
+      background-color: $blue-dash-2;
     }
   }
 
   h1 {
     padding-top: 8px;
-    color: $blue;
+    color: $blue-dash-2;
   }
 
   ul {
@@ -69,7 +78,7 @@
       border-radius: 5px;
 
       &:hover {
-        background: $blue;
+        background: $blue-dash-3;
 
         i {
           color: $light;
@@ -78,7 +87,7 @@
 
       i {
         font-size: 24px;
-        color: $blue;
+        color: $blue-dash-2;
       }
 
       &:nth-child(5) {

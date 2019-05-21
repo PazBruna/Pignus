@@ -22,7 +22,7 @@
   <div id="close-menu"></div>
   <header id="header-dashboard" class="small-space right">
     <div id="header-content">
-      <h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1>
+      <a href="dashboard.html"><h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1></a>
       <div></div>
       <ul class="base-space left">
         <a href="dashboard.html">
@@ -60,14 +60,21 @@
     </div>
   </header>
 
+  <a href="configuracoes-usuario.html" id="goTo-profile">
+    <div>
+      <i class="fas fa-user"></i>
+    </div>
+  </a>
+
   <div class="container">
     <div class="grid-6 extra-large-space">
-      <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Eita! Conseguimos mais um setor? :D</h2>
+      <h2 class="color-blue-dash font-weight-bold font-size-subtitle align-center small-space bottom">Eita! Conseguimos
+        mais um setor? :D</h2>
       <form class="dashboard-form-container">
         <div>
           <label class="font-weight-bold color-gray little-space bottom">Quem será o gestor deste setor?</label>
           <select id="select-manager" class="not-multiple base-space bottom">
-            <option selected disabled >Selecione o novo gestor...</option>
+            <option selected disabled>Selecione o novo gestor...</option>
             <option>Ryan Gomes</option>
             <option>Guilherme Sousa</option>
             <option>Rodrigo Guimarães</option>
@@ -76,7 +83,7 @@
         <div>
           <label class="font-weight-bold color-gray little-space bottom">E quem será colaborador deste setor?</label>
           <select id="select-contributors" multiple>
-            <option disabled >Selecione os colaboradores...</option>
+            <option disabled>Selecione os colaboradores...</option>
             <option>Bianca Gomes</option>
             <option>Bruno Carvalho</option>
             <option>Diego Braga</option>
@@ -88,7 +95,7 @@
         <div>
           <label class="font-weight-bold color-gray little-space bottom">Quais softwares eles irão necessitar?</label>
           <select id="select-softwares" multiple>
-            <option disabled >Selecione os colaboradores...</option>
+            <option disabled>Selecione os colaboradores...</option>
             <option>Eclipse IDE</option>
             <option>Brackets</option>
           </select>
@@ -100,20 +107,21 @@
           <input class="base-space bottom font-size-body" type="text" name="nome-setor" />
         </div>
         <button id="add-to-app" type="button"
-          class="btn-form-dash button-outline red color-red to-uppercase font-weight-bold">Anexar</button>
+          class="btn-form-dash button-outline blue color-blue-dash to-uppercase font-weight-bold">Anexar</button>
       </form>
     </div>
     <div class="grid-6 extra-large-space">
-      <h2 class="color-red font-weight-bold font-size-subtitle align-center small-space bottom">Estes são os setores que você acabou de cadastrar</h2>
+      <h2 class="color-blue-dash font-weight-bold font-size-subtitle align-center small-space bottom">Estes são os
+        setores que você acabou de cadastrar</h2>
       <div id="app"></div>
       <button type="submit"
-        class="btn-form-dash button-filled red color-red to-uppercase font-weight-bold float-right base-space">Finalizar</button>
+        class="btn-form-dash remove-mr button-filled blue color-blue-dash to-uppercase font-weight-bold float-right base-space">Finalizar</button>
     </div>
   </div>
 
   <script src="js/default.js"></script>
   <script src="js/forms/add-sector.js"></script>
-  
+
 </body>
 
 </html>
