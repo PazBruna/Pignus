@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <!-- INÍCIO META TAGS -->
   <meta charset="utf-8" />
@@ -13,21 +14,62 @@
   <meta property="og:title" content="">
   <meta property="og:url" content="">
   <meta property="og:image" content="resources/img/logo-SmooTI.png">
-  <meta property="og:image:alt", content= >
-  <meta property="og:image:type", content= "image/jpg">
-  <meta property="og:image:width", content= "1365">
-  <meta property="og:image:height", content= "1365">
+  <meta property="og:image:alt" , content=>
+  <meta property="og:image:type" , content="image/jpg">
+  <meta property="og:image:width" , content="1365">
+  <meta property="og:image:height" , content="1365">
   <meta name=”twitter:card” content=”summary_large_image”>
   <meta name=”twitter:site” content=”Conta do Twitter do site (incluindo arroba)“>
   <meta name=”twitter:title” content=”Título da página“>
   <meta name=”twitter:description” content=”Descrição da página. No máximo 200 caracteres“>
   <meta name=”twitter:creator” content=”Conta do Twitter do autor do texto (incluindo arroba)“>
   <!-- FIM META TAGS -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <title>Pignus</title>
 </head>
-<body>
-  
+
+<body class="background-dark">
+
+  <div class="container">
+    <div class="grid-4 offset-4">
+      <div id="sign-tab">
+        <div class="font-weight-bold" id="tab-general" onclick="flipGeneral()">Geral</div>
+        <div class="font-weight-bold" id="tab-manager" onclick="flipManager()">Administrador</div>
+      </div>
+      <div id="card">
+        <div class="padding-32" id="signIn-general">
+          <img src="img/sign-general.png" />
+          <p class="small-space top font-weight-bold color-blue align-center to-uppercase">Logue-se</p>
+          <div class="small-space">
+            <label class="color-gray font-weight-bold tiny-space bottom">E-mail</label>
+            <input type="text" name="email-general" />
+          </div>
+          <div class="small-space">
+            <label class="color-gray font-weight-bold tiny-space bottom">Senha</label>
+            <input type="password" name="passwd-general" />
+          </div>
+          <button class="base-space button-filled blue color-blue font-weight-bold to-uppercase">Entrar</button>
+        </div>
+        <div class="padding-32" id="signIn-manager">
+        <img src="img/sign-manager.png" />
+        <p class="small-space top font-weight-bold font-weight-bold color-blue align-center to-uppercase">Logue-se como Administrador</p>
+        <div class="small-space">
+          <label class="color-gray font-weight-bold tiny-space bottom">E-mail</labe>
+          <input type="text" name="email-manager" />
+        </div>
+        <div class="small-space">
+          <label class="color-gray font-weight-bold tiny-space bottom">Senha</label>
+          <input type="password" name="passwd-manager" />
+        </div>
+        <button class="base-space button-filled blue color-blue font-weight-bold to-uppercase">Entrar</button>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
   <script src="js/default.js"></script>
 </body>
+
 </html>
