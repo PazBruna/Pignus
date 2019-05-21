@@ -1,0 +1,115 @@
+#containerMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 5;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,.7);
+}
+
+#header {
+  z-index: 10;
+  padding: 8px 0;
+  min-height: 80px;
+  height: auto;
+  background: transparent;
+
+  button {
+    width: 100%;
+    padding: 16px 0;
+
+    &.button-outline {
+      padding: 14px 0;
+    }
+  }
+
+  p {
+    margin-top: 10%;
+    
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  img {
+    width: 65%;
+  }
+
+  #nav {
+    display: block;
+
+    @include d(t) {
+      display: none;
+    }
+    @include d(s) {
+      display: none;
+    }
+  }
+
+  #nav-mobile {
+    display: none;
+
+    @include d(s) {
+      display: block;
+    }
+    @include d(t) {
+      display: block;
+    }
+
+    position: relative;
+
+    ul {
+      visibility: hidden;
+      //box-shadow: 0px 8px 10px rgba(255, 255, 255, 0.2), 0px 6px 30px rgba(255, 255, 255, 0.12), 0px 16px 24px rgba(255, 255, 255, 0.14);
+      position: absolute;
+      top: 50px;
+      width: 100%;
+      background-color: $dark;
+      padding: 32px;
+      z-index: 10;
+
+      li:hover {
+        color: $blue;
+      }
+    }
+
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+      width: 100%;
+
+      div {
+        cursor: pointer;
+        position: relative;
+        width: 40px;
+        height: 3px;
+        background-color: $light;
+        margin-top: 32px;
+        margin-right: 16px;
+
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          width: 40px;
+          height: 3px;
+          background-color: $light;
+        }
+
+        &::before {
+          bottom: 10px;
+        }
+
+        &::after {
+          top: 10px;
+        }
+      }
+    }
+
+    img {
+      width: 80%;
+    }
+  }
+}

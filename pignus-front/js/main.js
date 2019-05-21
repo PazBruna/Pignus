@@ -143,3 +143,25 @@ function flipManager() {
   var cardContainer = document.getElementById('card');
   cardContainer.style.transform = "rotateY(180deg)";
 }
+
+
+function openMenu() {
+  var root = document.getElementById('body');
+  var closeMenu = document.getElementById('containerMenu');
+  var ulElement = document.getElementById('ulElement');
+  ulElement.style.visibility = 'visible';
+  closeMenu.style.display = 'block';
+  root.style.overflowY = 'hidden';
+}
+
+function closeMenu() {
+  var root = document.getElementById('body');
+  var ulElement = document.getElementById('ulElement');
+  var closeMenu = document.getElementById('containerMenu');
+  ulElement.style.visibility = 'hidden';
+  
+  setTimeout(function(){ 
+    root.style.overflowY = 'scroll';
+    closeMenu.style.display = 'none';
+  }, 100);
+}

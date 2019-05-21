@@ -1,6 +1,8 @@
 #page-introduction {
   position: relative;
   min-height: 481px;
+  top: -90px;
+  z-index: -1;
 
   > img {
     position: absolute;
@@ -13,19 +15,5 @@
     position: absolute;
     right: 64px;
     bottom: 16px;
-  }
-
-  &.who-we-are {
-    // h1::after {
-    //   content: '';
-    //   position: absolute;
-    //   z-index: -1;
-    //   width: 100%;
-    //   height: 140%;
-    //   border: 8px solid $blue;
-    //   left: 16px;
-    //   top: -32px;
-    //   opacity: .7;
-    // }
   }
 }

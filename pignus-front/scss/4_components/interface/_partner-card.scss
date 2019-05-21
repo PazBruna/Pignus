@@ -4,4 +4,8 @@
   background-color: $gray;
   height: 176px;
   border-radius: 5px;
+
+  @include d(s) {
+    margin-top: 32px;
+  }
 }
