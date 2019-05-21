@@ -1,3 +1,5 @@
 Eclipse;https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2019-03/R/eclipse-inst-win64.exe&mirror_id=576;4
-Node;https://nodejs.org/dist/v10.15.3/node-v10.15.3-x64.msi;5
-GitHub;https://central.github.com/deployments/desktop/desktop/latest/win32;6
+Node;https://nodejs.org/dist/v10.15.3/node-v10.15.3-x64.msi;4
+GitHub;https://central.github.com/deployments/desktop/desktop/latest/win32;4
+BrModelo;http://www.sis4.com/brModelo/brModelo.jar;5
+Sketch;https://download.sketchapp.com/sketch-55-78076.zip;6
