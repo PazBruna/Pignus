@@ -42,6 +42,14 @@ public class UsuarioController {
 	
 	
 	
+	@GetMapping("/logoff")
+	public String logoff(HttpSession session) throws ClassNotFoundException {
+		
+    session.invalidate();
+	
+	return "redirect:login";
+	
+	}
 	
 	
 	
