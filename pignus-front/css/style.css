@@ -696,7 +696,6 @@ img {
 }
 
 .card.card--projects {
-  cursor: pointer;
   position: relative;
 }
 
@@ -715,8 +714,8 @@ img {
 
 .card.card--downloads img {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 16px;
+  right: 16px;
   width: 15%;
 }
 
