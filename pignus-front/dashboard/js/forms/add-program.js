@@ -1,5 +1,7 @@
+// Geradores de ID
 var counterDiv = 0;
 var counterIcon = 0;
+
 var buttonElement = document.getElementById('add-to-app');
 var buttonSubmit = document.getElementsByClassName('btn-form-dash')[1];
 var containerElement = document.getElementById('app');
@@ -34,6 +36,7 @@ function validaSelecoes() {
 var arrToJava = [];
 buttonElement.onclick = function () {
 
+  // Cria uma variável de suporte quee sempre reseta quando clicar no botão
   var suppArrToJava = [];
   buttonSubmit.style.display = 'block';
 
@@ -106,7 +109,7 @@ buttonElement.onclick = function () {
   suppArrToJava.push(linkText);
   arrToJava.push(suppArrToJava);
 
-
+  // Escutando quando ocorrerá um evento de click no ícone
   iconContainer.addEventListener('click', function (e) {
     if (window.confirm('Realmente deseja remover este elemento?')) {
       var el = document.getElementById(`element${iconElement.id}`);
