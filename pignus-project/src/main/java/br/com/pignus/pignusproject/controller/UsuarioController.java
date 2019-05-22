@@ -30,10 +30,10 @@ public class UsuarioController {
 		}
 		seguranca.historicoAcesso(usuario.getEmail(),novoUsuario);
 		session.setAttribute("usuarioLogado", novoUsuario);
-		return "paginaPrincipal";
+		return "redirect:home";
 		
 	}	
-	
+
 	
 	@GetMapping("/login")
 	public String acessarUsuarioLogin(@ModelAttribute Usuario usuario,@ModelAttribute Empresa empresa) {
@@ -42,6 +42,14 @@ public class UsuarioController {
 	
 	
 	
+	@GetMapping("/logoff")
+	public String logoff(HttpSession session) throws ClassNotFoundException {
+		
+    session.invalidate();
+	
+	return "redirect:login";
+	
+	}
 	
 	
 	

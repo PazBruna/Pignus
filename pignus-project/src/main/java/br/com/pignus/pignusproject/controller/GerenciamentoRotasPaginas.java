@@ -11,7 +11,7 @@ public class GerenciamentoRotasPaginas {
 	public String paginaPrincipal(HttpSession session) {
 		session.getAttribute("usuarioLogado");
 		
-		return "paginaPrincipal";
+		return "dashboard/dashboard";
 	}
 
 }
