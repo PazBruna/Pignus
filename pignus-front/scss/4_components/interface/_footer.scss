@@ -41,6 +41,19 @@
     }
   }
 
+  .send-mail {
+    cursor: pointer;
+    
+    &:hover {
+      span {
+        opacity: .5;
+      }
+    }
+  }
+  .send-mail:hover {
+    
+  }
+
   .container div:last-child {
     cursor: pointer;
     margin-top: 64px;

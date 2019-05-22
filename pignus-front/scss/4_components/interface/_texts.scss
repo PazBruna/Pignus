@@ -10,7 +10,7 @@ h1 {
     height: 23px;
     opacity: .2;
     bottom: 0;
-    z-index: 1;
+    z-index: -1;
 
     &.color-red {
       background-color: $red;
