@@ -42,8 +42,6 @@ public class SetorController{
     @RequestMapping(value = "/cadastroSetor", method=RequestMethod.GET)
     public String cadastrarSetor(@ModelAttribute Setor setor, Model model){
     	List<Usuario> listaGestor = usuario.findAllByTipo("G");
-
-
     	model.addAttribute("listaGestor", listaGestor);
     	
         return "paginaCadastroSetor";

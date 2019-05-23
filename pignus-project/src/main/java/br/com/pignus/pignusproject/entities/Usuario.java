@@ -31,8 +31,10 @@ public class Usuario {
 	private String senha;
 	private String nome;
 	@ManyToOne
+	@JoinColumn(name="id_empresa_usuarios")
 	private Empresa empresa;
 	@ManyToOne
+	@JoinColumn(name="id_setor_usuarios")
 	private Setor setor;
 	@Column(insertable = false, updatable = false)
 	private String tipo;
@@ -41,6 +43,7 @@ public class Usuario {
 			@JoinColumn(name = "usuario_id") }, inverseJoinColumns = { @JoinColumn(name = "download_id") })
 	private List<Download> downloadsUsuario = new ArrayList<>();
 	@ManyToOne
+	@JoinColumn(name="id_funcoes_usuarios")
 	private Funcoes funcaoUsuario;
 
 	public Funcoes getFuncaoUsuario() {
