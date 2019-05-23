@@ -21,12 +21,12 @@ class EmpresaControllerSpockTest extends Specification {
 			new EmpresaController(seguranca)).build()
 	}
 	
-	def "Should return HttpStatus as OK(200) when GET"(){
+	def "Retornar um HttpStatus um OK(200) quando GET"(){
 		
-		given: "url with /cadastro"
+		given: "url com /cadastro"
 		UrlBase+="/cadastro"
 		
-		when: "perform GET in http://localhost:8080/login"
+		when: "perform GET no http://localhost:8080/login"
 		def response =mockMvc.perform(get(UrlBase)).andReturn().getResponse()
 		
 		then: "Status OK"
@@ -34,7 +34,7 @@ class EmpresaControllerSpockTest extends Specification {
 		
 	}
 	
-	def "Should return HttpStatus as NOT FOUND(404) when GET"(){
+	def "Retornar HttpStatus um NOT FOUND(404) quando GET"(){
 		
 		given:"url with inexistent path /xxx"
 		UrlBase+="/yyy"

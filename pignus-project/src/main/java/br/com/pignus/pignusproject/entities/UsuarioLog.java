@@ -24,12 +24,17 @@ public class UsuarioLog {
 	public void setLogId(int logId) {
 		this.logId = logId;
 	}
+	
+	
+	
 	public Usuario getUsuario() {
 		return usuario;
 	}
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+	
+	
 	public String getUsuarioData() {
 		return usuarioData;
 	}

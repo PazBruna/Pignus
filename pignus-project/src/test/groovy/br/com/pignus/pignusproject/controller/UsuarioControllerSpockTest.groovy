@@ -12,7 +12,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 class UsuarioControllerSpockTest extends Specification{
 	
-	//geralmente sua aplicação vai ter isso como base
+	// base da aplicacao
 	def UrlBase="http://localhost:8080"
 	
 	MockMvc mockMvc //quem vai bater na URL 
@@ -25,7 +25,7 @@ class UsuarioControllerSpockTest extends Specification{
 			new UsuarioController(seguranca)).build()
 	}
 	
-	def "Should return paginaDeLogin when perform GET"(){
+	def "Retornar paginaDeLogin quando perform GET"(){
 		
 		given:"url with path /login"
 		UrlBase+="/login"

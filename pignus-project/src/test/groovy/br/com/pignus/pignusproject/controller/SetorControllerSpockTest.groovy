@@ -20,24 +20,24 @@ class SetorControllerSpockTest extends Specification{
 			new SetorController(seguranca)).build()
 	}
 	
-	def "Should return paginaDeCadastroSetor when perform GET"(){
+	def "Retornar paginaDeCadastroSetor quando chamar GET"(){
 		
 		given:"url with path /setores"
 		UrlBase+="/setores"
 		
-		when:"perform GET in http://localhost:8080/setores"
+		when:"perform GET no http://localhost:8080/setores"
 		def response =mockMvc.perform(get(UrlBase)).andReturn().getResponse()
 		
 		then:"Status OK"
 		response.status==200
 		
 	}
-	def "Should return NOT FOUND when perform GET in a inexistent Url path"(){
+	def "Retornar NOT FOUND quando perform GET numa URL inexistente"(){
 		
-		given:"url with inexistent path /qualquerCoisa"
+		given:"com uma url inexistente /qualquerCoisa"
 		UrlBase+="/cadastroSetor"
 		
-		when:"perform GET in http://localhost:8080/cadastroSetor"
+		when:"perform GET no http://localhost:8080/cadastroSetor"
 		def response =mockMvc.perform(get(urlBase)).andReturn().getResponse()
 		
 		then:"Status NOT FOUND"
