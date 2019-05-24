@@ -22,6 +22,7 @@ public class Setor {
 	@Column(unique = true, nullable = false)
 	private String nomeSetor;
 	@ManyToOne
+	@JoinColumn(name="id_empresa_setor")
 	private Empresa empresa;
 	@OneToOne
 	private UsuarioGestor gestor;	

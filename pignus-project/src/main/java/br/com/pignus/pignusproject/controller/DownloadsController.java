@@ -16,6 +16,7 @@ import br.com.pignus.pignusproject.entities.LerArquivos;
 import br.com.pignus.pignusproject.entities.Usuario;
 import br.com.pignus.pignusproject.repository.DownloadRepository;
 import br.com.pignus.pignusproject.repository.FuncaoRepository;
+import br.com.pignus.pignusproject.repository.UsuarioRepository;
 
 @Controller
 public class DownloadsController {
@@ -26,6 +27,8 @@ public class DownloadsController {
 	private DownloadRepository meusDownloads;
 	@Autowired
 	private FuncaoRepository funcoes;
+	@Autowired
+	UsuarioRepository us;
 
 
 	@PostMapping("/downloads")
@@ -38,19 +41,12 @@ public class DownloadsController {
 		return "redirect:meusDownloads";
 	}
 	
-	@RequestMapping(value = "/meusDownloads", method=RequestMethod.GET)
-	public String pegandoArquivoLista (@ModelAttribute Download download, Model model,HttpSession session) {
-		
-		
-		
-		List<Download> listaArqv = meusDownloads.findAll();
-		for (Download downloadLista : listaArqv) {
-			Usuario usuario = null;
-			if (usuario.getFuncaoUsuario() != download.getFuncaoDownload()) {
-				listaArqv.remove(downloadLista);
-			}
-		}
-		model.addAttribute("listaArqv", listaArqv).toString();	
+	@RequestMapping(value = "/meusDownloads/funcao", method=RequestMethod.GET)
+	public String pegandoArquivoLista (@ModelAttribute Download download, Model model,HttpSession session,@ModelAttribute Usuario usuario) {
+		session.getAttribute("usuarioLogado");
+		List<Download> listaArqv = meusDownloads.findByFuncaoAndSetor(usuario.getFuncaoUsuario(), usuario.getSetor());
+
+		model.addAttribute("listaArqv", listaArqv);	
 		return "dashboard/meus-downloads";
 	}
 	
