@@ -29,7 +29,7 @@
           <li class="color-white font-size-body"><i class="small-space right menu-icon fas fa-tachometer-alt"></i>Meu
             dashboard</li>
         </a>
-        <a href="meus-downloads.html"  th:href="@{/meusDownloads/funcao(funcaoId=${session.usuarioLogado.funcaoUsuario)}">
+        <a th:href="@{/meusDownloads(funcaoId=4)}">
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-download"></i>Meus
             downloads</li>
@@ -100,7 +100,7 @@
         <img src="../img/icons/area-atuacao.svg" />
         <div class="small-space left">
           <p class="font-weight-bold color-white font-size-body">Área de <br />Atuação</p>
-          <p class="font-weight-light color-white font-size-body"th:text="${session.usuarioLogado.funcaoUsuario.nomeFuncao}"></p>
+          <p class="font-weight-light color-white font-size-body" th:text="${session.usuarioLogado.funcaoUsuario.nomeFuncao}"></p>
         </div>
       </div>
     </div>

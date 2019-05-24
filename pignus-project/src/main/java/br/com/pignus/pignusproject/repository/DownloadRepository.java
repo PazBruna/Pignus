@@ -10,6 +10,8 @@ import br.com.pignus.pignusproject.entities.Setor;
 
 public interface DownloadRepository extends JpaRepository<Download, Integer> {
 	@Query("From Download")
-	public List<Download> findByFuncaoAndSetor(Funcoes funcaoUsuario, Setor setor);
+	public List<Download> findAllByFuncaoAndSetor(Funcoes funcaoUsuario, Setor setor);
+	@Query("From Download where funcao_download_id = ?1")
+	public List<Download> findAllByFuncaoDownload(Funcoes funcaoUsuario);
 
 }

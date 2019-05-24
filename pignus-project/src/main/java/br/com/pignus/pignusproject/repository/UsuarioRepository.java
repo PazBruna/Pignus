@@ -13,14 +13,14 @@ import br.com.pignus.pignusproject.entities.UsuarioGestor;
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
 	public boolean existsByEmailAndSenha(String email, String senha);
-
+	@Query("from Usuario where email = ?1")
 	public Usuario findByEmail(String email);
 	
 	//Buscando na Tabela
 	@Query("select nome from Usuario where nome = ?1 ")
 	public UsuarioGestor findByNomeGestor(String nome);
 	
-	@Query("from Usuario")
+	
 	public List<Usuario> findAllByTipo(String tipo);
 
 

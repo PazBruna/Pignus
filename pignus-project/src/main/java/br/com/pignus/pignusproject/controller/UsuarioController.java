@@ -30,6 +30,7 @@ public class UsuarioController {
 			return "redirect:login";
 		}
 		seguranca.historicoAcesso(usuario.getEmail(),novoUsuario);
+		System.out.println(novoUsuario.getEmpresa());
 		session.setAttribute("usuarioLogado", novoUsuario);
 		return "redirect:home";
 		
