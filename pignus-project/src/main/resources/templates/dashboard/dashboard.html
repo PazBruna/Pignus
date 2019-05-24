@@ -34,25 +34,29 @@
               class="small-space right menu-icon fas fa-download"></i>Meus
             downloads</li>
         </a>
-        <a href="meus-projetos.html">
+        <a href="meus-projetos.html"  th:href=@{/meusProjetos} >
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-rocket"></i>Meus
             projetos</li>
         </a>
-        <a href="novo-programa.html">
+        
+        <a href="novo-programa.html" th:href=@{/novoPrograma}>
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-plus"></i>Adicionar
             programas</li>
         </a>
-        <a href="novo-setor.html">
+        
+        <a href="novo-setor.html" th:href=@{/novoSetor}>
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-sitemap"></i>Adicionar setores</li>
-          <a href="novo-projeto.html">
+              
+          <a href="novo-projeto.html" th:href=@{/novoProjeto}>
             <li class="color-white font-size-body base-space"><i
                 class="small-space right menu-icon fas fa-plus"></i>Adicionar
               projetos</li>
           </a>
-          <a href="../login.html">
+          
+          <a th:href=@{/logoff}>
             <li class="color-white font-size-body base-space"><i
                 class="small-space right menu-icon fas fa-sign-out-alt"></i>Sair</li>
           </a>
@@ -60,7 +64,7 @@
     </div>
   </header>
 
-  <a href="configuracoes-usuario.html">
+  <a href="configuracoes-usuario.html" th:href=@{/configuracoesUsuario}>
     <div id="goTo-profile">
       <i class="fas fa-user"></i>
     </div>
