@@ -210,3 +210,13 @@ document.querySelectorAll('.input-mask').forEach(($input) => {
     e.target.value = masks[field](e.target.value);
   }, false)
 })
+
+window.onload = function() {
+  let el = document.getElementById('isLoading');
+  let body = document.getElementById('body');
+  el.style.top = '-100vh';
+
+  setTimeout(function() {
+    body.removeChild(el);
+  }, 1000)
+}
