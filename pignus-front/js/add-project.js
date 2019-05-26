@@ -19,15 +19,15 @@ var pessoasSelecionadas = document.getElementById('select-persons');
 
 // Validando os valores dos selects
 function validaSelecoes() {
-  for( var i = 0; i < softwaresSelecionados.length; i++ )  {
-    if( softwaresSelecionados.options[i].selected == true ) {
+  for (var i = 0; i < softwaresSelecionados.length; i++) {
+    if (softwaresSelecionados.options[i].selected == true) {
       suppArrSoftwares.push(softwaresSelecionados[i]);
     }
   }
   arrSoftwares.push(suppArrSoftwares);
 
-  for( var i = 0; i < pessoasSelecionadas.length; i++ )  {
-    if( pessoasSelecionadas.options[i].selected == true ) {
+  for (var i = 0; i < pessoasSelecionadas.length; i++) {
+    if (pessoasSelecionadas.options[i].selected == true) {
       suppArrPersons.push(pessoasSelecionadas[i]);
     }
   }
@@ -36,7 +36,7 @@ function validaSelecoes() {
 
 // Array para captura de informação ao Java
 var arrToJava = [];
-buttonElement.onclick = function() {
+buttonElement.onclick = function () {
 
   // Cria uma variável de suporte quee sempre reseta quando clicar no botão
   var suppArrToJava = [];
@@ -45,7 +45,7 @@ buttonElement.onclick = function() {
   validaSelecoes();
 
   var divider = document.createElement('div');
-  
+
   var nomeProjeto = document.createElement('h3');
   var clienteBeneficiado = document.createElement('p');
   var descricaoProjeto = document.createElement('p');
@@ -70,14 +70,14 @@ buttonElement.onclick = function() {
 
   var personsValues = [];
   var softwaresValues = [];
-  for( var i = 0; i < suppArrPersons.length; i++ ) {
+  for (var i = 0; i < suppArrPersons.length; i++) {
     personsValues.push(suppArrPersons[i].text);
   }
   var personsTexts = document.createTextNode('Colaboradores: ' + personsValues.join(', '));
   listaIntegrantes.appendChild(personsTexts);
   divider.appendChild(listaIntegrantes);
 
-  for( var i = 0; i < suppArrSoftwares.length; i++ ) {
+  for (var i = 0; i < suppArrSoftwares.length; i++) {
     softwaresValues.push(suppArrSoftwares[i].text);
   }
   var softwaresTexts = document.createTextNode('Softwares: ' + softwaresValues.join(', '));
@@ -119,18 +119,28 @@ buttonElement.onclick = function() {
 
   containerElement.appendChild(divider);
 
-  
-  // Reseting Form
-  suppArrPersons = [];
-  suppArrSoftwares = [];
-  inputNomeProjeto.value = '';
-  inputClienteBeneficiado.value = '';
-  inputDescricaoProjeto.value = '';
-  for( var i = 0; i < pessoasSelecionadas.length; i++ )  {
-    pessoasSelecionadas.options[i].selected = false;
+  function clearInputs() {
+    // Reseting Form
+
+    suppArrPersons = [];
+    suppArrSoftwares = [];
+    inputNomeProjeto.value = '';
+    inputClienteBeneficiado.value = '';
+    inputDescricaoProjeto.value = '';
+    for (var i = 0; i < pessoasSelecionadas.length; i++) {
+      pessoasSelecionadas.options[i].selected = false;
+    }
+    for (var i = 0; i < softwaresSelecionados.length; i++) {
+      softwaresSelecionados.options[i].selected = false;
+    }
   }
-  for( var i = 0; i < softwaresSelecionados.length; i++ )  {
-    softwaresSelecionados.options[i].selected = false;
+
+  if (inputNomeProjeto.value === '' || inputClienteBeneficiado.value === '' || inputDescricaoProjeto === '' || suppArrPersons.length < 1 || suppArrSoftwares.length < 1) {
+    containerElement.removeChild(divider);
+    clearInputs();
+    return;
+  } else {
+    clearInputs();
   }
-  
+
 }

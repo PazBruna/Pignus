@@ -9,6 +9,10 @@
     color: $gray;
 
     &:focus {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 2px solid $blue-dash-3;
       border-bottom-left-radius: 16px;
       border-bottom-right-radius: 16px;
     }
