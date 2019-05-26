@@ -59,7 +59,7 @@
     position: absolute;
     width: 10%;
     top: 65%;
-    animation: pulse .5s infinite alternate;
+    animation: pulse 0.5s infinite alternate;
   }
 }
 
@@ -154,9 +154,30 @@
 
 @keyframes pulse {
   0% {
-    transform: scale(.95);
+    transform: scale(0.95);
   }
   100% {
     transform: scale(1);
+  }
+}
+
+.js {
+  .anime {
+    opacity: 0;
+  }
+
+  .anime-init {
+    opacity: 1;
+    transition: 0.4s all ease-in;
+
+    &.second {
+      transition: 0.8s all ease-in;
+    }
+    &.third {
+      transition: 1.2s all ease-in;
+    }
+    &.fourth {
+      transition: 1.4s all ease-in;
+    }
   }
 }

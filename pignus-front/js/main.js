@@ -29,7 +29,7 @@ var page8 = document.getElementById('sign-up-8');
 
 
 function nextOrPrev(e) {
-  var element = e.currentTarget;
+  let element = e.currentTarget;
 
   /* 
    * PREVIOUS BUTTONS
@@ -154,29 +154,36 @@ function nextOrPrev(e) {
 }
 
 
+/*
+ * Flip Card da tela de Login
+ */
 function flipGeneral() {
-  var cardContainer = document.getElementById('card');
+  let cardContainer = document.getElementById('card');
   cardContainer.style.transform = "rotateY(0deg)"
 }
 
 function flipManager() {
-  var cardContainer = document.getElementById('card');
+  let cardContainer = document.getElementById('card');
   cardContainer.style.transform = "rotateY(180deg)";
 }
 
+/*
+ * Abertura e fechamento do menu
+ */
+
 function openMenu() {
-  var root = document.getElementById('body');
-  var closeMenu = document.getElementById('containerMenu');
-  var ulElement = document.getElementById('ulElement');
+  let root = document.getElementById('body');
+  let closeMenu = document.getElementById('containerMenu');
+  let ulElement = document.getElementById('ulElement');
   ulElement.style.visibility = 'visible';
   closeMenu.style.display = 'block';
   root.style.overflowY = 'hidden';
 }
 
 function closeMenu() {
-  var root = document.getElementById('body');
-  var ulElement = document.getElementById('ulElement');
-  var closeMenu = document.getElementById('containerMenu');
+  let root = document.getElementById('body');
+  let ulElement = document.getElementById('ulElement');
+  let closeMenu = document.getElementById('containerMenu');
   ulElement.style.visibility = 'hidden';
 
   setTimeout(function () {
@@ -185,6 +192,9 @@ function closeMenu() {
   }, 100);
 }
 
+/*
+ * Máscadas dos campos de cadastro
+ */
 const masks = {
   cnpj(value) {
     return value
@@ -211,6 +221,10 @@ document.querySelectorAll('.input-mask').forEach(($input) => {
   }, false)
 })
 
+
+/*
+ * Efeito enquanto a tela está carregando
+ */
 window.onload = function() {
   let el = document.getElementById('isLoading');
   let body = document.getElementById('body');
@@ -220,3 +234,51 @@ window.onload = function() {
     body.removeChild(el);
   }, 1000)
 }
+
+
+/*
+ * Efeito para os elementos aparecerem durante o scroll
+ */
+
+var root = document.getElementById('body');
+var menuElement = document.getElementById('menu');
+var menuElementContent = document.getElementById('menu-content');
+
+root.className += ' js';
+function boxTop(idBox) {
+	var boxOffset = $(idBox).offset().top;
+	return boxOffset;
+}
+
+$(document).ready(function () {
+	var $target = $('.anime'),
+		animationClass = 'anime-init',
+		windowHeight = $(window).height(),
+		offset = windowHeight - (windowHeight / 4);
+
+	function animeScroll() {
+		var documentTop = $(document).scrollTop();
+		$target.each(function () {
+			if (documentTop > boxTop(this) - offset) {
+				$(this).addClass(animationClass);
+			} else {
+				$(this).removeClass(animationClass);
+			}
+		});
+	}
+	animeScroll();
+
+	$(document).scroll(function () {
+		setTimeout(function () { animeScroll() }, 150);
+	});
+});
+
+$(document).ready(function() {
+	root.style.overflowY = 'hidden';
+	window.scrollTo(0,0);
+	
+	$(window).load(function () {
+		$('#isLoading').delay(100).fadeOut("slow");
+		root.style.overflowY = 'scroll';
+	})
+})
