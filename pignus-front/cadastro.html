@@ -90,7 +90,7 @@
           <h1 class="font-size-title font-weight-light align-center base-space color-white">Olá! Acredito que você seja
             novo aqui... Qual o nome da sua empresa?</h1>
           <div class="sign-up-inputs large-space">
-            <input id="nome-empresa" name="nome-empresa" type="text" placeholder="Ex.: Pignus Corporation" />
+            <input minlength="5" maxlength="100" required id="nome-empresa" name="nome-empresa" type="text" placeholder="Ex.: Pignus Corporation" />
           </div>
           <div class="sign-up-buttons large-space">
             <button type="button" id="next-form-1"
@@ -102,7 +102,7 @@
           <h1 class="font-size-title font-weight-light align-center base-space color-white">Hey, <span
               id="textEmpresa-1"></span>, a sua empresa possui Nome Fantasia? (Caso não tenha, prossiga)</span></h1>
           <div class="sign-up-inputs large-space">
-            <input name="nome-fantasia" type="text" placeholder="Ex.: Pignus" />
+            <input maxlength="50" name="nome-fantasia" type="text" placeholder="Ex.: Pignus" />
           </div>
           <div class="sign-up-buttons large-space">
             <button type="button" id="prev-form-1"
@@ -116,7 +116,7 @@
           <h1 class="font-size-title font-weight-light d-block align-center base-space color-white">Agora, por favor,
             insira o CNPJ da empresa?</h1>
           <div class="sign-up-inputs large-space">
-            <input name="cnpj-empresa" type="text" placeholder="Ex.: 15.553.477/0001-71" />
+            <input minlength="18" maxlength="18" class="input-mask" data-js="cnpj" id="cnpj-empresa" name="cnpj-empresa" type="text" placeholder="Ex.: 15.553.477/0001-71" />
           </div>
           <div class="sign-up-buttons large-space">
             <button type="button" id="prev-form-2"
@@ -130,7 +130,7 @@
           <h1 class="font-size-title font-weight-light align-center base-space color-white">Também precisaremos do
             e-mail administrativo desta empresa :D</h1>
           <div class="sign-up-inputs large-space">
-            <input name="email-empresa" type="email" placeholder="Ex.: contato@pignus.com" />
+            <input required minlength="5" maxlength="60" id="email-empresa" name="email-empresa" type="email" placeholder="Ex.: contato@pignus.com" />
           </div>
           <div class="sign-up-buttons large-space">
             <button type="button" id="prev-form-3"
@@ -144,7 +144,7 @@
           <h1 class="font-size-title font-weight-light align-center base-space color-white">Estamos quase acabando!
             Precisamos agora do CEP da empresa</h1>
           <div class="sign-up-inputs large-space">
-            <input name="cep-empresa" type="text" placeholder="Ex.: 01419-002" />
+            <input required minlength="9" maxlength="9" class="input-mask" data-js="cep" id="cep-empresa" name="cep-empresa" type="text" placeholder="Ex.: 01419-002" />
           </div>
           <div class="sign-up-buttons large-space">
             <button type="button" id="prev-form-4"
@@ -160,24 +160,24 @@
           <div class="sign-up-inputs large-space">
             <div class="row">
               <div class="grid-7">
-                <input name="logradouro-empresa" type="text" />
+                <input required name="logradouro-empresa" type="text" />
               </div>
               <div class="grid-5">
-                <input name="bairro-empresa" type="text" />
+                <input required name="bairro-empresa" type="text" />
               </div>
             </div>
             <div class="row base-space">
               <div class="grid-3">
-                <input name="cidade-empresa" type="text" />
+                <input required name="cidade-empresa" type="text" />
               </div>
               <div class="grid-2">
-                <input name="estado-empresa" type="text" />
+                <input required name="estado-empresa" type="text" />
               </div>
               <div class="grid-4">
-                <input name="numero-empresa" type="text" placeholder="Nº Estabelecimento" />
+                <input required name="numero-empresa" id="numero-empresa" type="text" placeholder="Nº Estabelecimento" />
               </div>
               <div class="grid-3">
-                <input name="complemento-empresa" type="text" placeholder="Complemento" />
+                <input name="complemento-empresa" id="complemento-empresa" type="text" placeholder="Complemento" />
               </div>
             </div>
           </div>
@@ -193,7 +193,7 @@
           <h1 class="font-size-title font-weight-light align-center base-space color-white">Por fim, você precisa
             definir uma senha para o acesso. Lembre-se de memorizá-la</h1>
           <div class="sign-up-inputs large-space">
-            <input name="passwd" type="password" placeholder="Ex.: HelloWorld123" />
+            <input minlength="5" maxlength="20" required name="passwd" id="passwd" type="password" placeholder="Ex.: HelloWorld123" />
           </div>
           <div class="sign-up-buttons large-space">
             <button type="button" id="prev-form-6"
@@ -207,7 +207,7 @@
           <h1 class="font-size-title font-weight-light align-center base-space color-white">Lembra que era para você ter
             memorizado aquela senha, né? Agora precisa escrevê-la novamente</h1>
           <div class="sign-up-inputs large-space">
-            <input name="confirm-passwd" type="password"
+            <input minlength="5" maxlength="20" required name="confirm-passwd" id="confirm-passwd" type="password"
               placeholder="Ei, senhora, você lembra a senha que eu digitei?" />
           </div>
           <div class="sign-up-buttons large-space">
