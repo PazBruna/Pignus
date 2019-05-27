@@ -2,6 +2,8 @@ package br.com.pignus.pignusproject.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,16 +39,25 @@ public class DownloadsController {
 			System.out.println("Deu ruim");
 		}
 		meusDownloads.saveAll(ler.listaDownloads());
-		return "redirect:meusDownloads";
+		return "redirect:home";
 	}
 
 	@RequestMapping(value = "/meusDownloads", method = RequestMethod.GET)
 	public String pegandoArquivoLista(@ModelAttribute Funcoes funcao, Model model,
-			@RequestParam("funcaoId") String funcaoId) {
+			@RequestParam("funcaoId") String funcaoId, HttpSession session) {
+		
+		if(session.getAttribute("usuarioLogado") == null) {
+			return "redirect:login";
+		}
+		List<Download> listaArqv;
 		int idFuncao = Integer.parseInt(funcaoId);
 		funcao.setId(idFuncao);
-		
-		List<Download> listaArqv = meusDownloads.findAllByFuncaoDownload(funcao);
+		if(funcao.getId() == 5) {
+			listaArqv = meusDownloads.findAll();
+			model.addAttribute("listaArqv", listaArqv);
+			return "dashboard/meus-downloads";
+		}
+		listaArqv = meusDownloads.findAllByFuncaoDownload(funcao);
 
 		model.addAttribute("listaArqv", listaArqv);
 		return "dashboard/meus-downloads";

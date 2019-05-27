@@ -29,7 +29,7 @@
           <li class="color-white font-size-body"><i class="small-space right menu-icon fas fa-tachometer-alt"></i>Meu
             dashboard</li>
         </a>
-        <a th:href="@{/meusDownloads(funcaoId=4)}">
+        <a th:href="@{/meusDownloads(funcaoId=${session.usuarioLogado.funcaoUsuario.id})}">
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-download"></i>Meus
             downloads</li>

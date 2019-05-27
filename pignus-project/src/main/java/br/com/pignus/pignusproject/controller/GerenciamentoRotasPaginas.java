@@ -11,6 +11,9 @@ public class GerenciamentoRotasPaginas {
 	
 	@GetMapping("/home")
 	public String paginaPrincipal(HttpSession session) {
+		if(session.getAttribute("usuarioLogado") == null) {
+			return "redirect:login";
+		}
 		session.getAttribute("usuarioLogado");
 		
 		return "dashboard/dashboard";
@@ -18,6 +21,9 @@ public class GerenciamentoRotasPaginas {
 	
 	@GetMapping("/meusProjetos")
 	public String meusProjetos(HttpSession session) {
+		if(session.getAttribute("usuarioLogado") == null) {
+			return "redirect:login";
+		}
 		session.getAttribute("usuarioLogado");
 		
 		return "dashboard/meus-projetos";
@@ -25,6 +31,9 @@ public class GerenciamentoRotasPaginas {
 	
 	@GetMapping("/novoPrograma")
 	public String novoPrograma(HttpSession session) {
+		if(session.getAttribute("usuarioLogado") == null) {
+			return "redirect:login";
+		}
 		session.getAttribute("usuarioLogado");
 		
 		return "dashboard/novo-programa";
@@ -32,6 +41,9 @@ public class GerenciamentoRotasPaginas {
 	
 	@GetMapping("/novoProjeto")
 	public String novoprojeto(HttpSession session) {
+		if(session.getAttribute("usuarioLogado") == null) {
+			return "redirect:login";
+		}
 		session.getAttribute("usuarioLogado");
 		
 		return "dashboard/novo-projeto";
@@ -39,6 +51,9 @@ public class GerenciamentoRotasPaginas {
 	
 	@GetMapping("/novoSetor")
 	public String novoSetor(HttpSession session) {
+		if(session.getAttribute("usuarioLogado") == null) {
+			return "redirect:login";
+		}
 		session.getAttribute("usuarioLogado");
 		
 		return "dashboard/novo-setor";
@@ -46,6 +61,9 @@ public class GerenciamentoRotasPaginas {
 	
 	@GetMapping("/configuracoesUsuario")
 	public String configuracoesUsuario(HttpSession session) {
+		if(session.getAttribute("usuarioLogado") == null) {
+			return "redirect:login";
+		}
 		session.getAttribute("usuarioLogado");
 		
 		return "dashboard/configuracoes-usuario";
