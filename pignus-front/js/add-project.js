@@ -137,6 +137,8 @@ buttonElement.onclick = function () {
 
   if (inputNomeProjeto.value === '' || inputClienteBeneficiado.value === '' || inputDescricaoProjeto === '' || suppArrPersons.length < 1 || suppArrSoftwares.length < 1) {
     containerElement.removeChild(divider);
+    --counterDiv;
+    --counterIcon;
     clearInputs();
     return;
   } else {

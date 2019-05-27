@@ -143,12 +143,21 @@ function nextOrPrev(e) {
     page7.style.display = 'none';
     page8.style.display = 'block';
     progressBar.style.width = '100%';
+
+    let notEqual = document.getElementById('not-equal');
+    notEqual.style.display = 'none';
   }
   if (element.id === 'next-form-8') {
     let passwd = document.getElementById('passwd').value;
-    let confirmPasswd = document.getElementById('confirm-passwd').value;
-    while (!passwd === confirmPasswd) {
-      confirmPasswd.focus();
+    let confirmPasswd = document.getElementById('confirm-passwd');
+    let notEqual = document.getElementById('not-equal');
+
+    if( confirmPasswd.value !== passwd ) {
+      confirmPasswd.value = '';
+      notEqual.style.display = 'block';
+      return;
+    } else {
+      // window.location.href = '';
     }
   }
 }

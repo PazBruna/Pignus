@@ -135,6 +135,8 @@ buttonElement.onclick = function () {
 
   if (inputNomePrograma.value === '' || inputLinkDownload.value === '' || categorySelected === '' || suppArrSectors.length < 1) {
     containerElement.removeChild(divider);
+    --counterDiv;
+    --counterIcon;
     clearInputs();
     return;
   } else {

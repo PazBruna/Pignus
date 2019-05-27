@@ -134,6 +134,8 @@ buttonElement.onclick = function () {
 
   if (inputNomeSetor.value === '' || managerSelected === '' || suppArrContributors.length < 1 || suppArrSoftwares.length < 1) {
     containerElement.removeChild(divider);
+    --counterDiv;
+    --counterIcon;
     clearInputs();
     return;
   } else {
