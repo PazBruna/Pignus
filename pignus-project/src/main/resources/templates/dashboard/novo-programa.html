@@ -22,36 +22,36 @@
   <div id="close-menu"></div>
   <header id="header-dashboard" class="small-space right">
     <div id="header-content">
-      <a href="dashboard.html"><h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1></a>
+      <a th:href=@{/home}><h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1></a>
       <div></div>
       <ul class="base-space left">
       
-        <a href="dashboard.html">
+        <a th:href=@{/home}>
           <li class="color-white font-size-body"><i class="small-space right menu-icon fas fa-tachometer-alt"></i>Meu
             dashboard</li>
         </a>
-      <a href="meus-downloads.html"  th:href=@{/meusDownloads}>
+      <a th:href="@{/meusDownloads(funcaoId=${session.usuarioLogado.funcaoUsuario.id})}">
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-download"></i>Meus
             downloads</li>
         </a>
-        <a href="meus-projetos.html"  th:href=@{/meusProjetos} >
+        <a th:href=@{/meusProjetos} >
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-rocket"></i>Meus
             projetos</li>
         </a>
         
-        <a href="novo-programa.html" th:href=@{/novoPrograma}>
+        <a th:href=@{/novoPrograma}>
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-plus"></i>Adicionar
             programas</li>
         </a>
         
-        <a href="novo-setor.html" th:href=@{/novoSetor}>
+        <a th:href=@{/novoSetor}>
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-sitemap"></i>Adicionar setores</li>
               
-          <a href="novo-projeto.html" th:href=@{/novoProjeto}>
+          <a th:href=@{/novoProjeto}>
             <li class="color-white font-size-body base-space"><i
                 class="small-space right menu-icon fas fa-plus"></i>Adicionar
               projetos</li>
@@ -65,7 +65,7 @@
     </div>
   </header>
 
-  <a href="configuracoes-usuario.html" th:href=@{/configuracoesUsuario}>
+  <a th:href=@{/configuracoesUsuario}>
     <div id="goTo-profile">
       <i class="fas fa-user"></i>
     </div>
