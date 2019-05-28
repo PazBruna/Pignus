@@ -102,18 +102,17 @@
         </div>
         </form>
         
-        <form action="#" th:action="@{/loginEmpresa}" th:object="${empresa}" method="post"
-		onsubmit="return validaFormLogin(this);">
+        <form action="#" th:action="@{/loginEmpresa}" th:object="${empresa}" method="post" onsubmit="return validaFormLogin(this);">
 	        <div class="padding-32"  id="signIn-manager">
 	          <img src="img/sign-manager.png" />
 	          <p class="small-space top font-weight-bold font-weight-bold color-blue align-center to-uppercase">Logue-se como Administrador</p>
 	          <div class="small-space">
 	            <label class="color-gray font-weight-bold tiny-space bottom">E-mail</labe>
-	              <input type="text" name="email-manager"  th:field="*{email}"/>
+	              <input type="text" name="email-manager"  th:value="${empresa.email}"/>
 	          </div>
 	          <div class="small-space">
 	            <label class="color-gray font-weight-bold tiny-space bottom">Senha</label>
-	            <input type="password" name="passwd-manager" th:field="*{senha}" />
+	            <input type="password" name="passwd-manager" th:value="${empresa.senha}" />
 	          </div>
 	          <button class="base-space button-filled blue color-blue font-weight-bold to-uppercase" type="submit">Entrar</button>
 	        </div>

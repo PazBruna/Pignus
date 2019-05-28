@@ -9,6 +9,7 @@ import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import br.com.pignus.pignusproject.entities.Empresa;
 import br.com.pignus.pignusproject.entities.Usuario;
 import br.com.pignus.pignusproject.entities.UsuarioGestor;
 import br.com.pignus.pignusproject.entities.UsuarioLog;
@@ -49,12 +50,13 @@ public class SegurancaDaAplicacao {
 		return null;
 	}
 
-	public boolean permitirAcessoEmpresa(String email, String senha) {
+	public Empresa permitirAcessoEmpresa(String email, String senha) {
 
 		if (empresa.existsByEmailAndSenha(email, senha)) {
-			return true;
+			Empresa novaEmp = empresa.findByEmail(email);
+			return novaEmp;
 		}
-		return false;
+		return null;
 	}
 	
 	

@@ -17,6 +17,7 @@ public class EmpresaController {
 	public static final String PAGINA_DE_LOGIN = "login";
 	public static final String PAGINA_LOGIN_ERRO = "paginaLoginErro";
 	public static final String PAGINA_PRINCIPAL = "dashboard/dashboard";
+	@Autowired
 	private SegurancaDaAplicacao seguranca;
 	@Autowired
 	private EmpresaRepository empresas;
@@ -39,13 +40,14 @@ public class EmpresaController {
 	@PostMapping("/loginEmpresa")
 	public String loginEmpresaEfetuado(@ModelAttribute Empresa empresa) {
 		/* Empresa novaEmpresa = new Empresa(); */
-		if (seguranca.permitirAcessoEmpresa(empresa.getEmail(), empresa.getSenha())) {
+		Empresa novaEmpresa = seguranca.permitirAcessoEmpresa(empresa.getEmail(), empresa.getSenha());
+		if (novaEmpresa == null) {
 			System.out.println(empresa.getEmail());
 			/* seguranca.historicoAcesso((empresa.getEmail()); */ 
-			return PAGINA_PRINCIPAL;
+			return "redirect:login";
 		}
 
-		return PAGINA_LOGIN_ERRO;
+		return "redirect:home";
 	}
 
 }
