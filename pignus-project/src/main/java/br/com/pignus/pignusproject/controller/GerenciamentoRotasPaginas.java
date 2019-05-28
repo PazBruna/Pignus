@@ -69,6 +69,22 @@ public class GerenciamentoRotasPaginas {
 		return "dashboard/configuracoes-usuario";
 	}
 	
+	@GetMapping("/index")
+	public String paginaPrincipalIndex(HttpSession session) {
+		
+		return "index";
+	}
+	@GetMapping("/nossaSolucao")
+	public String paginaPrincipalNossaSolucao(HttpSession session) {
+		
+		return "nossa-solucao";
+	}
+	@GetMapping("/quemSomos")
+	public String paginaPrincipalQuemSomos(HttpSession session) {
+		
+		return "quem-somos";
+	}
+	
 	
 }
 

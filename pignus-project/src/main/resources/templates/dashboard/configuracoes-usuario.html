@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+  <link rel="shortcut icon" type="image/x-icon" href="../img/pignus-favicon.png">
   <!-- INÍCIO META TAGS -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +12,7 @@
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../css/style.css" />
-  <title>Pignus</title>
+  <title>Pignus Solution - Configurações do Usuário</title>
 </head>
 
 <body id="body-dashboard">
@@ -25,38 +26,34 @@
       <a th:href=@{/home}><h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1></a>
       <div></div>
       <ul class="base-space left">
-        <a th:href=@{/home}>
+       <a th:href=@{/home}>
           <li class="color-white font-size-body"><i class="small-space right menu-icon fas fa-tachometer-alt"></i>Meu
             dashboard</li>
         </a>
-       <a  th:href="@{/meusDownloads(funcaoId=${session.usuarioLogado.funcaoUsuario.id})}">
+        <a th:href="@{/meusDownloads(funcaoId=${session.usuarioLogado.funcaoUsuario.id})}">
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-download"></i>Meus
             downloads</li>
         </a>
-        <a  th:href=@{/meusProjetos} >
+        <a th:href=@{/meusProjetos} >
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-rocket"></i>Meus
             projetos</li>
         </a>
-        
         <a th:href=@{/novoPrograma}>
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-plus"></i>Adicionar
             programas</li>
         </a>
-        
         <a th:href=@{/novoSetor}>
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-sitemap"></i>Adicionar setores</li>
-              
-          <a th:href=@{/novoProjeto}>
+         <a th:href=@{/novoProjeto}>
             <li class="color-white font-size-body base-space"><i
                 class="small-space right menu-icon fas fa-plus"></i>Adicionar
               projetos</li>
           </a>
-          
-          <a th:href=@{/logoff}>
+           <a th:href=@{/logoff}>
             <li class="color-white font-size-body base-space"><i
                 class="small-space right menu-icon fas fa-sign-out-alt"></i>Sair</li>
           </a>
@@ -64,8 +61,8 @@
     </div>
   </header>
 
-    <a th:href=@{/configuracoesUsuario}>
-    <div id="goTo-profile">
+  <a th:href=@{/configuracoesUsuario} id="goTo-profile">
+    <div>
       <i class="fas fa-user"></i>
     </div>
   </a>
@@ -81,21 +78,21 @@
           <div class="row base-space">
             <div class="grid-8">
               <label class="tiny-space bottom font-weight-bold color-gray">Nome Completo</label>
-              <input class="font-size-body" type="text" name="user-completeName" />
+              <input readonly class="font-size-body" type="text" name="user-completeName" />
             </div>
             <div class="grid-4">
               <label class="tiny-space bottom font-weight-bold color-gray">Idade</label>
-              <input class="font-size-body" type="text" name="user-age" />
+              <input readonly class="font-size-body" type="text" name="user-age" />
             </div>
           </div>
           <div class="row base-space">
             <div class="grid-6">
               <label class="tiny-space bottom font-weight-bold color-gray">Setor Pertencente</label>
-              <input class="font-size-body" type="text" name="user-area" />
+              <input readonly class="font-size-body" type="text" name="user-area" />
             </div>
             <div class="grid-6">
               <label class="tiny-space bottom font-weight-bold color-gray">Gestor da Área</label>
-              <input class="font-size-body" type="text" name="user-manager" />
+              <input readonly class="font-size-body" type="text" name="user-manager" />
             </div>
           </div>
           <div class="row base-space">
@@ -106,7 +103,7 @@
             </div>
             <div class="grid-6">
               <label class="tiny-space bottom font-weight-bold color-gray">E-mail Corporativo</label>
-              <input class="font-size-body" type="email" name="user-email" />
+              <input readonly class="font-size-body" type="email" name="user-email" />
             </div>
           </div>
           <button
@@ -125,7 +122,8 @@
     </div>
   </div>
 
-  <script src="js/js/default.js"></script>
+  <script src="js/pace.js"></script>
+  <script src="static/js/aside-animations.js"></script>
 </body>
 
 </html>

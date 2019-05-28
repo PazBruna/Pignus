@@ -14,9 +14,9 @@ import br.com.pignus.pignusproject.repository.EmpresaRepository;
 
 @Controller
 public class EmpresaController {
-	public static final String PAGINA_DE_LOGIN = "paginaDeLogin";
+	public static final String PAGINA_DE_LOGIN = "login";
 	public static final String PAGINA_LOGIN_ERRO = "paginaLoginErro";
-	public static final String PAGINA_PRINCIPAL = "paginaPrincipal";
+	public static final String PAGINA_PRINCIPAL = "dashboard/dashboard";
 	private SegurancaDaAplicacao seguranca;
 	@Autowired
 	private EmpresaRepository empresas;
@@ -27,7 +27,7 @@ public class EmpresaController {
 
 	@RequestMapping(value = "/cadastro", method = RequestMethod.GET)
 	public String acessarCadastro(@ModelAttribute Empresa empresa) {
-		return "paginaDeCadastro";
+		return "cadastro";
 	}
 
 	@PostMapping("/cadastro")

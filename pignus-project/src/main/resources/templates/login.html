@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="img/pignus-favicon.png">
+  <!-- INÍCIO META TAGS -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reconhecemos os problemas da sua corporação,
+  e focamos em solucioná-los de maneira prática, eficiente e tecnológica">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="https://dgbragas.com.br">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pignus Company - Soluções para a Gerência Corporativa">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="/img/pignus-logotipo-white.png">
+  <meta property="og:image:alt" , content="Logotipo da empresa Pignus">
+  <meta property="og:image:type" , content="image/jpg">
+  <meta property="og:image:width" , content="133">
+  <meta property="og:image:height" , content="80">
+  <!-- FIM META TAGS -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <title>Pignus - Soluções para a Gerência Corporativa | Pignus Solution - Login</title>
+</head>
+
+<body id="body" class="background-dark">
+
+  <header id="header">
+    <div class="container">
+      <div class="grid-12">
+        <nav id="nav">
+          <div class="grid-2">
+            <a th:href=@{/index}><img src="img/pignus-logotipo-white.png" /></a>
+          </div>
+          <div class="grid-2 offset-2">
+            <a th:href=@{/nossaSolucao}>
+              <p class="color-white to-uppercase d-flex centralized-flex centralize">Nossa solução</p>
+            </a>
+          </div>
+          <div class="grid-2">
+            <a  th:href=@{/quemSomos}>
+              <p class="color-white to-uppercase d-flex centralized-flex centralize">Quem somos</p>
+            </a>
+          </div>
+          <div class="grid-2">
+            <a th:href=@{/cadastro}><button class="button-outline blue color-blue to-uppercase">Cadastre-se</button></a>
+          </div>
+          <div class="grid-2">
+            <a th:href=@{/login}><button class="button-filled blue color-blue to-uppercase">Login</button></a>
+          </div>
+        </nav>
+        <nav class="d-flex centralize column" id="nav-mobile">
+          <div id="openMenu" onclick="openMenu()">
+            <a href="index.html"><img src="img/pignus-logotipo-white.png" /></a>
+            <div></div>
+          </div>
+          <ul id="ulElement" class="base-space align-center">
+            <a href="nossa-solucao.html">
+              <li class="color-white to-uppercase base-space bottom">Nossa solução</li>
+            </a>
+            <a href="quem-somos.html">
+              <li class="color-white to-uppercase base-space bottom">Quem somos</li>
+            </a>
+            <a href="cadastro.html">
+              <li class="color-white to-uppercase base-space bottom">Cadastre-se</li>
+            </a>
+            <a href="login.html">
+              <li class="color-white to-uppercase base-space bottom">Login</li>
+            </a>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div id="containerMenu" onclick="closeMenu()"></div>
+
+  <div class="container base-space">
+    <div class="grid-4 offset-4">
+      <div id="sign-tab">
+        <div class="font-weight-bold" id="tab-general" onclick="flipGeneral()">Geral</div>
+        <div class="font-weight-bold" id="tab-manager" onclick="flipManager()">Administrador</div>
+      </div>
+      <div id="card">
+      
+     
+		<form action="#" th:action="@{/login}" th:object="${usuario}" method="post"
+		onsubmit="return validaFormLogin(this);">
+        <div class="padding-32" id="signIn-general">     
+	          <img src="img/sign-general.png" />
+	          <p class="small-space top font-weight-bold color-blue align-center to-uppercase">Logue-se</p>
+	          <div class="small-space">
+	            <label class="color-gray font-weight-bold tiny-space bottom">E-mail</label>
+	            <input type="text" name="email-general" th:field="*{email}"/>
+	          </div>
+	          <div class="small-space">
+	            <label class="color-gray font-weight-bold tiny-space bottom">Senha</label>
+	            <input type="password" name="passwd-general" th:field="*{senha}"/>
+	          </div>
+	          <button class="base-space button-filled blue color-blue font-weight-bold to-uppercase"  type="submit">Entrar</button>	        
+        </div>
+        </form>
+        
+        <form action="#" th:action="@{/loginEmpresa}" th:object="${empresa}" method="post"
+		onsubmit="return validaFormLogin(this);">
+	        <div class="padding-32"  id="signIn-manager">
+	          <img src="img/sign-manager.png" />
+	          <p class="small-space top font-weight-bold font-weight-bold color-blue align-center to-uppercase">Logue-se como Administrador</p>
+	          <div class="small-space">
+	            <label class="color-gray font-weight-bold tiny-space bottom">E-mail</labe>
+	              <input type="text" name="email-manager"  th:field="*{email}"/>
+	          </div>
+	          <div class="small-space">
+	            <label class="color-gray font-weight-bold tiny-space bottom">Senha</label>
+	            <input type="password" name="passwd-manager" th:field="*{senha}" />
+	          </div>
+	          <button class="base-space button-filled blue color-blue font-weight-bold to-uppercase" type="submit">Entrar</button>
+	        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="isLoading">
+    <div id="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <img src="../img/pignus-logotipo-white.png" />
+  </div>
+
+  <script src="../js/main.js"></script>
+
+</body>
+
+</html>

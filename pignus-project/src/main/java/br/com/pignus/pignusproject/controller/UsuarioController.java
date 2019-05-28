@@ -14,7 +14,7 @@ import br.com.pignus.pignusproject.infra.SegurancaDaAplicacao;
 
 @Controller
 public class UsuarioController {
-	public static final String PAGINA_DE_LOGIN = "paginaDeLogin";
+	public static final String PAGINA_DE_LOGIN = "login";
 	public static final String PAGINA_LOGIN_ERRO = "paginaLoginErro";
 	private SegurancaDaAplicacao seguranca;
 	

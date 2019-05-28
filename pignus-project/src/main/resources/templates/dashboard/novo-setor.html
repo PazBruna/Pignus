@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+  <link rel="shortcut icon" type="image/x-icon" href="../img/pignus-favicon.png">
   <!-- INÍCIO META TAGS -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +12,7 @@
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../css/style.css" />
-  <title>Pignus</title>
+  <title>Pignus Solution - Adicionar Setor</title>
 </head>
 
 <body id="body-dashboard">
@@ -22,14 +23,14 @@
   <div id="close-menu"></div>
   <header id="header-dashboard" class="small-space right">
     <div id="header-content">
-      <a th:href=@{/home}><h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1></a>
+     <a th:href=@{/home}><h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1></a>
       <div></div>
       <ul class="base-space left">
         <a th:href=@{/home}>
           <li class="color-white font-size-body"><i class="small-space right menu-icon fas fa-tachometer-alt"></i>Meu
             dashboard</li>
         </a>
-       <a th:href="@{/meusDownloads(funcaoId=${session.usuarioLogado.funcaoUsuario.id})}">
+        <a th:href="@{/meusDownloads(funcaoId=${session.usuarioLogado.funcaoUsuario.id})}">
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-download"></i>Meus
             downloads</li>
@@ -39,23 +40,19 @@
               class="small-space right menu-icon fas fa-rocket"></i>Meus
             projetos</li>
         </a>
-        
         <a th:href=@{/novoPrograma}>
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-plus"></i>Adicionar
             programas</li>
         </a>
-        
-        <a th:href=@{/novoSetor}>
+       <a th:href=@{/novoSetor}>
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-sitemap"></i>Adicionar setores</li>
-              
           <a th:href=@{/novoProjeto}>
             <li class="color-white font-size-body base-space"><i
                 class="small-space right menu-icon fas fa-plus"></i>Adicionar
               projetos</li>
           </a>
-          
          <a th:href=@{/logoff}>
             <li class="color-white font-size-body base-space"><i
                 class="small-space right menu-icon fas fa-sign-out-alt"></i>Sair</li>
@@ -64,11 +61,12 @@
     </div>
   </header>
 
-   <a th:href=@{/configuracoesUsuario}>
-    <div id="goTo-profile">
+ <a th:href=@{/configuracoesUsuario} id="goTo-profile">
+    <div>
       <i class="fas fa-user"></i>
     </div>
   </a>
+
   <div class="container">
     <div class="grid-6 extra-large-space">
       <h2 class="color-blue-dash font-weight-bold font-size-subtitle align-center small-space bottom">Eita! Conseguimos
@@ -122,8 +120,9 @@
     </div>
   </div>
 
-  <script src="js/js/default.js"></script>
-  <script src="js/forms/add-sector.js"></script>
+  <script src="js/pace.js"></script>
+  <script src="js/add-sector.js"></script>
+  <script src="js/aside-animations.js"></script>
 
 </body>
 

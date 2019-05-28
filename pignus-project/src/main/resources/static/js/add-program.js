@@ -74,11 +74,11 @@ buttonElement.onclick = function () {
   link.setAttribute('href', inputLinkDownload.value);
 
   // Validando se o usuário digitou com protocolo ou não
-  var str = linkText.substringData(0,4);
+  var str = linkText.substringData(0, 4);
 
-  if ( str !== 'http') {
-    linkText = document.createTextNode('http://'+inputLinkDownload.value);
-    link.setAttribute('href', 'http://'+inputLinkDownload.value);
+  if (str !== 'http') {
+    linkText = document.createTextNode('http://' + inputLinkDownload.value);
+    link.setAttribute('href', 'http://' + inputLinkDownload.value);
   }
 
   link.appendChild(linkText);
@@ -112,7 +112,7 @@ buttonElement.onclick = function () {
   // Escutando quando ocorrerá um evento de click no ícone
   iconContainer.addEventListener('click', function (e) {
     if (window.confirm('Realmente deseja remover este elemento?')) {
-      var el = document.getElementById(`element${iconElement.id}`);
+      let el = document.getElementById(`element${iconElement.id}`);
       el.parentNode.removeChild(el);
       arrToJava.pop(iconElement.id);
     }
@@ -121,17 +121,26 @@ buttonElement.onclick = function () {
   // Jogando os elementos para a div
   containerElement.appendChild(divider);
 
+  function clearInputs() {
+    // Reseting Form
 
-
-  // Reseting Form
-  suppArrSectors = [];
-  inputNomePrograma.value = '';
-  categoriaSelecionada.selectedIndex = 0;
-  for (var i = 0; i < setoresSelecionados.length; i++) {
-    setoresSelecionados.options[i].selected = false;
+    suppArrSectors = [];
+    inputNomePrograma.value = '';
+    categoriaSelecionada.selectedIndex = 0;
+    for (var i = 0; i < setoresSelecionados.length; i++) {
+      setoresSelecionados.options[i].selected = false;
+    }
+    inputLinkDownload.value = '';
   }
-  inputLinkDownload.value = '';
+
+  if (inputNomePrograma.value === '' || inputLinkDownload.value === '' || categorySelected === '' || suppArrSectors.length < 1) {
+    containerElement.removeChild(divider);
+    --counterDiv;
+    --counterIcon;
+    clearInputs();
+    return;
+  } else {
+    clearInputs();
+  }
 
 }
-
-// Caso não haja elementos não deixar enviar!!!
