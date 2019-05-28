@@ -65,20 +65,20 @@
         </nav>
         <nav class="d-flex centralize column" id="nav-mobile">
           <div id="openMenu" onclick="openMenu()">
-            <a href="index.html"><img src="img/pignus-logotipo-white.png" alt="Logotipo da empresa Pignus" /></a>
+             <a th:href=@{/index}><img src="img/pignus-logotipo-white.png" alt="Logotipo da empresa Pignus" /></a>
             <div></div>
           </div>
           <ul id="ulElement" class="base-space align-center">
-            <a href="nossa-solucao.html">
+            <a th:href=@{/nossaSolucao}>
               <li class="color-white to-uppercase base-space bottom">Nossa solução</li>
             </a>
-            <a href="quem-somos.html">
+           <a  th:href=@{/quemSomos}>
               <li class="color-white to-uppercase base-space bottom">Quem somos</li>
             </a>
-            <a href="cadastro.html">
+            <a th:href=@{/cadastro}>
               <li class="color-white to-uppercase base-space bottom">Cadastre-se</li>
             </a>
-            <a href="login.html">
+              <a th:href=@{/login}>
               <li class="color-white to-uppercase base-space bottom">Login</li>
             </a>
           </ul>
