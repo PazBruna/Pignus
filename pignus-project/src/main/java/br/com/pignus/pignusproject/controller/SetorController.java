@@ -47,8 +47,6 @@ public class SetorController{
         return "paginaCadastroSetor";
     }
     
-  
-    
     @PostMapping("/cadastroSetor")
 	public String cadastraSetor(@ModelAttribute Setor setor) {
     	
@@ -59,7 +57,6 @@ public class SetorController{
     	setores.save(setor);
 		return "redirect:setores";
 	}
-    
     
 
 
