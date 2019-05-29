@@ -67,6 +67,7 @@
     </div>
   </a>
 
+
   <div class="container">
     <div class="grid-6 extra-large-space">
       <h2 class="color-blue-dash font-weight-bold font-size-subtitle align-center small-space bottom">Opa! Mais um
@@ -79,30 +80,19 @@
         </div>
         <div>
           <label class="font-weight-bold color-gray little-space bottom">Em qual categoria ele está inserido?</label>
-          <select id="select-category" class="not-multiple base-space bottom">
-            <option disabled>Selecione a categoria...</option>
-            <option>Análise de Programas</option>
-            <option>Depuração de Código</option>
-            <option>Documentação</option>
-            <option>Editores de Texto</option>
-            <option>Geradores de Código</option>
-            <option>Gerência de Mudanças</option>
-            <option>Gerência de Versões</option>
-            <option>IDE</option>
-            <option>Métricas</option>
-            <option>Planejamento</option>
-            <option>Prototipação</option>
-            <option>Testes</option>
+          <select id="select-category" class="not-multiple base-space bottom" th:field="*{funcoes.id}">
+            <option  th:each="funcoes: ${listaFuncao}"
+            th:value="${funcoes.id}"
+            th:text="${funcoes.nomeFuncao}"></option>
+
           </select>
         </div>
         <div>
           <label class="font-weight-bold color-gray little-space bottom">Ele estará disponível para quais
             setores?</label>
-          <select id="select-sectors" multiple>
-            <option disabled>Selecione os setores...</option>
-            <option>Oracle</option>
-            <option>IBM</option>
-            <option>Marketing</option>
+          <select id="select-sectors" multiple th:field="*{setor.id}">
+            <option th:each="setor: ${listaSetor}" th:value="${setor.id}"
+            th:text="${setor.nomeSetor}"></option>
           </select>
           <small class="font-weight-light color-gray base-space bottom">Para selecionar mais de um, pressione e segure
             CTRL</small>

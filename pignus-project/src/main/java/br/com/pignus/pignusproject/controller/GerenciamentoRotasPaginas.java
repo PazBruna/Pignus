@@ -1,12 +1,23 @@
 package br.com.pignus.pignusproject.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+import br.com.pignus.pignusproject.entities.Funcoes;
+import br.com.pignus.pignusproject.repository.FuncaoRepository;
 
 @Controller 
 public class GerenciamentoRotasPaginas {
+	
+	@Autowired
+	FuncaoRepository fc;
 	
 	
 	@GetMapping("/home")
@@ -29,15 +40,6 @@ public class GerenciamentoRotasPaginas {
 		return "dashboard/meus-projetos";
 	}
 	
-	@GetMapping("/novoPrograma")
-	public String novoPrograma(HttpSession session) {
-		if(session.getAttribute("usuarioLogado") == null) {
-			return "redirect:login";
-		}
-		session.getAttribute("usuarioLogado");
-		
-		return "dashboard/novo-programa";
-	}
 	
 	@GetMapping("/novoProjeto")
 	public String novoprojeto(HttpSession session) {
