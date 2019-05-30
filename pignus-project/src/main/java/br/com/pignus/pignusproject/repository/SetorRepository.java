@@ -11,7 +11,7 @@ import br.com.pignus.pignusproject.entities.Setor;
 @Repository
 public interface SetorRepository extends JpaRepository<Setor, Integer>{
 
-	@Query("from Setor where nomeSetor = ?1")
+	@Query("from Setor")
 	List<Setor> findByNome(String nomeSetor);
 	@Query("from Setor")
 	List<Setor> findAllById(int id);
