@@ -67,13 +67,12 @@
     </div>
   </a>
 
-
   <div class="container">
     <div class="grid-6 extra-large-space">
       <h2 class="color-blue-dash font-weight-bold font-size-subtitle align-center small-space bottom">Opa! Mais um
         programa
         chegando <br /> para a coleção?</h2>
-      <form class="dashboard-form-container">
+      <form class="dashboard-form-container" th:action="@{/novoPrograma}" method="POST"> 
         <div>
           <label class="font-weight-bold color-gray tiny-space bottom">Qual o nome do programa?</label>
           <input class="base-space bottom font-size-body" type="text" name="nome-programa" />
@@ -103,7 +102,7 @@
         </div>
         <button id="add-to-app" type="button"
           class="btn-form-dash button-outline blue color-blue-dash to-uppercase font-weight-bold">Anexar</button>
-      </form>
+   
     </div>
     <div class="grid-6 extra-large-space">
       <h2 class="color-blue-dash font-weight-bold font-size-subtitle align-center small-space bottom">Os programas que
@@ -113,6 +112,7 @@
       <button type="submit"
         class="btn-form-dash remove-mr button-filled blue color-blue-dash to-uppercase font-weight-bold float-right base-space">Finalizar</button>
     </div>
+     </form>
   </div>
 
   <script src="js/pace.js"></script>

@@ -21,7 +21,10 @@ public class Download{
 	@ManyToOne
 	private Funcoes funcaoDownload;
 
- 
+	public int getId() {
+		return id;
+	}
+
 	public Funcoes getFuncaoDownload() {
 		return funcaoDownload;
 	}

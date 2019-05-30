@@ -71,7 +71,7 @@ public class DownloadsController {
 	}
 	
 	@GetMapping("/novoPrograma")
-	public String novoPrograma(HttpSession session,@ModelAttribute Funcoes funcoes, Model model,@ModelAttribute Setor setor) {
+	public String novoPrograma(HttpSession session,@ModelAttribute Funcoes funcoes, Model model,@ModelAttribute Setor setor,@ModelAttribute Download download) {
 		if(session.getAttribute("usuarioLogado") == null) {
 			return "redirect:login";
 		}
@@ -80,21 +80,34 @@ public class DownloadsController {
 		session.getAttribute("usuarioLogado");
 		model.addAttribute("listaFuncao", listaFuncao);
 		model.addAttribute("listaSetor",listaSetor);
+		download.setSetores(listaSetor);
 		return "dashboard/novo-programa";
 	}
 	
-//	   @RequestMapping(value = "/novoPrograma", method = RequestMethod.POST)
-//		public String cadastraSetor(@ModelAttribute Download download, @ModelAttribute Funcoes funcao,@ModelAttribute Setor setor) {
-//	    	
-//		  List<Setor> novosetor = st.findAllById(setor.getId());
-//		   Funcoes novafuncao = fc.getOne(funcao.getId());
-//		   download.setFuncaoDownload(funcao);
-//	    	download.setFuncaoDownload(novafuncao);
-//	    	download.setSetores(novosetor);
-//	    	
-//	    	meusDownloads.save(download);
-//	    	
-//			return "redirect:setores";
-//		}
+	   @RequestMapping(value = "/novoPrograma", method = RequestMethod.POST)
+		public String cadastraSetor(@ModelAttribute Download download, @ModelAttribute Funcoes funcao,@ModelAttribute Setor setor) {
+		   List<Setor> novosetor = st.findByNome(setor.getNomeSetor());
+		   
+			System.out.println(novosetor);
+		
+		   Funcoes novafuncao = fc.getOne(funcao.getId());
+		  String novoNome = meusDownloads.findByNome(download.getNomePrograma());
+		  String novoLink = meusDownloads.findByLink(download.getLink());
+		  List<Download> novaListaDownload = meusDownloads.findAllById(download.getId());
+		   download.setFuncaoDownload(funcao);
+	    	download.setFuncaoDownload(novafuncao);
+	    	download.setNomePrograma(novoNome);
+	    	download.setLink(novoLink);
+	    	setor.setSoftwaresprojeto(novaListaDownload);
+	    	download.setSetores(novosetor);
+	    	
+	    
+	    	
+	    	meusDownloads.save(download);
+	    	st.save(setor);
+	    	
+	    	
+			return "redirect:setores";
+		}
 
 }

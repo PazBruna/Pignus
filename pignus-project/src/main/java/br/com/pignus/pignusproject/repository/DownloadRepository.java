@@ -13,5 +13,12 @@ public interface DownloadRepository extends JpaRepository<Download, Integer> {
 	public List<Download> findAllByFuncaoAndSetor(Funcoes funcaoUsuario, Setor setor);
 	@Query("From Download where funcao_download_id = ?1")
 	public List<Download> findAllByFuncaoDownload(Funcoes funcaoUsuario);
+	@Query("From Download where nomePrograma = ?1")
+	public String findByNome(String nomePrograma);
+	@Query("From Download where link = ?1")
+	public String findByLink(String link);
+	@Query("From Download")
+	public List<Download> findAllById(int id);
+	
 
 }

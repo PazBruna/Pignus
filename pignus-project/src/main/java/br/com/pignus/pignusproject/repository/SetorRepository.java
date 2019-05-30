@@ -5,16 +5,21 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import br.com.pignus.pignusproject.entities.Download;
 import br.com.pignus.pignusproject.entities.Setor;
 
 @Repository
 public interface SetorRepository extends JpaRepository<Setor, Integer>{
 
-	@Query("from Setor")
+	@Query("from Setor where nomeSetor = ?1")
 	List<Setor> findByNome(String nomeSetor);
-
-	@Query ("from Setor")
+	@Query("from Setor")
 	List<Setor> findAllById(int id);
+	@Query("from Setor")
+	List<Download> findAllByIdDownload(int id);
+
+
+
 
 	
 
