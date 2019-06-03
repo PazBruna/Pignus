@@ -72,36 +72,31 @@ public class DownloadsController {
 	
 	@GetMapping("/novoPrograma")
 	public String novoPrograma(HttpSession session,@ModelAttribute Funcoes funcoes, Model model,@ModelAttribute Setor setor,@ModelAttribute Download download) {
+		session.getAttribute("usuarioLogado");
 		if(session.getAttribute("usuarioLogado") == null) {
 			return "redirect:login";
 		}
-		List<Setor> listaSetor = st.findByNome(setor.getNomeSetor());
+		List<Setor> listaSetor = st.findAllById(setor.getId());
 		List<Funcoes> listaFuncao = fc.findAllByNome(funcoes.getNomeFuncao());
-		session.getAttribute("usuarioLogado");
 		model.addAttribute("listaFuncao", listaFuncao);
 		model.addAttribute("listaSetor",listaSetor);
-		download.setSetores(listaSetor);
 		return "dashboard/novo-programa";
 	}
 	
 	   @RequestMapping(value = "/novoPrograma", method = RequestMethod.POST)
-		public String cadastraSetor(@ModelAttribute Download download, @ModelAttribute Funcoes funcao,@ModelAttribute Setor setor) {
-		   List<Setor> novosetor = st.findByNome(setor.getNomeSetor());
-		   
-			System.out.println(novosetor);
-		
-		   Funcoes novafuncao = fc.getOne(funcao.getId());
-		  String novoNome = meusDownloads.findByNome(download.getNomePrograma());
-		  String novoLink = meusDownloads.findByLink(download.getLink());
-		  List<Download> novaListaDownload = meusDownloads.findAllById(download.getId());
-		   download.setFuncaoDownload(funcao);
-	    	download.setFuncaoDownload(novafuncao);
-	    	download.setNomePrograma(novoNome);
-	    	download.setLink(novoLink);
-	    	setor.setSoftwaresprojeto(novaListaDownload);
-	    	download.setSetores(novosetor);
-	    	
-	    
+		public String cadastraSetor(@ModelAttribute Download download, @ModelAttribute Funcoes funcao,@ModelAttribute Setor setor,HttpSession session) {
+//			String novosetor = st.findByNome(setor.getNomeSetor());		   	
+//			Funcoes novafuncao = fc.getOne(funcao.getId());
+//			String novoNome = meusDownloads.findByNome(download.getNomePrograma());
+//			String novoLink = meusDownloads.findByLink(download.getLink());
+//			List<Download> novaListaDownload = meusDownloads.findAllById(download.getId());
+//			download.setFuncaoDownload(funcao);
+//			download.setFuncaoDownload(novafuncao);
+//		    download.setNomePrograma(novoNome);
+//		    download.setLink(novoLink);
+//		    setor.setSoftwaresprojeto(novaListaDownload);
+//		    setor.setNomeSetor(novosetor);   	
+		   session.getAttribute("usuarioLogado");
 	    	
 	    	meusDownloads.save(download);
 	    	st.save(setor);
