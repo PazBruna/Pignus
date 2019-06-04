@@ -99,10 +99,10 @@ public class DownloadsController {
 		   session.getAttribute("usuarioLogado");
 	    	
 	    	meusDownloads.save(download);
-	    	st.save(setor);
+//	    	st.save(setor);
 	    	
 	    	
-			return "redirect:setores";
+			return "redirect:meusDownloads";
 		}
 
 }
