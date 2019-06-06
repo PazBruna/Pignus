@@ -40,15 +40,16 @@
               class="small-space right menu-icon fas fa-rocket"></i>Meus
             projetos</li>
         </a>
-        <a th:href=@{/novoPrograma}>
+        <a th:if="${session.usuarioLogado.tipo} != 'C'" th:href=@{/novoPrograma}>
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-plus"></i>Adicionar
             programas</li>
         </a>
-        <a th:href=@{/novoSetor}>
+        <a th:if="${session.usuarioLogado.tipo} != 'C'" th:href=@{/novoSetor}>
           <li class="color-white font-size-body base-space"><i
               class="small-space right menu-icon fas fa-sitemap"></i>Adicionar setores</li>
-         <a th:href=@{/novoProjeto}>
+              </a>
+         <a th:if="${session.usuarioLogado.tipo} != 'C'" th:href=@{/novoProjeto}>
             <li class="color-white font-size-body base-space"><i
                 class="small-space right menu-icon fas fa-plus"></i>Adicionar
               projetos</li>
