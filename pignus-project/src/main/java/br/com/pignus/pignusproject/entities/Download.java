@@ -1,48 +1,52 @@
 package br.com.pignus.pignusproject.entities;
-
-
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
 
 @Entity
-public class Download {
+public class Download{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String nomePrograma;
-	private String categoria;
 	private String link;
 	@ManyToMany(mappedBy="softwaresSetor")
 	private List<Setor> setores = new ArrayList<>();
+	@ManyToOne
+	private Funcoes funcaoDownload;
+
+	public int getId() {
+		return id;
+	}
+
+	public Funcoes getFuncaoDownload() {
+		return funcaoDownload;
+	}
+
+	public void setFuncaoDownload(Funcoes funcaoDownload) {
+		this.funcaoDownload = funcaoDownload;
+	}
 
 	public String getNomePrograma() {
 		return nomePrograma;
 	}
 
-	public void setNomePrograma(String nomePrograma) {
-		this.nomePrograma = nomePrograma;
-	}
-
-	public String getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
+	public String setNomePrograma(String nomePrograma) {
+		return this.nomePrograma = nomePrograma;
 	}
 
 	public String getLink() {
 		return link;
 	}
 
-	public void setLink(String link) {
-		this.link = link;
+	public String setLink(String link) {
+		return this.link = link;
 	}
 
 	public List<Setor> getSetores() {
@@ -52,5 +56,12 @@ public class Download {
 	public void setSetores(List<Setor> setores) {
 		this.setores = setores;
 	}
+	
+	@Override
+	public String toString() {
+		return nomePrograma+"\n"+funcaoDownload+"\n" +link;
+	}
+
+
 
 }

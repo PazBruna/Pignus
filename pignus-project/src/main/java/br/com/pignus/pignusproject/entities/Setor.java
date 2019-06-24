@@ -2,7 +2,6 @@ package br.com.pignus.pignusproject.entities;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +23,8 @@ public class Setor {
 	@ManyToOne
 	private Empresa empresa;
 	@OneToOne
-	private UsuarioGestor gestor;
+	private UsuarioGestor gestor;	
+
 	@ManyToMany
 	@JoinTable(name = "setor_has_download", joinColumns = { @JoinColumn(name = "setor_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "download_id") })
@@ -77,4 +77,7 @@ public class Setor {
 	public void setUsuarioGestor(UsuarioGestor gestor) {
 		this.gestor = gestor;
 	}
+
+
+	
 }

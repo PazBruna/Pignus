@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="../img/pignus-favicon.png">
+  <!-- INÍCIO META TAGS -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FIM META TAGS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <title>Pignus Solution - Configurações do Usuário</title>
+</head>
+
+<body id="body-dashboard">
+
+  <div id="open-menu">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div id="close-menu"></div>
+  <header id="header-dashboard" class="small-space right">
+    <div id="header-content">
+      <a th:href=@{/home}><h1 class="font-weight-light d-block font-size-title align-center">Pignus Solution</h1></a>
+      <div></div>
+      <ul class="base-space left">
+       <a th:href=@{/home}>
+          <li class="color-white font-size-body"><i class="small-space right menu-icon fas fa-tachometer-alt"></i>Meu
+            dashboard</li>
+        </a>
+        <a th:href="@{/meusDownloads(funcaoId=${session.usuarioLogado.funcaoUsuario.id})}">
+          <li class="color-white font-size-body base-space"><i
+              class="small-space right menu-icon fas fa-download"></i>Meus
+            downloads</li>
+        </a>
+        <a th:href=@{/meusProjetos} >
+          <li class="color-white font-size-body base-space"><i
+              class="small-space right menu-icon fas fa-rocket"></i>Meus
+            projetos</li>
+        </a>
+        <a th:if="${session.usuarioLogado.tipo} != 'C'" th:href=@{/novoPrograma}>
+          <li class="color-white font-size-body base-space"><i
+              class="small-space right menu-icon fas fa-plus"></i>Adicionar
+            programas</li>
+        </a>
+        <a th:if="${session.usuarioLogado.tipo} != 'C'" th:href=@{/novoSetor}>
+          <li class="color-white font-size-body base-space"><i
+              class="small-space right menu-icon fas fa-sitemap"></i>Adicionar setores</li>
+              </a>
+         <a th:if="${session.usuarioLogado.tipo} != 'C'" th:href=@{/novoProjeto}>
+            <li class="color-white font-size-body base-space"><i
+                class="small-space right menu-icon fas fa-plus"></i>Adicionar
+              projetos</li>
+          </a>
+           <a th:href=@{/logoff}>
+            <li class="color-white font-size-body base-space"><i
+                class="small-space right menu-icon fas fa-sign-out-alt"></i>Sair</li>
+          </a>
+      </ul>
+    </div>
+  </header>
+
+  <a th:href=@{/configuracoesUsuario} id="goTo-profile">
+    <div>
+      <i class="fas fa-user"></i>
+    </div>
+  </a>
+
+  <div class="container extra-large-space">
+    <div class="grid-8">
+      <div class="card card--user base-space">
+        <div class="top-info padding-32">
+          <h2 class="font-weight-bold color-white">Edição de Perfil</h2>
+          <p class="font-weight-light color-white">Deseja editar suas informações?</p>
+        </div>
+        <div class="user-infos">
+          <div class="row base-space">
+            <div class="grid-8">
+              <label class="tiny-space bottom font-weight-bold color-gray">Nome Completo</label>
+              <input readonly class="font-size-body" type="text" name="user-completeName" />
+            </div>
+            <div class="grid-4">
+              <label class="tiny-space bottom font-weight-bold color-gray">Idade</label>
+              <input readonly class="font-size-body" type="text" name="user-age" />
+            </div>
+          </div>
+          <div class="row base-space">
+            <div class="grid-6">
+              <label class="tiny-space bottom font-weight-bold color-gray">Setor Pertencente</label>
+              <input readonly class="font-size-body" type="text" name="user-area" />
+            </div>
+            <div class="grid-6">
+              <label class="tiny-space bottom font-weight-bold color-gray">Gestor da Área</label>
+              <input readonly class="font-size-body" type="text" name="user-manager" />
+            </div>
+          </div>
+          <div class="row base-space">
+            <div class="grid-6">
+              <label class="tiny-space bottom font-weight-bold color-gray">Senha de Acesso <i
+                  class="far fa-question-circle"></i></label>
+              <input class="font-size-body" type="password" name="user-password" />
+            </div>
+            <div class="grid-6">
+              <label class="tiny-space bottom font-weight-bold color-gray">E-mail Corporativo</label>
+              <input readonly class="font-size-body" type="email" name="user-email" />
+            </div>
+          </div>
+          <button
+            class="button-filled btn-form-dash blue color-white to-uppercase large-space font-weight-bold">Atualizar</button>
+        </div>
+      </div>
+    </div>
+    <div class="grid-4">
+      <div class="card card--user base-space">
+        <div class="user-profile d-flex centralize column">
+          <div class="d-flex centralize color-white">A</div>
+          <p class="color-gray font-weight-bold small-space">Alessandro Ribeiro da Silva Júnior</p>
+          <p class="color-gray font-weight-light small-space">Desenvolvedor Fullstack</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/pace.js"></script>
+  <script src="js/aside-animations.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="img/pignus-favicon.png">
+  <!-- INÍCIO META TAGS -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reconhecemos os problemas da sua corporação,
+  e focamos em solucioná-los de maneira prática, eficiente e tecnológica">
+  <meta name="keywords"
+    content="Proporcionar experiência, foco no cliente, solução corporativa, downloads, gerência de downloads, solução de impasses, capital intelectual, sucesso do cliente, orgulho">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="https://dgbragas.com.br">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pignus Company - Soluções para a Gerência Corporativa">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="/img/pignus-logotipo-white.png">
+  <meta property="og:image:alt" , content="Logotipo da empresa Pignus">
+  <meta property="og:image:type" , content="image/jpg">
+  <meta property="og:image:width" , content="133">
+  <meta property="og:image:height" , content="80">
+  <meta name=”twitter:card” content=”/img/pignus-logotipo-white.png”> <meta name=”twitter:site”
+    content=”https://twitter.com/dgbragas“> <meta name=”twitter:title”
+    content="Pignus Company - Soluções para a Gerência Corporativa">
+  <meta name=”twitter:description” content="Reconhecemos os problemas da sua corporação,
+  e focamos em solucioná-los de maneira prática, eficiente e tecnológica">
+  <meta name=”twitter:creator” content="https://twitter.com/dgbragas">
+  <!-- FIM META TAGS -->
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <!-- FIM SCRIPTS -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <title>Pignus - Soluções para a Gerência Corporativa | Quem Somos</title>
+</head>
+
+<body id="body" class="background-light">
+
+  <header id="header">
+    <div class="container">
+      <div class="grid-12">
+        <nav id="nav">
+          <div class="grid-2">
+            <a th:href=@{/index}><img src="img/pignus-logotipo-white.png" alt="Logotipo da empresa Pignus" /></a>
+          </div>
+          <div class="grid-2 offset-2">
+           <a th:href=@{/nossaSolucao}>
+              <p class="color-white to-uppercase d-flex centralize
+                d-flex centralize">Nossa solução</p>
+            </a>
+          </div>
+          <div class="grid-2">
+           <a  th:href=@{/quemSomos}>
+              <p class="color-white to-uppercase d-flex centralize
+                d-flex centralize">Quem somos</p>
+            </a>
+          </div>
+          <div class="grid-2">
+             <a th:href=@{/cadastro}><button class="button-outline blue color-blue to-uppercase">Cadastre-se</button></a>
+          </div>
+          <div class="grid-2">
+            <a th:href=@{/login}><button class="button-filled blue color-blue to-uppercase">Login</button></a>
+          </div>
+        </nav>
+        <nav class="d-flex centralize column" id="nav-mobile">
+          <div id="openMenu" onclick="openMenu()">
+           <a th:href=@{/index}><img src="img/pignus-logotipo-white.png" alt="Logotipo da empresa Pignus" /></a>
+            <div></div>
+          </div>
+          <ul id="ulElement" class="base-space align-center">
+       <a th:href=@{/nossaSolucao}>
+              <li class="color-white to-uppercase base-space bottom">Nossa solução</li>
+            </a>
+             <a  th:href=@{/quemSomos}>
+              <li class="color-white to-uppercase base-space bottom">Quem somos</li>
+            </a>
+            <a th:href=@{/cadastro}>
+              <li class="color-white to-uppercase base-space bottom">Cadastre-se</li>
+            </a>
+            <a th:href=@{/login}>
+              <li class="color-white to-uppercase base-space bottom">Login</li>
+            </a>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div id="containerMenu" onclick="closeMenu()"></div>
+
+  <section id="page-introduction" class="who-we-are">
+    <img src="img/quem-somos.jpg" />
+    <div class="container">
+      <div class="grid-5">
+        <h1 class="font-size-large extra-large-space to-uppercase color-white font-weight-bold">Focamos em <br /> nossos
+          clientes</h1>
+        <p class="font-size-subtitle color-white font-weight-light base-space">almejando proporcioná-los experiências
+          antes ditas como inalcansáveis para à sua corporação</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="extra-large-space">
+    <div class="container">
+      <div class="grid-12">
+        <h1 class="font-weight-bold color-blue to-uppercase font-size-title anime"><span class="color-blue"></span>Nossa
+        </h1>
+        <br />
+        <h1 class="font-weight-bold color-blue to-uppercase font-size-title anime"><span
+            class="color-blue"></span>Missão</h1>
+        <h2 class="font-size-subtitle small-space font-weight-light color-gray anime second">Uma aplicação eficiente,
+          que vise
+          solucionar os
+          impasses corporativos</h2>
+        <p class="color-gray base-space anime third">Valorizamos, acima de tudo, <span class="font-weight-bold color-blue">capital
+            intelectual</span>,
+            <span class="font-weight-bold color-blue">resiliência mediante aos impasses corporativos</span>, <span class="font-weight-bold color-blue">capacidade de trabalhar em times,</span> <span class="font-weight-bold color-blue">comunicação com os
+            companheiros de equipe,</span> <span class="font-weight-bold color-blue">paixão por entregar a melhor experiência possível aos clientes</span> e, também, o
+          <span class="font-weight-bold color-blue">apreço por auxiliar os demais membros da equipe no desenvolvimento pessoal ou
+            profissional</span>.</p>
+        <p class="color-gray little-space anime third">Nós, da Pignus, somos uma equipe focada - e engajada - em sempre
+          entregar a
+          melhor experiência ao usuário e, acreditamos fortemente que o pensamento em equipe gera grandes benefícios à
+          todos. Saiba <span class="font-weight-bold color-blue">quem somos</span>:</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="extra-large-space">
+    <div class="container">
+      <div class="grid-3 base-space anime">
+        <div class="card-us">
+          <img class="img-cracha" src="img/cracha-ana.svg" alt="Representação do crachá da colaboradora Ana Beatriz" />
+          <div class="d-flex centralize column card-effect align-center">
+            <div class="card-hover" id="card-us-1">
+              <img class="tiny-space bottom" src="img/ana-beatriz.jpg" alt="Foto da colaboradora Ana Beatriz" />
+              <p class="font-weight-bold tiny-space top">GITHUB: <a class="font-weight-light" target="_blank"
+                  href="https://github.com/anabneri">anabneri</a></p>
+              <p class="font-weight-bold tiny-space bottom">TWITTER: <a class="font-weight-light" target="_blank"
+                  href="https://twitter.com/anabneri">@anabneri</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-3 base-space anime second">
+        <div class="card-us">
+          <img class="img-cracha" src="img/cracha-bianca.svg"
+            alt="Representação do crachá da colaboradora Bianca Gomes" />
+          <div class="d-flex centralize column card-effect align-center">
+            <div class="card-hover" id="card-us-2">
+              <img class="tiny-space bottom" src="img/bianca-gomes.jpg" alt="Foto da colaboradora Bianca Gomes" />
+              <p class="font-weight-bold tiny-space top">GITHUB: <a class="font-weight-light" target="_blank"
+                  href="https://github.com/bgfenelon">bgfenelon</a></p>
+              <p class="font-weight-bold tiny-space bottom">TWITTER: <a class="font-weight-light"
+                  href="#">@bgfmoraes</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-3 base-space anime third">
+        <div class="card-us">
+          <img class="img-cracha" src="img/cracha-bruna.svg" alt="Representação do crachá da colaboradora Bruna Paz" />
+          <div class="d-flex centralize column card-effect align-center">
+            <div class="card-hover" id="card-us-3">
+              <img class="tiny-space bottom" src="img/bruna-paz.jpg" alt="Foto da colaboradora Bruna Paz" />
+              <p class="font-weight-bold tiny-space top">GITHUB: <a class="font-weight-light" target="_blank"
+                  href="https://github.com/PazBruna">PazBruna</a></p>
+              <p class="font-weight-bold tiny-space bottom">TWITTER: <a class="font-weight-light" target="_blank"
+                  href="https://twitter.com/Paz_bruu">@Paz_bruu</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-3 base-space anime fourth">
+        <div class="card-us">
+          <img class="img-cracha" src="img/cracha-bruno.svg"
+            alt="Representação do crachá do colaborador Bruno Carvalho" />
+          <div class="d-flex centralize column card-effect align-center">
+            <div class="card-hover" id="card-us-4">
+              <img class="tiny-space bottom" src="img/bruno-carvalho.jpg" alt="Foto do colaborador Bruno Carvalho" />
+              <p class="font-weight-bold tiny-space top">GITHUB: <a class="font-weight-light" target="_blank"
+                  href="https://github.com/papamike18">papamike18</a></p>
+              <p class="font-weight-bold tiny-space bottom">TWITTER: <a class="font-weight-light"
+                  href="#">papamike18</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-3 base-space offset-3 anime">
+        <div class="card-us">
+          <img class="img-cracha" src="img/cracha-diego.svg" alt="Representação do crachá do colaborador Diego Braga" />
+          <div class="d-flex centralize column card-effect align-center">
+            <div class="card-hover" id="card-us-5">
+              <img class="tiny-space bottom" src="img/diego-braga.jpg" alt="Foto do colaborador Diego Braga" />
+              <p class="font-weight-bold tiny-space top">GITHUB: <a class="font-weight-light" target="_blank"
+                  href="https://github.com/dgbragas">dgbragas</a></p>
+              <p class="font-weight-bold tiny-space bottom">WEBSITE: <a class="font-weight-light" target="_blank"
+                  href="https://dgbragas.com.br">dgbragas</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-3 base-space anime second">
+        <div class="card-us">
+          <img class="img-cracha" src="img/cracha-guilherme.svg"
+            alt="Representação do crachá do colaborador Guilherme Raulino" />
+          <div class="d-flex centralize column card-effect align-center">
+            <div class="card-hover" id="card-us-6">
+              <img class="tiny-space bottom" src="img/guilherme-raulino.jpg"
+                alt="Foto do colaborador Guilherme Raulino" />
+              <p class="font-weight-bold tiny-space top">GITHUB: <a class="font-weight-light" target="_blank"
+                  href="https://github.com/GuigoFaria">GuigoFaria</a></p>
+              <p class="font-weight-bold tiny-space bottom">TWITTER: <a class="font-weight-light"
+                  href="#">guiraulino</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sections-space">
+    <div class="container">
+      <div class="grid-3 offset-1">
+        <h1 class="font-weight-bold to-uppercase font-size-display reduce-lh color-red anime"><span
+            class="color-red"></span>Orgu</h1>
+        <br />
+        <h1 class="font-weight-bold to-uppercase font-size-display reduce-lh color-red anime"><span
+            class="color-red"></span>lho</h1>
+      </div>
+      <div class="grid-7">
+        <p class="color-gray base-space anime second">Um dos grandes diferenciais da Pignus é <span class="color-red font-weight-bold">manter a dedicação em pesquisas e inovações tecnológicas para trazer sempre a melhor experiências àqueles que adquirem o nosso software</span>s. É do
+          sucesso do cliente que vem o nosso sucesso e, por este motivo, temos orgulho de todos os nossos funcionários -
+          que fazem os nossos trabalhar se tornarem concretos e viáveis aos mais variados tipos de empresas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sections-space">
+    <div class="container">
+      <div class="grid-4 offset-1 anime">
+        <img src="img/join-us.png"
+          alt="Imagem do peito de um homem com trajado de terno e estando ajeitando sua gravata" />
+      </div>
+      <div class="grid-5 offset-1 d-flex centralize column">
+        <h3 class="color-blue font-weight-light extra-large-space align-center font-size-title anime">Ajude-nos a
+          construir o
+          futuro do mundo corporativo</h3>
+        <p class="base-space color-gray align-center anime second">Se você <span class="font-weight-bold color-blue">cansou
+            das mesmas soluções</span> para problemas que
+          poderiam ser
+          resolvidos de maneira <span class="font-weight-bold color-blue">prática e eficiente</span>, se deseja <span
+            class="font-weight-bold color-blue">testar novas ideias</span>, se acredita em <span
+            class="font-weight-bold color-blue">design</span>, em <span class="font-weight-bold color-blue">tecnologia</span>
+          ou até mesmo em uma <span class="font-weight-bold color-blue">revolução tecnológica próxima</span>, venha conosco.
+          Estamos em busca de pessoas para <span class="font-weight-bold color-blue">simplificar
+            o mundo</span>.</p>
+        <button
+          class="base-space button-outline font-weight-bold to-uppercase color-blue blue align-center anime third">Temos
+          vagas
+          abertas</button>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="sections-space anime">
+    <div class="container">
+      <div class="grid-5">
+        <h3 class="font-size-subtitle font-weight-light">Entre em contato</h3>
+        <div class="social-medias color-white base-space">
+          <p class="font-weight-bold font-size-large base-space right">in</p>
+          <p class="font-weight-bold font-size-large base-space right">ig</p>
+          <p class="font-weight-bold font-size-large base-space right">f</p>
+          <p class="font-weight-bold font-size-large base-space right">git</p>
+        </div>
+        <h3 class="font-size-title font-weight-light color-white base-space">Deseja seguir em frente?</h3>
+        <h1 class="send-mail font-size-title to-lowercase color-white little-space"><span class="color-red"></span>envie
+          um e-mail
+        </h1>
+      </div>
+      <div class="grid-2 offset-5">
+        <a class="goTop-container" href="#header">
+          <div class="backTop align-center base-space d-flex centralize">
+            <p class="color-white to-uppercase font-weight-light">Back to top</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="isLoading">
+    <div id="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <img src="img/pignus-logotipo-white.png" />
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

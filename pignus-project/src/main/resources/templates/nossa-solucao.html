@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="img/pignus-favicon.png">
+  <!-- INÍCIO META TAGS -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reconhecemos os problemas da sua corporação,
+  e focamos em solucioná-los de maneira prática, eficiente e tecnológica">
+  <meta name="keywords"
+    content="Pignus Solution, solução corporativa, gerência interna, corporação, segurança da informação, segurança corporativa, gerência de downloads, downloads, organização de equipes">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="https://dgbragas.com.br">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pignus Company - Soluções para a Gerência Corporativa">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="/img/pignus-logotipo-white.png">
+  <meta property="og:image:alt" , content="Logotipo da empresa Pignus">
+  <meta property="og:image:type" , content="image/jpg">
+  <meta property="og:image:width" , content="133">
+  <meta property="og:image:height" , content="80">
+  <meta name=”twitter:card” content=”/img/pignus-logotipo-white.png”> <meta name=”twitter:site”
+    content=”https://twitter.com/dgbragas“> <meta name=”twitter:title”
+    content="Pignus Company - Soluções para a Gerência Corporativa">
+  <meta name=”twitter:description” content="Reconhecemos os problemas da sua corporação,
+  e focamos em solucioná-los de maneira prática, eficiente e tecnológica">
+  <meta name=”twitter:creator” content="https://twitter.com/dgbragas">
+  <!-- FIM META TAGS -->
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <!-- FIM SCRIPTS -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <title>Pignus - Soluções para a Gerência Corporativa | Nossa Solução</title>
+</head>
+
+<body id="body" class="background-light">
+
+  <header id="header">
+    <div class="container">
+      <div class="grid-12">
+        <nav id="nav">
+          <div class="grid-2">
+            <a th:href=@{/index}><img src="img/pignus-logotipo-white.png" alt="Logotipo da empresa Pignus" /></a>
+          </div>
+          <div class="grid-2 offset-2">
+            <a th:href=@{/nossaSolucao}>
+              <p class="color-white to-uppercase d-flex centralize
+                d-flex centralize">Nossa solução</p>
+            </a>
+          </div>
+          <div class="grid-2">
+           <a  th:href=@{/quemSomos}>
+              <p class="color-white to-uppercase d-flex centralize
+                d-flex centralize">Quem somos</p>
+            </a>
+          </div>
+          <div class="grid-2">
+             <a th:href=@{/cadastro}><button class="button-outline blue color-blue to-uppercase">Cadastre-se</button></a>
+          </div>
+          <div class="grid-2">
+            <a th:href=@{/login}><button class="button-filled blue color-blue to-uppercase">Login</button></a>
+          </div>
+        </nav>
+        <nav class="d-flex centralize column" id="nav-mobile">
+          <div id="openMenu" onclick="openMenu()">
+             <a th:href=@{/index}><img src="img/pignus-logotipo-white.png" alt="Logotipo da empresa Pignus" /></a>
+            <div></div>
+          </div>
+          <ul id="ulElement" class="base-space align-center">
+          <a th:href=@{/nossaSolucao}>
+              <li class="color-white to-uppercase base-space bottom">Nossa solução</li>
+            </a>
+             <a  th:href=@{/quemSomos}>
+              <li class="color-white to-uppercase base-space bottom">Quem somos</li>
+            </a>
+              <a th:href=@{/cadastro}>
+              <li class="color-white to-uppercase base-space bottom">Cadastre-se</li>
+            </a>
+           <a th:href=@{/login}>
+              <li class="color-white to-uppercase base-space bottom">Login</li>
+            </a>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div id="containerMenu" onclick="closeMenu()"></div>
+
+  <section id="page-introduction">
+    <img src="img/nossa-solucao.jpg" />
+    <div class="container">
+      <div class="grid-5">
+        <h1 class="font-size-large extra-large-space to-uppercase color-white font-weight-bold">Conheça o <br /> Pignus
+          Solution</h1>
+        <p class="font-size-subtitle color-white font-weight-light base-space">a mais nova solução corporativa quando o
+          assunto se trata de gerência interna da sua corporação</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pignus-solution" class="extra-large-space">
+    <div class="container">
+      <div class="grid-12">
+        <h1 class="font-size-title color-blue font-weight-bold to-uppercase anime"><span
+            class="color-blue"></span>Pignus</h1>
+        <br />
+        <h1 class="font-size-title color-blue font-weight-bold to-uppercase tiny-space anime second"><span
+            class="color-blue"></span>Solution</h1>
+        <p class="small-space font-weight-light color-gray font-size-subtitle anime second">Sua empresa possui impasses,
+          e nós
+          possuímos a solução</p>
+        <p class="base-space color-gray anime second">O mundo atual <span class="color-blue font-weight-bold">gira em
+            torno da tecnologia</span> e, por este motivo, é necessário
+          tomar uma série de cuidados quando o assunto se trata da <span class="color-blue font-weight-bold">segurança
+            da corporação</span> ou, até mesmo, dos clientes
+          que a sua empresa presta serviços.</p>
+        <p class="small-space color-gray  anime second">Seja em equipes de Desenvolvimento, times de Recursos Humanos,
+          setores de
+          Vendas ou quaisquer outras áreas, a segurança da informação, dentro de uma empresa, é sempre o <span
+            class="color-blue font-weight-bold">principal foco
+            corporativo</span> e, com o avanço da tecnologia, tornou-se cada vez mais difícil administrar com maestria
+          esta
+          contenção de informações. Pensando nisto, a Pignus teve o ideal de juntar a <span
+            class="color-blue font-weight-bold">segurança corporativa</span> em uma aplicação com foco em <span
+            class="color-blue font-weight-bold">gerência de downloads</span>, <span
+            class="color-blue font-weight-bold">organização de
+            equipes</span>, <span class="color-blue font-weight-bold">monitoramento de ociosiodade</span> e <span
+            class="color-blue font-weight-bold">segurança corporativa</span>.</p>
+        <button class="font-weight-bold base-space button-filled blue to-uppercase  anime third">Faça um
+          preview</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sections-space">
+    <div class="container">
+      <div class="grid-4 offset-1">
+        <h1 class="font-size-display font-weight-bold reduce-lh to-uppercase color-red anime"><span
+            class="color-red"></span>Exper</h1>
+        <br />
+        <h1 class="font-size-display font-weight-bold reduce-lh to-uppercase color-red tiny-space anime"><span
+            class="color-red"></span>tise</h1>
+        <h2 class="font-size-title font-weight-light base-space color-gray anime second">O cliente sempre em primeiro
+          lugar</h2>
+      </div>
+      <div class="grid-6 anime third">
+        <img src="img/our-work-icon.svg"
+          alt="Ícone de representação da nossa expertise, mostrando um iMac, iPad, iPhone e um Apple Watch vetorizados" />
+      </div>
+    </div>
+  </section>
+
+  <div class="extra-large-space anime">
+    <div class="container">
+      <div class="grid-10 offset-1">
+        <p class="color-gray">A Pignus visa sempre entregar o <span class="font-weight-bold color-red">melhor produto</span> para
+          seus clientes, objetivando solucionar grande parte dos problemas quando o assunto se trata de <span
+            class="font-weight-bold color-red">gerência corporativa</span>. Para que isso fosse concretizado, tivemos a iniciativa
+          de resolver estas ocorrências se embasando nas principais <span class="font-weight-bold color-red">dores e
+            necessidades</span> dos funcionários de empresas de tecnologia e, com o passar do tempo, tornamos estas
+          premissas os <span class="font-weight-bold color-red">nossos pilares</span> para a construção software.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="sections-space">
+    <div class="container">
+      <div class="grid-2 offset-1">
+        <h1 class="font-size-title color-blue to-uppercase font-weight-bold anime"><span
+            class="color-blue"></span>Nossos</h1>
+        <br />
+        <h1 class="font-size-title color-blue to-uppercase font-weight-bold anime"><span
+            class="color-blue"></span>Pilares
+        </h1>
+      </div>
+      <div class="grid-9">
+        <div class="row base-space bottom">
+          <div class="grid-2 anime">
+            <img src="img/icons/icon-3.svg" alt="Ícone de agilidade, mostrando um ciclo contínuo" />
+          </div>
+          <div class="grid-9 padding-64 bottom anime second">
+            <p class="small-space color-gray base-space left">O Pignus Solution possui o propósito de <span class="color-blue font-weight-bold">agilizar os
+              processos internos da corporação</span>, visando gerar <span class="color-blue font-weight-bold">menos aberturas de chamados</span> e, ao mesmo tempo, <span class="color-blue font-weight-bold">maior
+              produtividade</span> por parte da equipe de TI da empresa.</p>
+          </div>
+        </div>
+        <div class="row padding-32 top base-space bottom">
+          <div class="grid-2 anime">
+            <img src="img/icons/icon-2.svg" alt="Ícone de monitoria, representando um olho aberto" />
+          </div>
+          <div class="grid-9 padding-64 bottom anime second">
+            <p class="small-space color-gray base-space left">Se você busca segurança para a sua empresa, notoriamente
+              necessitará de uma <span class="color-blue font-weight-bold">monitoria dos softwares que estão sendo baixados nos computadores</span> e, com o Pignus
+              Solution, esta realização é possível!</p>
+          </div>
+        </div>
+        <div class="row padding-32 top base-space bottom">
+          <div class="grid-2 anime">
+            <img src="img/icons/icon-1.svg" alt="Ícone de análises, apresentando um gráfico crescente" />
+          </div>
+          <div class="grid-9 padding-64 bottom anime second">
+            <p class="small-space color-gray base-space left">O Pignus Solution possui <span class="color-blue font-weight-bold">emissão de relatórios de uso dos
+              softwares licenciados pela empresa</span>, fazendo com que haja a possibilida de verificar se todos estão
+              realmente
+              sendo utilizados na corporação.</p>
+          </div>
+        </div>
+        <div class="row padding-32 top bottom base-space bottom">
+          <div class="grid-2 anime">
+            <img src="img/icons/icon.svg" alt="Representação de segurança, mostrando um escudo" />
+          </div>
+          <div class="grid-9 padding-64 bottom anime second">
+            <p class="small-space color-gray base-space left">A nossa corporação reconhece a grande quantidade de <span class="color-blue font-weight-bold">softwares
+              maléficos</span> existentes no mercado e, pensando nisto, visamos em uma aplicação que <span class="color-blue font-weight-bold">disponibilize apenas o
+              necessário para os momentos oportunos de projetos</span>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sections-space">
+    <div class="container">
+      <div class="grid-4 offset-1 anime">
+        <img src="img/join-us.png"
+          alt="Imagem do peito de um homem com trajado de terno e estando ajeitando sua gravata" />
+      </div>
+      <div class="grid-5 offset-1 d-flex centralize column">
+        <h3 class="color-red font-weight-light extra-large-space align-center font-size-title anime">Ajude-nos a
+          construir o
+          futuro do mundo corporativo</h3>
+        <p class="base-space color-gray align-center anime second">Se você <span class="font-weight-bold color-red">cansou das mesmas soluções</span> para problemas que
+          poderiam ser
+          resolvidos de maneira <span class="font-weight-bold color-red">prática e eficiente</span>, se deseja <span class="font-weight-bold color-red">testar novas ideias</span>, se acredita em <span class="font-weight-bold color-red">design</span>, em <span class="font-weight-bold color-red">tecnologia</span>
+          ou até mesmo em uma <span class="font-weight-bold color-red">revolução tecnológica próxima</span>, venha conosco. Estamos em busca de pessoas para <span class="font-weight-bold color-red">simplificar
+          o mundo</span>.</p>
+        <button
+          class="base-space button-outline font-weight-bold to-uppercase color-red red align-center anime third">Temos
+          vagas
+          abertas</button>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="sections-space anime">
+    <div class="container">
+      <div class="grid-5">
+        <h3 class="font-size-subtitle font-weight-light">Entre em contato</h3>
+        <div class="social-medias color-white base-space">
+          <p class="font-weight-bold font-size-large base-space right">in</p>
+          <p class="font-weight-bold font-size-large base-space right">ig</p>
+          <p class="font-weight-bold font-size-large base-space right">f</p>
+          <p class="font-weight-bold font-size-large base-space right">git</p>
+        </div>
+        <h3 class="font-size-title font-weight-light color-white base-space">Deseja seguir em frente?</h3>
+        <h1 class="send-mail font-size-title to-lowercase color-white little-space"><span class="color-red"></span>envie
+          um e-mail
+        </h1>
+      </div>
+      <div class="grid-2 offset-5">
+        <a class="goTop-container" href="#header">
+          <div class="backTop align-center base-space d-flex centralize">
+            <p class="color-white to-uppercase font-weight-light">Back to top</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="isLoading">
+    <div id="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <img src="img/pignus-logotipo-white.png" />
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

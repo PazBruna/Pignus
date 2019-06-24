@@ -9,16 +9,20 @@ import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import br.com.pignus.pignusproject.entities.Empresa;
 import br.com.pignus.pignusproject.entities.Usuario;
+import br.com.pignus.pignusproject.entities.UsuarioGestor;
 import br.com.pignus.pignusproject.entities.UsuarioLog;
 import br.com.pignus.pignusproject.repository.DadosUsuarios;
 import br.com.pignus.pignusproject.repository.EmpresaRepository;
+import br.com.pignus.pignusproject.repository.SetorRepository;
 import br.com.pignus.pignusproject.repository.UsuarioRepository;
 import br.com.pignus.pignusproject.repository.UsuariosLogRepository;
 
 @Component
 public class SegurancaDaAplicacao {
 	DadosUsuarios dados = new DadosUsuarios();
+	Usuario usuarioGestor;
 	String matrizLogin[][] = dados.retornaMatrizUsuarios();
 	String[][] matrizLog = new String[10][2];
 	@Autowired
@@ -26,6 +30,9 @@ public class SegurancaDaAplicacao {
 	
 	@Autowired
 	EmpresaRepository empresa;
+	
+	@Autowired
+	SetorRepository setores;
 
 	UsuarioLog usuarioAcesso = new UsuarioLog();
 	@Autowired
@@ -34,22 +41,23 @@ public class SegurancaDaAplicacao {
 	DateTimeFormatter formatador = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
 			.withLocale(new Locale("pt", "br"));
 
-	public boolean permitirAcessoUsuario(String email, String senha) {
+	public Usuario permitirAcessoUsuario(String email, String senha) {
 
 		if (usuarios.existsByEmailAndSenha(email, senha)) {
-			return true;
+			Usuario usuarioExistente = usuarios.findByEmail(email);
+			return	usuarioExistente ;
 		}
-		return false;
+		return null;
 	}
 
-	public boolean permitirAcessoEmpresa(String email, String senha) {
+	public Empresa permitirAcessoEmpresa(String email, String senha) {
 
 		if (empresa.existsByEmailAndSenha(email, senha)) {
-			return true;
+			Empresa novaEmp = empresa.findByEmail(email);
+			return novaEmp;
 		}
-		return false;
+		return null;
 	}
-	
 	
 	
 	
@@ -92,6 +100,16 @@ public class SegurancaDaAplicacao {
 		}
 
 		return exibeHistorico(matrizLog);
+	}
+	
+	public UsuarioGestor procuraGestor(UsuarioGestor gestor) {
+		UsuarioGestor gestorNovo = usuarios.findByNomeGestor(gestor.getNome());
+		return gestorNovo;
+	}
+	
+	public Usuario procurarFuncionario(Usuario funcionario) {
+		funcionario = usuarios.findByNome(funcionario.getNome());
+		return funcionario;
 	}
 
 }

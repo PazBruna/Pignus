@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title>Cadastro Setor</title>
+</head>
+
+<body>
+	<form action="#" th:action="@{/cadastroSetor}" th:object="${setor}" method="POST"
+		onsubmit="return validaFormLogin(this);">
+		
+		
+	<select class="form-control col-4" th:field="*{gestor.id}" id="selectGestor">	 
+    <option th:each="gestor: ${listaGestor}"
+    		th:value="${gestor.id}"
+            th:text="${gestor}"></option>
+</select><br>
+
+
+
+		<div class="form-group">
+			<input type="text" th:field="*{nomeSetor}" id="nomeSetor" class="form-control col-md-2"
+				placeholder="Nome do Setor">
+		</div>	
+		
+
+		<div class="form-group">
+			<input type="submit" value="Cadastrar" class="btn btn-primary" />
+		</div>
+
+
+	</form>
+</body>
+
+<script src="../../js/form.js"></script>
+
+</html>

@@ -30,7 +30,6 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private String nome;
-	private String funcao;
 	@ManyToOne
 	private Empresa empresa;
 	@ManyToOne
@@ -41,6 +40,16 @@ public class Usuario {
 	@JoinTable(name = "usuario_has_downloads", joinColumns = {
 			@JoinColumn(name = "usuario_id") }, inverseJoinColumns = { @JoinColumn(name = "download_id") })
 	private List<Download> downloadsUsuario = new ArrayList<>();
+	@ManyToOne
+	private Funcoes funcaoUsuario;
+
+	public Funcoes getFuncaoUsuario() {
+		return funcaoUsuario;
+	}
+
+	public void setFuncaoUsuario(Funcoes funcaoUsuario) {
+		this.funcaoUsuario = funcaoUsuario;
+	}
 
 	public Setor getSetor() {
 		return setor;
@@ -86,14 +95,6 @@ public class Usuario {
 		return tipo;
 	}
 
-	public String getFuncao() {
-		return funcao;
-	}
-
-	public void setFuncao(String funcao) {
-		this.funcao = funcao;
-	}
-
 	public Empresa getEmpresa() {
 		return empresa;
 	}
@@ -108,6 +109,15 @@ public class Usuario {
 
 	public void setDownloadsUsuario(List<Download> downloadsUsuario) {
 		this.downloadsUsuario = downloadsUsuario;
+	}
+
+	public void setFuncao(int nextInt) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public String toString() {
+		return nome;
 	}
 
 }
