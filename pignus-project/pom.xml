@@ -38,7 +38,7 @@
 		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>mssql-jdbc</artifactId>
-			<version>7.2.1.jre8</version><!--$NO-MVN-MAN-VER$ -->
+			<version>11.1.0.jre8-preview</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
 		<dependency>
